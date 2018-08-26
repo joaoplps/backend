@@ -8,12 +8,12 @@ package pkg101poo;
  */
 import java.util.Scanner;								//Lib. Scanner: método consultor.
 public class Main {
-    public static void main(String[] args) {
-        String nomex, nomey;
-        nomex="Joao";
-        nomey="Jose";
-        if(nomex.compareTo(nomey)>0){System.out.println(nomex+" vem depois de "+nomey);}
-        else if(nomex.compareTo(nomey)<0){System.out.println(nomex+" vem antes de "+nomey);}
-        else{System.out.println(nomex+" é igual a "+nomey);}
-    }
+  public static void main(String[] args) {
+    String nomex, nomey;
+    nomex="Joao";
+    nomey="Jose";
+    if(nomex.compareTo(nomey)>0){System.out.println(nomex+" vem depois de "+nomey);}
+    else if(nomex.compareTo(nomey)<0){System.out.println(nomex+" vem antes de "+nomey);}
+    else{System.out.println(nomex+" é igual a "+nomey);}
+  }
 }

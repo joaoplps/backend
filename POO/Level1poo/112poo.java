@@ -9,20 +9,20 @@ package pkg101poo;
  * de exemplo deste repositório como "112poo.java".
  */
 public class Lampada {
-             //Características, atributos;
-    public String tipo;         //Default: public não precisa ser declarado, apenas privado ou protegido;
-    boolean estado;
-    String forma;
-    int voltagem;
-            //Métodos ou comportamentos;
-    public void ligar(){
-            System.out.println("Lâmpada está sendo ligada...");
-            estado=true;
-            System.out.println("Lâmpada está ligada!");
-    }
-    public void desligar(){
-            System.out.println("Lâmpada está sendo desligada...");
-            estado=false;
-            System.out.println("Lâmpada está desligada!");
-    }
+  //Características, atributos;
+  public String tipo;         //Default: public não precisa ser declarado, apenas privado ou protegido;
+  boolean estado;
+  String forma;
+  int voltagem;
+  //Métodos ou comportamentos;
+  public void ligar(){
+    System.out.println("Lâmpada está sendo ligada...");
+    estado=true;
+    System.out.println("Lâmpada está ligada!");
+  }
+  public void desligar(){
+      System.out.println("Lâmpada está sendo desligada...");
+      estado=false;
+      System.out.println("Lâmpada está desligada!");
+  }
 }

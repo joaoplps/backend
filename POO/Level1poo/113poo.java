@@ -10,20 +10,18 @@ package pkg101poo;
  */
 public class Cachorro{
 	//Atributos:
-    public String sNomedog;
-    public String sRacadog;
-    public String sCordog;
-    public double dPesodog;
-
-    //Métodos:
-    public void brincar(){
-        dPesodog = dPesodog - 0.5;
-    }
-    public void comer(){
-        dPesodog = dPesodog + 0.6;
-    }
-    public void latir(){
-        System.out.println("Au!");
-    }
-    
+  public String sNomedog;
+  public String sRacadog;
+  public String sCordog;
+  public double dPesodog;
+  //Métodos:
+  public void brincar(){
+    dPesodog = dPesodog - 0.5;
+  }
+  public void comer(){
+    dPesodog = dPesodog + 0.6;
+  }
+  public void latir(){
+    System.out.println("Au!");
+  }
 }

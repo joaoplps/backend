@@ -9,39 +9,39 @@ package pkg101poo;
  * de exemplo deste repositório como "115poo.java".
  */
 public class Carro {
-    public String sNomecar;
-    public String sCorcar;
-    public int iAnocar;
-    public String sModelocar;
-    public int sSpeedcar=0;
-    public boolean bStatuscar=false;
-    
-    public void ligar(){
-        if(bStatuscar==false){
-            bStatuscar=true;
-            System.out.println("Você ligou o carro.");
-        }
-        else{System.out.println("O carro já está ligado!");}
+  public String sNomecar;
+  public String sCorcar;
+  public int iAnocar;
+  public String sModelocar;
+  public int sSpeedcar=0;
+  public boolean bStatuscar=false;
+
+  public void ligar(){
+    if(bStatuscar==false){
+      bStatuscar=true;
+      System.out.println("Você ligou o carro.");
     }
-    
-    public void desligar(){
-        if(bStatuscar==true){
-            bStatuscar=false;
-            System.out.println("Você desligou o carro.");
-        }
-        else{System.out.println("O carro já está desligado!");}
+    else{System.out.println("O carro já está ligado!");}
+  }
+
+  public void desligar(){
+    if(bStatuscar==true){
+      bStatuscar=false;
+      System.out.println("Você desligou o carro.");
     }
-    
-    public void acelerar(){
-        if(bStatuscar==true)sSpeedcar++;
-        else{System.out.println("Primeiro ligue o carro.");}
+    else{System.out.println("O carro já está desligado!");}
+  }
+
+  public void acelerar(){
+    if(bStatuscar==true)sSpeedcar++;
+    else{System.out.println("Primeiro ligue o carro.");}
+  }
+
+  public void freiar(){
+    if(bStatuscar==false){
+      if(sSpeedcar>0)sSpeedcar--;
+      else{System.out.println("O carro está parado.");}
     }
-    
-    public void freiar(){
-        if(bStatuscar==false){
-            if(sSpeedcar>0)sSpeedcar--;
-            else{System.out.println("O carro está parado.");}
-        }
-        else{System.out.println("Há necessidade de freiar com o carro desligado?");}
-    }
+    else{System.out.println("Há necessidade de freiar com o carro desligado?");}
+  }
 }
