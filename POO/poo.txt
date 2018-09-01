@@ -85,4 +85,10 @@ Classe String
 			if(x.equals(y)){System.out.println("X e Y são iguais.");}
 			else{System.out.println("X e Y são diferentes.");}
 			
-	
+			
+Vamos à prática.
+Comece pelo arquivo chamado 101poo.java, abra-o no editor de texto de sua preferência
+e leia a documentação inclusa no código para acompanhar o passo a passo e complete a
+lista.
+
+JPLPS
