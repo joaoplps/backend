@@ -27,7 +27,7 @@ package pkg203poo;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        //Criação de Objeto:        
+        //Criação de vetor para receber objetos:        
         Employee[] emps;                                                //2
         emps = new Employee[3];
         
@@ -37,7 +37,9 @@ public class Main {
         //Definição de Objetos:
         System.out.println("Estabeleça atributos para:\n");
         for(int i=0; i<3; i++){
+            //Criação de objeto dentro do vetor:
             emps[i] = new Employee();
+            
             System.out.println("Nome do "+(i+1)+"º Empregado? ");       //5
             emps[i].setsName(ler.nextLine());
             System.out.println("Cargo do "+(i+1)+"º Empregado? ");
@@ -67,18 +69,13 @@ public class Main {
         Employee emp4;
         emp4 = new Employee("João Pedro", "CEO", 9500.00);
         
+        //Relatório de Objetos Criados:
         int i;
         for(i=0; i<3; i++){
-            System.out.println((i+1)+"º Empregado: "
-                +emps[i].getsName()+", "
-                +emps[i].getsJob()+", $"
-                +emps[i].getdPaycheck()+".");
+            System.out.println((i+1)+"º Empregado: "+emps[i].getsName()+", "+emps[i].getsJob()+", $"+emps[i].getdPaycheck()+".");
             
         }
-        System.out.println((i+1)+"º Empregado: "
-                +emp4.getsName()+", "
-                +emp4.getsJob()+", $"
-                +emp4.getdPaycheck()+".");
+        System.out.println((i+1)+"º Empregado: "+emp4.getsName()+", "+emp4.getsJob()+", $"+emp4.getdPaycheck()+".");
         
     }
 }
