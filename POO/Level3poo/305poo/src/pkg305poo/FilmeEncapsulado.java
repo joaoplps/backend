@@ -95,14 +95,14 @@ public class FilmeEncapsulado {
         
     }
     
-    public FilmeEncapsulado(String sTitulo, int iIdadeMinima, double dDuracao, int iAno, String sGenero, String sCategoria){
+    public FilmeEncapsulado(String sTitulo, int iIdadeMinima, double dDuracao, int iAno, String sGenero, Pessoa pessoa1){
         this.sTitulo = sTitulo;
         this.iIdadeMinima = iIdadeMinima;
         this.dDuracao = dDuracao;
         this.iAno = iAno;
         this.sGenero = sGenero;
         
-        switch(Pessoa.sCategoria){
+        switch(pessoa1.sCategoria){
             case "cliente": this.dValor = 20.00;    
             break;
                 

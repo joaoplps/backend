@@ -33,7 +33,7 @@ public class Main {
         
         //Criado do método FilmeEncapsulado:
         FilmeEncapsulado filme2;
-        filme2 = new FilmeEncapsulado("Inception", 16, 120.00, 2005, "Ação", "estudante");
+        filme2 = new FilmeEncapsulado("Inception", 16, 120.00, 2005, "Ação", pessoa1);
         
         
         

@@ -9,7 +9,7 @@ public class Pessoa {
     //Atributos:
     public String sNome;
     public int iIdade;
-    static String sCategoria;
+    public String sCategoria;
     
     //Método Construtor:
     public Pessoa(){
@@ -18,7 +18,7 @@ public class Pessoa {
     public Pessoa(String sNome, int iIdade, String sCategoria){
         this.sNome = sNome;
         this.iIdade = iIdade;
-        Pessoa.sCategoria = sCategoria;
+        this.sCategoria = sCategoria;
         
     }
     
