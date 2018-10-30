@@ -95,26 +95,22 @@ public class PasswdValidation {
             }
             
             //SENHA FRACA
-            if(passwd.length() < 6){
-                if(numberPresent == false || upperCasePresent == false || lowerCasePresent == false || specialCharacterPresent == false){
-                    System.out.println("A senha inseria é considerada FRACA, Insira sua senha novamente: ");
-                }
+            if(passwd.length() < 6 || totalMatches == 0){
+                System.out.println("A senha inseria é considerada FRACA, Insira sua senha novamente: ");
             }
             
             //SENHA MÉDIA
-            else if(passwd.length() < 9){
-                if(qtdPresent > 1 || qtdUpper > 1 || qtdSpecial > 1){
-                    System.out.println("\nA senha inserida é considerada MÉDIA, deseja inserir uma nova senha? (s/n) ");
-                    answer = ler.nextLine();
-                    
-                    if("n".equals(answer)){
-                        System.out.println("\nObrigado.");
-                    }
-                    
-                    else{
-                        System.out.println("\nInsira sua senha novamente:");
-                    }
-                }    
+            else if(passwd.length() < 9 || totalMatches >= 1){
+                System.out.println("\nA senha inserida é considerada MÉDIA, deseja inserir uma nova senha? (s/n) ");
+                answer = ler.nextLine();
+
+                if("n".equals(answer)){
+                    System.out.println("\nObrigado.");
+                }
+
+                else{
+                    System.out.println("\nInsira sua senha novamente:");
+                }  
             }
             
             //SENHA FORTE
@@ -122,7 +118,7 @@ public class PasswdValidation {
                 System.out.println("\nA senha inserida é considerada FORTE. Obrigado.\n\n");
             }
             
-        }while(passwd.length() < 6 || numberPresent == false || upperCasePresent == false || lowerCasePresent == false || specialCharacterPresent == false || "s".equals(answer));
+        }while(passwd.length() < 6 || totalMatches == 0 || "s".equals(answer));
         
     }
     
