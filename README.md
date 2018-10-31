@@ -15,4 +15,4 @@ de projetos em java é o NetBeans, e se faz necessário ler atentamente a docume
 efeitos práticos de cada exemplo dado. Um ou mais códigos devem estar nos locais corretos para que tudo ocorra conforme o
 esperado.
 
-Autor: João Pedro LPS
+@LPS
