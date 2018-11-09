@@ -13,22 +13,34 @@ package pkg308poo;
  * @author LPS
  */
 public class Radar {
+    //Definindo vetor de String para placas multadas:
+    String[] fined = new String[10];
+    int i = 0;
+    
     //Método construtor:
     public void Radar(){}
     
     //Método checkSpeed:
     public void checkSpeed(Car car0){
-        String[] fined;
-        fined = new String[10];
+
         
-        double maxSpeed = car0.getdSpeed();
-        
-        if(maxSpeed <= 80.00){
+        //Teste de velocidade:
+        if(car0.getdSpeed() <= 80.00){
             System.out.println("You are free to go Sir.\n\n");
         }
         else{
             System.out.println("You have been fined.\n\n");
-            fined[0] = car0.getsPlate();
+            
+            //Atribuição no vetor de String de placas multadas:
+            fined[i] = car0.getsPlate();
+            
+            //Incremento para garantir o looping do vetor de dez posições:
+            if(i < 10){
+                i++;
+            }
+            else{
+                i = 0;
+            }
         }
     }
     
