@@ -15,10 +15,16 @@ public class Main {
         students.add("Peter");
         students.add("Mary");
         
-        //Métodos para lidar com o vetor:
+        //Métodos para lidar com o vetor/lista:
         System.out.println(students);
         System.out.println(students.size());
         System.out.println(students.get(2));
+        
+        if(students.contains("John")){
+            System.out.println("Shout Out to John!");
+        }
+        
+        students.set(2, "Joanna");        
         System.out.println("Remove: " + students.remove(1));
         System.out.println(students);
         
