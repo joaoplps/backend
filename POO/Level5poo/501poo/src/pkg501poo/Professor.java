@@ -10,24 +10,7 @@ package pkg501poo;
  * @author aluno
  */
 public class Professor extends Pessoa {
-    private String sDisciplina;
-    private String[] sConhecimento;
-
-    public String getsDisciplina() {
-        return sDisciplina;
-    }
-
-    public void setsDisciplina(String sDisciplina) {
-        this.sDisciplina = sDisciplina;
-    }
-
-    public String[] getsConhecimento() {
-        return sConhecimento;
-    }
-
-    public void setsConhecimento(String[] sConhecimento) {
-        this.sConhecimento = sConhecimento;
-    }
-    
+    String sDisciplina;
+    String[] sConhecimento;
     
 }
