@@ -4,9 +4,9 @@ package pkg501poo;
  * @author LPS
  */
 public class Pessoa {
-    String sNome;
+    private String sNome;
     int iIdade;
     boolean bSexo;
-    String sMatricula;
+    String sMatricula; //Será uma constante
     
 }
