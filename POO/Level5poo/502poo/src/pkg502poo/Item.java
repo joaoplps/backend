@@ -5,10 +5,10 @@ package pkg502poo;
  */
 public enum Item {
     //Objetos constantes (enumerados):
-    COGUMELOVERMELHO("Cogumelo Vermelho", true, false, true, true, new IncrementalState(1)), //Objetos dependentes do estado;
-    FLORDEFOGO("Flor de Fogo", true, true, true, true, new IncrementalState(2)),
+    COGUMELOVERMELHO("Cogumelo Vermelho", true, false, true, true, new IncrementalState(State.GRANDE)), //Objetos dependentes do estado;
+    FLORDEFOGO("Flor de Fogo", true, true, true, true, new IncrementalState(State.PODEROSO)),
     YOSHI("Yoshi", false, true, true, false, new StateIndependent()), //Objeto Independe do estado iState(int e);
-    PENA("Pena", true, true, true, true, new IncrementalState(2)),
+    PENA("Pena", true, true, true, true, new IncrementalState(State.VOADOR)),
     MOEDA("Moeda", false, false, true, true, null); //A moeda terá um objeto vazio (não implementa PowerUp);
     
     //Atributos constantes:

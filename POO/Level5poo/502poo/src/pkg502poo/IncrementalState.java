@@ -15,13 +15,13 @@ public class IncrementalState implements PowerUp {
     //Sobrecargas da interface PowerUp:
     @Override
     public boolean Affects(Character character){
-        return (character.IsState.iRepr + 1) == State.iRepr;
+        return (character.CharState.iRepr + 1) == IsState.iRepr;
     }
 
     @Override
     public void ApllyEffect(Character character) {
         if (Affects(character)){
-            character.IsState.iRepr = IsState;
+            character.CharState = IsState;
         }
     }
 }
