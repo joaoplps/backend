@@ -5,23 +5,28 @@ package pkg502poo;
  */
 public enum Character {
     //Criação de objetos enumerados:
-    MARIO("mario", 0, false),
-    LUIGGI("luiggi", 0, false);
+    MARIO("mario", State.PEQUENO, false),
+    LUIGGI("luiggi", State.PEQUENO, false);
     
     //Atributos:
     public final String sName;
-    int iState; //(0) Pequeno, (1) Grande e (2) - Poderoso
+    State CharState; //(0) Pequeno, (1) Grande e (2) - Poderoso
     boolean bOnYoshi;
     
+    //Método sobrecarregado:
+    public String StringtoString(){
+        return "It's me "+ sName;
+    }
+    
     //Construtores:    
-    private Character(String sName, int iState, boolean bOnYoshi) {
+    private Character(String sName, State CharState, boolean bOnYoshi) {
         this.sName = sName;
-        this.iState = iState;
+        this.CharState = CharState;
         this.bOnYoshi = bOnYoshi;
     }
     
-    protected int getiState() {
-        return iState;
+    protected State getCharState() {
+        return CharState;
     }
 
     protected boolean isbOnYoshi() {

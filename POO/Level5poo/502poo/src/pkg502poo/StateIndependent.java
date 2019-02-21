@@ -10,7 +10,7 @@ public class StateIndependent implements PowerUp {
         return !character.bOnYoshi;
     }
     
-    //Aplica o efeito:
+    //Aplicação do efeito:
     @Override
     public void ApllyEffect(Character character) {
         //Muda o estado da variavel:

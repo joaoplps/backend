@@ -7,12 +7,14 @@ package pkg502poo;
  */
 public class Main {
     public static void main(String[] args) {
+
+        //MARIO:
         //Retorna Estado:
-        System.out.println(Character.MARIO.getiState());
+        System.out.println(Character.MARIO.getCharState());
                 
         //Ranga o cogu:
         Item.COGUMELOVERMELHO.incrementow.ApllyEffect(Character.MARIO);
-        System.out.println(Character.MARIO.getiState());
+        System.out.println(Character.MARIO.getCharState());
         
         //Retorna Yoshi:
         System.out.println(Character.MARIO.isbOnYoshi());
@@ -23,6 +25,12 @@ public class Main {
         
         //Pega a Pena:
         Item.PENA.incrementow.ApllyEffect(Character.MARIO);
-        System.out.println(Character.MARIO.getiState());
+        System.out.println(Character.MARIO.getCharState());
+        
+        //String to String:
+        System.out.println(Character.MARIO);
+        
+        //LUIGGI:
+        
     }
 }
