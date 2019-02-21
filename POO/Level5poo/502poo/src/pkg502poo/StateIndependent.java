@@ -6,13 +6,14 @@ package pkg502poo;
 public class StateIndependent implements PowerUp {
     //Se o mario não tiver o Yoshi, surtirá efeito:
     @Override
-    public boolean Affects(Mario mario){
-        return !mario.bOnYoshi;
+    public boolean Affects(Character character){
+        return !character.bOnYoshi;
     }
-
+    
+    //Aplica o efeito:
     @Override
-    public void ApllyEffect(Mario mario) {
-        mario.bOnYoshi = true;
-        
+    public void ApllyEffect(Character character) {
+        //Muda o estado da variavel:
+        character.bOnYoshi = true;
     }
 }

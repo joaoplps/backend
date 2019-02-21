@@ -14,14 +14,14 @@ public class IncrementalState implements PowerUp {
     
     //Sobrecargas da interface PowerUp:
     @Override
-    public boolean Affects(Mario mario){
-        return (mario.iState + 1) == iState;
+    public boolean Affects(Character character){
+        return (character.iState + 1) == iState;
     }
 
     @Override
-    public void ApllyEffect(Mario mario) {
-        if (Affects(mario)){
-            mario.iState = iState;
+    public void ApllyEffect(Character character) {
+        if (Affects(character)){
+            character.iState = iState;
         }
     }
 }
