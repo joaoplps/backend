@@ -13,10 +13,10 @@ public class Collection{
         viItems = new Item[5];
         
         //Criação de objetos:
-        viItems[0] = new IncrementalState("Cogumelo Vermelho", true, false, true, true);
-        viItems[1] = new IncrementalState("Flor de Fogo", true, true, true, true);
-        viItems[2] = new StateIndependent("Yoshi", false, true, true, false);
-        viItems[3] = new IncrementalState("Pena", true, true, true, true);
-        viItems[4] = new Collectionables("Moeda", false, false, true, true);
+        viItems[0] = Item.COGUMELOVERMELHO;
+        viItems[1] = Item.FLORDEFOGO;
+        viItems[2] = Item.YOSHI;
+        viItems[3] = Item.PENA;
+        viItems[4] = Item.MOEDA;
     }
 }
