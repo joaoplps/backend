@@ -9,4 +9,10 @@ public class StateIndependent implements PowerUp {
     public boolean Affects(Mario mario){
         return !mario.bOnYoshi;
     }
+
+    @Override
+    public void ApllyEffect(Mario mario) {
+        mario.bOnYoshi = true;
+        
+    }
 }

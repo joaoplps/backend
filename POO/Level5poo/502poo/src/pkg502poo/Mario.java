@@ -16,4 +16,12 @@ public class Mario {
     
     //Criação de Objetos:
     Mario mario = new Mario(0, false);
+
+    public int getiState() {
+        return iState;
+    }
+
+    public boolean isbOnYoshi() {
+        return bOnYoshi;
+    }
 }

@@ -8,5 +8,6 @@ package pkg502poo;
 public class Main {
     public static void main(String[] args) {
         Collection colecao1 = new Collection();
+        mario.getiState();
     }   
 }

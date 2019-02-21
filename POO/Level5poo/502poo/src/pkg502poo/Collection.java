@@ -12,7 +12,7 @@ public class Collection{
         //Definição de vetor:
         viItems = new Item[5];
         
-        //Criação de objetos:
+        //Criação de objetos (itens):
         viItems[0] = Item.COGUMELOVERMELHO;
         viItems[1] = Item.FLORDEFOGO;
         viItems[2] = Item.YOSHI;
