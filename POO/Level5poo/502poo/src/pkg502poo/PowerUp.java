@@ -5,6 +5,5 @@ package pkg502poo;
  */
 public interface PowerUp {
     public boolean Affects(Mario mario);
-    
     public void ApllyEffect(Mario mario);
 }
