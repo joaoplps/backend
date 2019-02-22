@@ -11,17 +11,16 @@ public enum State {
     
     //Atributos:
     final String sStateName;
-    final int iRepr;
+    final int iStateRepr;
     
     //Construtor privado (acesso somente pela própria classe):
-    private State(int iRepr, String sStateName){
-        this.iRepr = iRepr;
+    private State(int iStateRepr, String sStateName){
+        this.iStateRepr = iStateRepr;
         this.sStateName = sStateName;
     }
 
     //Construtor protegido (acesso pelo mesmo pacote):
     protected String getsStateName() {
         return sStateName;
-    }
-    
+    }    
 }

@@ -31,6 +31,26 @@ public class Main {
         System.out.println(Character.MARIO);
         
         //LUIGGI:
+        //Retorna Estado:
+        System.out.println(Character.LUIGGI.getCharState());
+                
+        //Pega a pena:
+        Item.PENA.incrementow.ApllyEffect(Character.LUIGGI);
+        System.out.println(Character.LUIGGI.getCharState());
+        
+        //Retorna Yoshi:
+        System.out.println(Character.LUIGGI.isbOnYoshi());
+        
+        //Monta no Yoshi:
+        Item.YOSHI.incrementow.ApllyEffect(Character.LUIGGI);
+        System.out.println(Character.LUIGGI.isbOnYoshi());
+        
+        //Pega a flor de fogo:
+        Item.FLORDEFOGO.incrementow.ApllyEffect(Character.LUIGGI);
+        System.out.println(Character.LUIGGI.getCharState());
+        
+        //String to String:
+        System.out.println(Character.LUIGGI);
         
     }
 }

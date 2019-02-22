@@ -5,23 +5,23 @@ package pkg502poo;
  */
 public class IncrementalState implements PowerUp {
     //Objetos de estato incremental implementam poderes conforme estado do mario:
-    public final State IsState;
+    public final State isState;
     
     //Contrutor público:
-    public IncrementalState(State IsState){
-        this.IsState = IsState;
+    public IncrementalState(State isState){
+        this.isState = isState;
     }
     
     //Sobrecargas da interface PowerUp:
     @Override
     public boolean Affects(Character character){
-        return (character.CharState.iRepr + 1) == IsState.iRepr;
+        return (character.CharState.iStateRepr + 1) == isState.iStateRepr;
     }
 
     @Override
     public void ApllyEffect(Character character) {
         if (Affects(character)){
-            character.CharState = IsState;
+            character.CharState = isState;
         }
     }
 }
