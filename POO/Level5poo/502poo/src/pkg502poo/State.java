@@ -26,5 +26,5 @@ public enum State {
             default:
                 return PEQUENO;
         }
-}    
+    }
 }

@@ -20,8 +20,8 @@ public enum Antagonist implements Interactive {
         this.kaKoopaAttack = kaKoopaAttack;
     }
     
-    public boolean LooserStrat(Strategy strat) {
-        return strat.equals(kaKoopaAttack.WinnerStrat);
+    public boolean LooseWithStrat(Strategy s) {
+        return s.equals(kaKoopaAttack.WinnerStrat);
     }
 
     private void CauseDamage(Character c) {
@@ -30,17 +30,17 @@ public enum Antagonist implements Interactive {
             return;
         }
         
-        if(c.State.iValue == 0) {
+        if(c.CharState == State.PEQUENO) {
             c.Die();
             return;
         }
         
-        c.iValue = State.PrevState(c.iValue);
+        c.CharState = State.PrevState(c.CharState);
     }
 
     @Override
     public void Interact(Character c) {
-        if(LooserStrat(c.strat))
+        if(LooseWithStrat(c.strat))
             return;
         CauseDamage(c);
     }

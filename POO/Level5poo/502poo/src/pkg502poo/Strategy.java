@@ -13,12 +13,12 @@ public class Strategy {
     }
     
     public Strategy(Interaction strategy1) {
-        this.formats = new Interaction[1];
+        formats = new Interaction[1];
         formats[0] = strategy1;
     }
         
     public Strategy(Interaction strategy1, Interaction strategy2){
-        this.formats = new Interaction[2];
+        formats = new Interaction[2];
         formats[0] = strategy1;
         formats[1] = strategy2;
     }

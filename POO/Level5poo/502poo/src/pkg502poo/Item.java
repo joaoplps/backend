@@ -29,7 +29,7 @@ public enum Item implements Interactive {
 
     @Override
     public void Interact(Character c) {
-        PowerUp.ApllyEffect(c);
+        incrementow.ApllyEffect(c);
     }
     
 }

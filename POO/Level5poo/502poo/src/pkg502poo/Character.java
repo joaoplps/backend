@@ -1,4 +1,7 @@
 package pkg502poo;
+
+import static java.lang.System.exit;
+
 /**
  *
  * @author LPS
@@ -12,6 +15,8 @@ public enum Character {
     public final String sName;
     State CharState; //(0) Pequeno, (1) Grande e (2) - Poderoso
     boolean bOnYoshi;
+    
+    protected Strategy strat;
     
     //Método sobrecarregado:
     public String StringtoString(){
@@ -31,5 +36,14 @@ public enum Character {
 
     protected boolean isbOnYoshi() {
         return bOnYoshi;
+    }
+    
+    public void NewStrat(Strategy e) {
+        strat = e;
+    }
+    
+    public void Die() {
+        System.out.println("Mama Mia, " + sName + " is dead!");
+        exit(0);
     }
 }
