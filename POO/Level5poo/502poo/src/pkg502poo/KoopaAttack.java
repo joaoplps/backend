@@ -4,22 +4,15 @@ package pkg502poo;
  * @author LPS
  */
 public enum KoopaAttack {
-    BASICO(0, "basico"),
-    LANCA(1, "lança"),
-    DISTANCIA(2, "à distância");
+    BASICO(new Strategy(Interaction.PULO)),
+    LANCA(new Strategy(Interaction.FRENTE, Interaction.PULO)),
+    DISTANCIA(new Strategy(Interaction.TRAS, Interaction.PULO));
     
     //Atributos:
-    final String sKoopaAttackName;
-    final int iKoopaAttackRepr;
+    public final Strategy WinnerStrat;
     
     //Construtor privado (acesso somente pela própria classe):
-    private KoopaAttack(int iKoopaAttackRepr, String sKoopaAttackName){
-        this.iKoopaAttackRepr = iKoopaAttackRepr;
-        this.sKoopaAttackName = sKoopaAttackName;
+    private KoopaAttack(Strategy strat){
+        WinnerStrat = strat;
     }
-
-    //Construtor protegido (acesso pelo mesmo pacote):
-    protected String getsKoopaAttackName() {
-        return sKoopaAttackName;
-    }   
 }

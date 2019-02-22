@@ -8,20 +8,20 @@ public class IncrementalState implements PowerUp {
     public final State isState;
     
     //Contrutor público:
-    public IncrementalState(State isState){
-        this.isState = isState;
+    public IncrementalState(State s){
+        this.isState = s;
     }
     
     //Sobrecargas da interface PowerUp:
     @Override
-    public boolean Affects(Character character){
-        return (character.CharState.iStateRepr + 1) == isState.iStateRepr;
+    public boolean Affects(Character c){
+        return (c.CharState.iValue + 1) == isState.iValue;
     }
 
     @Override
-    public void ApllyEffect(Character character) {
-        if (Affects(character)){
-            character.CharState = isState;
+    public void ApllyEffect(Character c) {
+        if (Affects(c)){
+            c.CharState = isState;
         }
     }
 }

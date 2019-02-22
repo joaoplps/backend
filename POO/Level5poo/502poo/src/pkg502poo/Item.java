@@ -3,7 +3,7 @@ package pkg502poo;
  *
  * @author LPS
  */
-public enum Item {
+public enum Item implements Interactive {
     //Objetos constantes (enumerados):
     COGUMELOVERMELHO("Cogumelo Vermelho", true, false, true, true, new IncrementalState(State.GRANDE)), //Objetos dependentes do estado;
     FLORDEFOGO("Flor de Fogo", true, true, true, true, new IncrementalState(State.PODEROSO)),
@@ -26,4 +26,10 @@ public enum Item {
         this.bWorld = bWorld;
         this.incrementow = incrementow;
     }
+
+    @Override
+    public void Interact(Character c) {
+        PowerUp.ApllyEffect(c);
+    }
+    
 }

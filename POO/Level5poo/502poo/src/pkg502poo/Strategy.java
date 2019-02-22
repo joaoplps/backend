@@ -7,21 +7,35 @@ public class Strategy {
     //Atributos:
     public Interaction[] formats;
     
-    public Strategy(Interaction format1){
-        this.formats = new Interaction[1];
-        formats[0] = format1;
+    //Construtores para estratégias:
+    public Strategy(Interaction[] interaction){
+        formats = interaction;
     }
     
-    public Strategy(Interaction format1, Interaction format2){
-        this.formats = new Interaction[2];
-        formats[0] = format1;
-        formats[1] = format2;
+    public Strategy(Interaction strategy1) {
+        this.formats = new Interaction[1];
+        formats[0] = strategy1;
     }
         
-    public Strategy(Interaction format1, Interaction format2, Interaction format3){
-        this.formats = new Interaction[3];
-        formats[0] = format1;
-        formats[1] = format2;
-        formats[2] = format3;
+    public Strategy(Interaction strategy1, Interaction strategy2){
+        this.formats = new Interaction[2];
+        formats[0] = strategy1;
+        formats[1] = strategy2;
     }
+    
+    @Override
+    public boolean equals(Object outro) {
+        if(!(outro instanceof Strategy))
+            return false;
+        
+        Strategy outra_estrategia = (Strategy) outro;
+        if(formats.length != outra_estrategia.formats.length)
+            return false;
+        
+        for(int i = 0; i < formats.length; ++i)
+            if(!formats[i].equals(outra_estrategia.formats[i]))
+                return false;
+        return true;
+    }
+
 }
