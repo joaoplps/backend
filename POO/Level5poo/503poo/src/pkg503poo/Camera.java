@@ -6,7 +6,7 @@ package pkg503poo;
  */
 public enum Camera {
     CAMF(),
-    CAML(),
-    CAMR();
+    CAME(),
+    CAMD();
     
 }

@@ -9,19 +9,19 @@ package pkg503poo;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("carro", Gps.GPS1, 0, Direcao.PARADO);
+    CARRO("carro do joão", Gps.GPS01, 0, Direcao.PARADO);
     
     //Atributos de um objeto carro:
     public final String sTipo;
-    Gps gps1;
-    int iVelocidade;
-    Direcao Dir;
+    Gps CarGps;
+    int iCarVelo;
+    Direcao CarDir;
     
     //Construtor:
     private Automovel(String tipo, Gps gps, int v, Direcao dir){
         sTipo = tipo;
-        gps1 = gps;
-        iVelocidade = v;
-        Dir = dir;
+        CarGps = gps;
+        iCarVelo = v;
+        CarDir = dir;
     }
 }

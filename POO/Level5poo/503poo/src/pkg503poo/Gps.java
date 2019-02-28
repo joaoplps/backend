@@ -4,8 +4,8 @@ package pkg503poo;
  *
  * @author LPS
  */
-public enum Gps {
-    GPS1("gps1", null);
+public enum Gps implements GpsControl {
+    GPS01("ID01", Direcao.PARADO);
     
     //Atributos do GPS:
     public final String sGpsId;
@@ -20,5 +20,12 @@ public enum Gps {
     private Gps(String id, Direcao dir){
         sGpsId = id;
         MainDir = dir;
+    }
+
+    //Método de modificação de direção do carro:
+    @Override
+    public void MudaDir(Automovel auto) {
+        if (MainDir != auto.CarDir)
+            auto.CarDir = MainDir;
     }
 }
