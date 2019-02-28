@@ -1,6 +1,14 @@
 package pkg505poo;
 /**
- * ArrayList!!!
+ * Data Structure & ArrayList!
+ * 
+ * Estrutura de dados em lista: vetor tratado diferentemente, dado
+ * a imprevisibilidade do escopo.
+ * 
+ * Syntax:
+ * ArrayList <int> arrayId = new ArrayList <int> ();
+ * 
+ * See more for manage items in the list.
  *
  * @author LPS
  */
