@@ -6,14 +6,8 @@ package pkg503poo;
  * @author LPS
  */
 public enum Direcao {
-    FRENTE(0),
-    DIREITA(1),
-    PARADO(2),
-    ESQUERDA(3);
-    
-    public final int iDirId;
-    
-    private Direcao (int id) {
-        iDirId = id;
-    }
+    FRENTE(),
+    DIREITA(),
+    PARADO(),
+    ESQUERDA();
 }

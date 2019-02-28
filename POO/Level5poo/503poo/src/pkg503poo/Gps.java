@@ -9,7 +9,7 @@ public enum Gps {
     
     //Atributos do GPS:
     public final String sGpsId;
-    Direcao MainDir; //(0) FRENTE, (1)DIREITA, (2)PARADO, (3)ESQUERDA
+    Direcao MainDir; //FRENTE, DIREITA, PARADO ou ESQUERDA
     
     //Renomeando:
     public String StringtoString(){
@@ -18,7 +18,7 @@ public enum Gps {
     
     //Construtor:
     private Gps(String id, Direcao dir){
-        this.sGpsId = id;
-        this.MainDir = dir;
+        sGpsId = id;
+        MainDir = dir;
     }
 }
