@@ -5,7 +5,7 @@ package pkg503poo;
  * @author LPS
  */
 public enum Gps implements GpsControl {
-    GPS01("ID01", Direcao.PARADO);
+    GPS01("G-ID01", Direcao.PARADO);
     
     //Atributos do GPS:
     public final String sGpsId;

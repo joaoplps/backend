@@ -14,14 +14,14 @@ public enum Automovel {
     //Atributos de um objeto carro:
     public final String sTipo;
     Gps CarGps;
-    int iCarVelo;
+    int iCarVel;
     Direcao CarDir;
     
     //Construtor:
     private Automovel(String tipo, Gps gps, int v, Direcao dir){
         sTipo = tipo;
         CarGps = gps;
-        iCarVelo = v;
+        iCarVel = v;
         CarDir = dir;
     }
 }
