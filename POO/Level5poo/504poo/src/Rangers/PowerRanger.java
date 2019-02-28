@@ -8,13 +8,20 @@ package Rangers;
  * @author LPS
  */
 public class PowerRanger {
-    public static final PowerRanger ranger1 = new PowerRanger("White");
-    public static final PowerRanger ranger2 = new PowerRanger("Black");
+    public static PowerRanger ranger1;
+    public static PowerRanger ranger2;
     
     String sRangeColor;
     
     private PowerRanger(String color){
         sRangeColor = color;
+    }
+    
+    public static void NewRanger(String color){
+        if (ranger1 == null)
+            ranger1 = new PowerRanger(color);
+        else if (ranger2 == null)
+            ranger2 = new PowerRanger(color);
     }
     
     @Override
