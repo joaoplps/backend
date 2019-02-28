@@ -9,7 +9,7 @@ package pkg503poo;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("carro do joão", Gps.GPS01, 0, Direcao.PARADO);
+    CARRO("C-ID01", Gps.GPS01, 0, Direcao.PARADO);
     
     //Atributos de um objeto carro:
     public final String sTipo;
