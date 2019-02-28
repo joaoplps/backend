@@ -1,5 +1,9 @@
 package Rangers;
 /**
+ * Project: Singleton Model.
+ * - Creating static objects with private constructors;
+ * - Constant objects;
+ * - Override object ref with toString();
  *
  * @author LPS
  */

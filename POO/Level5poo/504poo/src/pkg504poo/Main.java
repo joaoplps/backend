@@ -3,6 +3,7 @@ package pkg504poo;
 import Rangers.PowerRanger;
 
 /**
+ * Project: Singleton Model.
  *
  * @author LPS
  */
