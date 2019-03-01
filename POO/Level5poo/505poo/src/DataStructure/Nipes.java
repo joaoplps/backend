@@ -1,17 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DataStructure;
-
 /**
  *
- * @author aluno
+ * @author LPS
  */
 public enum Nipes {
-    ESPADAS,
-    OURO,
-    COPAS,
-    PAUS;
+    ESPADAS(0, "Espadas"),
+    OURO(1, "Ouro"),
+    COPAS(2, "Copas"),
+    PAUS(3, "Paus");
+    
+    public final int iNipeValue;
+    public final String sNipeName;
+    
+    private Nipes(int val, String n){
+        iNipeValue = val;
+        sNipeName = n;
+    }
+    
+    @Override
+    public String toString() {
+        return sNipeName;
+}
 }
