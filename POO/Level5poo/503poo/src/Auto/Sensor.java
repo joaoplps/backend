@@ -23,6 +23,19 @@ public enum Sensor {
         sSensId = id;
         iMainVel = vel;
     }
+    
+    //Método de leitura de inf:
+    public void updateGps(Camera cam){
+        switch (cam.getCamObst()){
+            case 1:
+                //Logic for the obstacle here
+                break;
+            case 2:
+                //Logic for the obstacle here
+                break;
+        }
+    }
+    
 
     //Método de modificação de direção do carro:
     public void MudaVel(Automovel auto) {

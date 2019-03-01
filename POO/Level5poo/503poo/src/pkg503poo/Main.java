@@ -8,7 +8,7 @@ import Auto.Automovel;
 public class Main {
     public static void main(String[] args) {
         //Início, carro parado:
-        System.out.println("O carro está " + Automovel.CARRO.getCarDir() + ".");
+        System.out.println(Automovel.CARRO.getCarDir());
         
         
         

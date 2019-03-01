@@ -1,4 +1,7 @@
 package Auto;
+
+import Obstacle.Obstacle;
+
 /**
  * São três as câmeras, uma frontal e duas laterais.
  *
@@ -12,9 +15,9 @@ public enum Camera {
     public final String sCamId;
     int iCamObst;
     
-    private Camera(int cam, String id){
+    private Camera(int obst, String id){
         sCamId = id;
-        iCamObst = cam;
+        iCamObst = obst;
     }
     
     @Override
@@ -26,7 +29,7 @@ public enum Camera {
         return iCamObst;
     }
     
-    public void FilmObstacle(Camera cam, int obst){
-        cam.iCamObst = obst;
+    public void FilmObstacle(Obstacle obst){
+        iCamObst = obst.getiObstId();
     }
 }
