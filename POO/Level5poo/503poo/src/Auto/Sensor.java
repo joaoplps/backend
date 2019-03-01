@@ -1,19 +1,20 @@
-package pkg503poo;
+package Auto;
 /**
  * Os sensores servem para detecção de velocidade:
  * Rápido / Devagar.
  *
  * @author LPS
  */
-public enum Sensor implements SensorControl {
+public enum Sensor {
     SENS01("S-ID01", 0);
     
     //Atributos do GPS:
     public final String sSensId;
-    int iMainVel; //RÁPIDO ou DEVAGAR
+    int iMainVel; //(2)RÁPIDO, (1)DEVAGAR e (0)PARADO
     
     //Renomeando:
-    public String StringtoString(){
+    @Override
+    public String toString(){
         return sSensId;
     }
     
@@ -24,7 +25,6 @@ public enum Sensor implements SensorControl {
     }
 
     //Método de modificação de direção do carro:
-    @Override
     public void MudaVel(Automovel auto) {
         if (iMainVel != auto.iCarVel)
             auto.iCarVel = iMainVel;

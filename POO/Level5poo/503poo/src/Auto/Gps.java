@@ -1,29 +1,35 @@
-package pkg503poo;
+package Auto;
 /**
  * O GPS está presente no carro e gerencia as direções do mesmo.
  *
  * @author LPS
  */
-public enum Gps implements GpsControl {
-    GPS01("G-ID01", Direcao.PARADO);
+public enum Gps {
+    GPS01("G-ID01", Direction.FRENTE);
     
     //Atributos do GPS:
     public final String sGpsId;
-    Direcao MainDir; //FRENTE, DIREITA, PARADO ou ESQUERDA
+    Direction MainDir; //FRENTE, DIREITA, PARADO ou ESQUERDA
+    Sensor GpsSensor;
     
     //Renomeando:
-    public String StringtoString(){
+    @Override
+    public String toString(){
         return sGpsId;
     }
     
     //Construtor:
-    private Gps(String id, Direcao dir){
+    private Gps(String id, Direction dir){
         sGpsId = id;
         MainDir = dir;
     }
-
+    
+    //Método de leitura de inf:
+    public void updateGps(Camera cams){
+        
+    }
+    
     //Método de modificação de direção do carro:
-    @Override
     public void MudaDir(Automovel auto) {
         if (MainDir != auto.CarDir)
             auto.CarDir = MainDir;

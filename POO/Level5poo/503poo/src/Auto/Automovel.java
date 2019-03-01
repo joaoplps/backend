@@ -1,4 +1,4 @@
-package pkg503poo;
+package Auto;
 /**
  * Classe pública automóvel terá objeto carro, que por sua vez terá
  * um objeto do tipo GPS abordo (embutido). É este equipamento que
@@ -9,19 +9,36 @@ package pkg503poo;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("C-ID01", Gps.GPS01, 0, Direcao.PARADO);
+    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE);
     
     //Atributos de um objeto carro:
-    public final String sTipo;
+    public final String sCarId;
     Gps CarGps;
+    Sensor CarSens;
     int iCarVel;
-    Direcao CarDir;
+    Direction CarDir;
     
     //Construtor:
-    private Automovel(String tipo, Gps gps, int v, Direcao dir){
-        sTipo = tipo;
+    private Automovel(String id, Gps gps, Sensor sens, int v, Direction dir){
+        sCarId = id;
         CarGps = gps;
+        CarSens = sens;
         iCarVel = v;
         CarDir = dir;
     }
+    
+    //Renomeando:
+    @Override
+    public String toString(){
+        return sCarId;
+    }
+
+    public int getiCarVel() {
+        return iCarVel;
+    }
+
+    public Direction getCarDir() {
+        return CarDir;
+    }
+    
 }
