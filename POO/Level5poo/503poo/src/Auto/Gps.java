@@ -26,7 +26,7 @@ public enum Gps {
     
     //Método de leitura de inf:
     public void updateGps(Camera cam){
-        switch (cam.getCamObst()){
+        switch (cam.getCamObstCod()){
             case 1:
                 //Logic for the obstacle here
                 break;

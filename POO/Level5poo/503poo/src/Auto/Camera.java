@@ -13,11 +13,11 @@ public enum Camera {
     CAMD(0, "direita");
     
     public final String sCamId;
-    int iCamObst;
+    int iCamObstCod;
     
     private Camera(int obst, String id){
         sCamId = id;
-        iCamObst = obst;
+        iCamObstCod = obst;
     }
     
     @Override
@@ -25,11 +25,11 @@ public enum Camera {
         return sCamId;
     }
     
-    public int getCamObst(){
-        return iCamObst;
+    public int getCamObstCod(){
+        return iCamObstCod;
     }
     
     public void FilmObstacle(Obstacle obst){
-        iCamObst = obst.getiObstId();
+        iCamObstCod = obst.getiObstCod();
     }
 }

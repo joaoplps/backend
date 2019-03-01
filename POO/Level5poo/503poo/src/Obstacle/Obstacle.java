@@ -4,18 +4,18 @@ package Obstacle;
  * @author LPS
  */
 public enum Obstacle {
-    ESTRADA(1),
-    JACU(2),
-    PEDESTRE(3);
+    ESTRADA(0),
+    JACU(1),
+    PEDESTRE(2);
 
-    int iObstId;
+    public final int iObstCod;
     
     Obstacle(int id){
-        iObstId = id;
+        iObstCod = id;
     }
 
-    public int getiObstId() {
-        return iObstId;
+    public int getiObstCod() {
+        return iObstCod;
     }
 
 }

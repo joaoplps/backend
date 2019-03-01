@@ -6,13 +6,15 @@ package Auto;
  * @author LPS
  */
 public enum Direction {
-    FRENTE("frente"),
-    DIREITA("direita"),
-    ESQUERDA("esquerda");
+    FRENTE(0, "frente"),
+    DIREITA(1, "direita"),
+    ESQUERDA(2, "esquerda");
     
     public final String sDirId;
+    public final int iDirCod;
     
-    private Direction(String id){
+    private Direction(int cod, String id){
+        iDirCod = cod;
         sDirId = id;
     }
     
