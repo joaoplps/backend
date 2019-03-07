@@ -2,6 +2,7 @@ package pkg601poo;
 
 import Objects.Door;
 import Objects.Light;
+import Objects.Switch;
 import Rooms.StudyRoom;
 
 /**
@@ -12,23 +13,25 @@ import Rooms.StudyRoom;
 public class Main {
     public static void main(String[] args) {
         //Manipulando Objetos do tipo Luz:
-        Light light0 = new Light(0);
-        Light light1 = new Light(1);
+        Light lightA = new Light(0);
+        Light lightB = new Light(1);
         
-        light0.TurnOn(); //Liga a luz0;
-        light0.Destroy(); //Queima a luz0;
+        //Implemento do Interruptor:
+        Switch switchA = new Switch(lightA);
+        switchA.TurnOn(); //Liga a luzA através do Switch;
+        lightA.Destroy(); //Queima a luzA;
         
-        System.out.println(light0.IsOn()); //Retorna false pois uma lâmpada não pode estar acesa e queimada ao mesmo tempo;
-        System.out.println(light0.IsBusted());
+        System.out.println(lightA.IsOn()); //Retorna false pois uma lâmpada não pode estar acesa e queimada ao mesmo tempo;
+        System.out.println(lightA.IsBusted());
         
         //Manipulando Objetos do tipo Porta:
-        Door door0 = new Door(1234);
-        Door door1 = new Door(4321);
+        Door doorA = new Door(1234);
+        Door doorB = new Door(4321);
         
-        door0.OpenDoor(1234); //Utiliza método que pede a senha para abrir a porta;
-        System.out.println(door0.IsOpen());
+        doorA.OpenDoor(1234); //Utiliza método que pede a senha para abrir a porta;
+        System.out.println(doorA.IsOpen());
         
         //Construindo Sala de Estudos:
-        StudyRoom study0 = new StudyRoom();
+        StudyRoom studyA = new StudyRoom(1, 1234);
     }
 }

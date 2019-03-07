@@ -4,7 +4,7 @@ package Objects;
  *
  * @author LPS
  */
-public class Light {
+public class Light implements Onnable {
     private boolean bOn, bBusted;
     public final int iColor;
     
@@ -15,25 +15,28 @@ public class Light {
     }
     
     //Métodos:
-    public boolean IsOn () {
+    public boolean IsOn(){
         return bOn;
     }
     
-    public boolean IsBusted () {
+    public boolean IsBusted(){
         return bBusted;
     }
+        
+    public void Destroy(){
+        bBusted = true;
+        TurnOff(); //
+    }
     
-    public void TurnOn () {
+    //Acessíeis pelo mesmo pacote:
+    @Override
+    public void TurnOn(){
         if (!bBusted) //Só liga se não estiver queimada;
             bOn = true;
     }
     
-    public void TurnOff () {
+    @Override
+    public void TurnOff(){
         bOn = false;
-    }
-    
-    public void Destroy () {
-        bBusted = true;
-        TurnOff(); //
     }
 }
