@@ -16,7 +16,7 @@ public enum Automovel {
     Gps CarGps;
     Sensor CarSens;
     int iCarVel;
-    Direction CarDir;
+    public Direction CarDir;
     
     //Construtor:
     private Automovel(String id, Gps gps, Sensor sens, int v, Direction dir){
@@ -32,4 +32,30 @@ public enum Automovel {
     public String toString(){
         return sCarId;
     }   
+    
+    //Métodos:
+    public void SpeedUp(){
+        iCarVel++;
+    }
+    
+    public void StepOnBreak(){
+        iCarVel--;
+    }
+    
+    public void TurnRight(){
+        CarDir = Direction.DIREITA;
+    }
+    
+    public void TurnLeft(){
+        CarDir = Direction.ESQUERDA;
+    }
+    
+    public void KeepFoward(){
+        CarDir = Direction.FRENTE;
+    }
+    
+    public void FullStop(){
+        CarDir = Direction.FRENTE;
+        iCarVel = 0;
+    }
 }

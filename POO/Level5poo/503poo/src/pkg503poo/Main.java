@@ -14,7 +14,7 @@ public class Main {
         System.out.println(Automovel.CARRO.CarDir.sDirId);
         
         //Criação de instante:
-        int camcod = informInt("Escolha uma camera (0 - frontal, 1 - direita ou 2 - esquerda): ");
+        int camcod = informInt("Escolha uma camera (0 - frontal, 1 - lateral): ");
         
         int obst = informInt("Insira uma obstáculo (0 - estrada, 1 - jacu ou 2 - pedestre): ");
         

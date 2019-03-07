@@ -34,7 +34,6 @@ public enum Gps implements Control {
     public void ChangeCarState(Camera cam) {
         switch (cam.iCamObst){
             case JACU:
-                //Logic for the obstacle here
                 
                 break;
             case PEDESTRE:

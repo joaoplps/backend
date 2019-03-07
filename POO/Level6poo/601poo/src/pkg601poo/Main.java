@@ -25,7 +25,10 @@ public class Main {
         Door door0 = new Door(1234);
         Door door1 = new Door(4321);
         
-        door0.OpenDoor(1234); //Utiliza método que pede a senha;
+        door0.OpenDoor(1234); //Utiliza método que pede a senha para abrir a porta;
         System.out.println(door0.IsOpen());
+        
+        //Construindo Sala de Estudos:
+        StudyRoom study0 = new StudyRoom();
     }
 }

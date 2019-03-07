@@ -17,7 +17,6 @@ public class StudyRoom {
         light1 = new Light(1);
         doorFront = new Door(1234);
         doorBack = new Door(1234);
-
     }
 
     public Light FirstLight () {
