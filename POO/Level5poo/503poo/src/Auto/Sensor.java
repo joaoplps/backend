@@ -5,7 +5,7 @@ package Auto;
  *
  * @author LPS
  */
-public enum Sensor {
+public enum Sensor implements Control {
     SENS01("S-ID01", 0);
     
     //Atributos do GPS:
@@ -24,22 +24,22 @@ public enum Sensor {
         iMainVel = vel;
     }
     
-    //Método de leitura de inf:
-    public void updateGps(Camera cam){
-        switch (cam.getCamObstCod()){
-            case 1:
-                //Logic for the obstacle here
-                break;
-            case 2:
-                //Logic for the obstacle here
-                break;
-        }
-    }
-    
 
     //Método de modificação de direção do carro:
     public void MudaVel(Automovel auto) {
         if (iMainVel != auto.iCarVel)
             auto.iCarVel = iMainVel;
+    }
+
+    @Override
+    public void ChangeCarState(Camera cam) {
+        switch (cam.iCamObst){
+            case JACU:
+                //Logic for the obstacle here
+                break;
+            case PEDESTRE:
+                //Logic for the obstacle here
+                break;
+        }
     }
 }

@@ -4,7 +4,7 @@ package Auto;
  *
  * @author LPS
  */
-public enum Gps {
+public enum Gps implements Control {
     GPS01("G-ID01", Direction.FRENTE);
     
     //Atributos do GPS:
@@ -24,22 +24,23 @@ public enum Gps {
         MainDir = dir;
     }
     
-    //Método de leitura de inf:
-    public void updateGps(Camera cam){
-        switch (cam.getCamObstCod()){
-            case 1:
-                //Logic for the obstacle here
-                break;
-            case 2:
-                //Logic for the obstacle here
-                break; 
-            //(...)
-        }
-    }
-    
     //Método de modificação de direção do carro:
     public void MudaDir(Automovel auto) {
         if (MainDir != auto.CarDir)
             auto.CarDir = MainDir;
+    }
+
+    @Override
+    public void ChangeCarState(Camera cam) {
+        switch (cam.iCamObst){
+            case JACU:
+                //Logic for the obstacle here
+                
+                break;
+            case PEDESTRE:
+                //Logic for the obstacle here
+                break; 
+            //(...)
+        }
     }
 }

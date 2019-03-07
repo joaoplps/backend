@@ -8,16 +8,15 @@ import Obstacle.Obstacle;
  * @author LPS
  */
 public enum Camera {
-    CAMF(0, "frontal"),
-    CAME(0, "esquerda"),
-    CAMD(0, "direita");
+    CAMF(Obstacle.ESTRADA, "frontal"),
+    CAML(Obstacle.ESTRADA, "lateral");
     
     public final String sCamId;
-    int iCamObstCod;
+    Obstacle iCamObst;
     
-    private Camera(int obst, String id){
+    private Camera(Obstacle obst, String id){
         sCamId = id;
-        iCamObstCod = obst;
+        iCamObst = obst;
     }
     
     @Override
@@ -25,11 +24,11 @@ public enum Camera {
         return sCamId;
     }
     
-    public int getCamObstCod(){
-        return iCamObstCod;
+    public Obstacle getCamObstCod(){
+        return iCamObst;
     }
     
     public void FilmObstacle(Obstacle obst){
-        iCamObstCod = obst.getiObstCod();
+        iCamObst = obst;
     }
 }

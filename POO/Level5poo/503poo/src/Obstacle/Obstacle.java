@@ -13,9 +13,4 @@ public enum Obstacle {
     Obstacle(int id){
         iObstCod = id;
     }
-
-    public int getiObstCod() {
-        return iObstCod;
-    }
-
 }

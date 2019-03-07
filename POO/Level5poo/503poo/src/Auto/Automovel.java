@@ -31,14 +31,5 @@ public enum Automovel {
     @Override
     public String toString(){
         return sCarId;
-    }
-
-    public int getiCarVel() {
-        return iCarVel;
-    }
-
-    public Direction getCarDir() {
-        return CarDir;
-    }
-    
+    }   
 }

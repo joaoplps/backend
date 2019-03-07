@@ -1,20 +1,31 @@
 package pkg601poo;
+
+import Objects.Door;
+import Objects.Light;
+import Rooms.StudyRoom;
+
 /**
- * Lista ArrayList - Level 6 POO!
- * 
- * 
- * Faça um programa que seja capaz de pedir ao usuário números inteiros e
- * armazená-los em uma lista. O programa deve ser capaz de imprimir osinteiros
- * da lista quando o usuário parar de adicionar números.Dica: ​O método
- * System.out.println() é capaz de imprimir listas denúmeros inteiros. Dica:
- * Em java, a classe ​Integer ​é responsável por representar inteiros naforma de
- * classe.
+ * Manipulação de Objetos.
  * 
  * @author LPS
  */
 public class Main {
     public static void main(String[] args) {
+        //Manipulando Objetos do tipo Luz:
+        Light light0 = new Light(0);
+        Light light1 = new Light(1);
         
+        light0.TurnOn(); //Liga a luz0;
+        light0.Destroy(); //Queima a luz0;
+        
+        System.out.println(light0.IsOn()); //Retorna false pois uma lâmpada não pode estar acesa e queimada ao mesmo tempo;
+        System.out.println(light0.IsBusted());
+        
+        //Manipulando Objetos do tipo Porta:
+        Door door0 = new Door(1234);
+        Door door1 = new Door(4321);
+        
+        door0.OpenDoor(1234); //Utiliza método que pede a senha;
+        System.out.println(door0.IsOpen());
     }
-    
 }
