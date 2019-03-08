@@ -7,11 +7,11 @@ import java.util.ArrayList;
 /**
  * Data Structure & ArrayList!
  * 
- * Estrutura de dados em lista: vetor tratado diferentemente, dado
- * a imprevisibilidade do escopo.
+ * Estrutura de dados em lista: vetor tratado diferente, dado
+ * a imprevisibilidade do escopo (abstração de lista).
  * 
  * Syntax:
- * ArrayList <int> arrayId = new ArrayList <int> ();
+ * ArrayList <Integer> arrayId = new ArrayList <Integer> ();
  * 
  * See more for manage items in the list.
  *
@@ -19,8 +19,6 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Card> mypack = CardPack.complete();
-        System.out.println("Meu é um baralho completo com " + mypack.size() + " cartas.");
-        System.out.println("São elas:\n" + mypack);
+        
     }
 }

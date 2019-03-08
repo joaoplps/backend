@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author LPS
  */
 public class CardPack {
-    //Lista completa de cartas de um baralho comum:
+    //Pack completo de cartas de um baralho comum:
     public static ArrayList <Card> complete(){
         ArrayList <Card> MasterPack1 = new ArrayList <> ();
         for(Nipes n : Nipes.values())
@@ -33,12 +33,12 @@ public class CardPack {
         return "I'm a Card Pack!";
     }
     
-    //Lista completa de cartas para um jogo de canastra (dois baralhos completos):
+    //Pack de cartas para um jogo de canastra (dois baralhos completos):
     public static ArrayList<Card> canastra() {
         ArrayList<Card> MasterPack2 = complete();
         
         MasterPack2.addAll(complete());
         
         return MasterPack2;
-}
+    }
 }
