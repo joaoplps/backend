@@ -1,5 +1,4 @@
 package Cards;
-
 /**
  * Truco Card class
  *
@@ -9,6 +8,20 @@ public class TrucoCard extends Card {
     public TrucoCard(int i, int v) {
         super(i, v);
     }
-    
-    public void GreaterThan(TrucoCard c){}
+
+    @Override
+    public boolean GreaterThan(Card c) {
+        if(iVal == c.iVal)
+            return iNipe > c.iNipe;
+        
+        if(iVal <= 3 && c.iVal <= 3)
+            return iVal > c.iVal;
+        if(iVal <= 3 && c.iVal > 3)
+            return true;
+        
+        if(iVal > 3 && c.iVal > 3)
+            return iVal > c.iVal;
+        
+        return false;
+    }
 }

@@ -1,20 +1,17 @@
 package Cards;
-
 /**
  * Overall Abstract Card class
  *
  * @author LPS
  */
 public abstract class Card {
-    public int iNipe, iVal;
+    public final int iNipe, iVal;
     
     @Override
     public boolean equals(Object o){
         if (o instanceof Card){
             Card c_ref = (Card) o;
-            
-            if (iNipe == c_ref.iNipe && iVal == c_ref.iVal)
-                return true;
+            return iNipe == c_ref.iNipe && iVal == c_ref.iVal;
         }
             
         return false;
@@ -23,5 +20,9 @@ public abstract class Card {
     public Card(int i, int v){
         iNipe = i;
         iVal = v;
+    }
+    
+    public boolean GreaterThan(Card c){
+        return iVal > c.iVal;
     }
 }

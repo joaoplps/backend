@@ -2,6 +2,7 @@ package pkg507poo;
 
 import Cards.Card;
 import Cards.ConvCard;
+import Cards.PifCard;
 import Cards.TrucoCard;
 
 /**
@@ -19,6 +20,10 @@ public class Main {
 
         System.out.println(c2.equals(c2));
         System.out.println(c2.equals(c1));
+        
+        Card c3 = new PifCard(2, 8);
+        Card c4= new TrucoCard(2, 9);
+        
         
     }
 }
