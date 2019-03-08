@@ -17,12 +17,12 @@ import java.util.ArrayList;
  */
 public class CardPack {
     //Pack completo de cartas de um baralho comum:
-    public static ArrayList <Card> complete(){
-        ArrayList <Card> MasterPack1 = new ArrayList <> ();
+    public static ArrayList <Card> completeDefault(){
+        ArrayList <Card> pack = new ArrayList <> ();
         for(Nipes n : Nipes.values())
             for(CardValue v : CardValue.values())
-                MasterPack1.add(new Card(n, v));
-        return MasterPack1;
+                pack.add(new Card(n, v));
+        return pack;
     }
     
     //Construtor Privado, impedindo criações externas:
@@ -35,10 +35,10 @@ public class CardPack {
     
     //Pack de cartas para um jogo de canastra (dois baralhos completos):
     public static ArrayList<Card> canastra() {
-        ArrayList<Card> MasterPack2 = complete();
+        ArrayList<Card> pack = completeDefault();
         
-        MasterPack2.addAll(complete());
+        pack.addAll(completeDefault());
         
-        return MasterPack2;
+        return pack;
     }
 }
