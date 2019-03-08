@@ -10,11 +10,11 @@ public class PifCard extends ConvCard {
     
     @Override
     public boolean equals(Object o){
-        if (o instanceof Card){
+        if (o instanceof PifCard){ //Only compares to same type;
             Card c_ref = (Card) o;
             return iVal == c_ref.iVal;
         }
-            
+        
         return false;
     }
 }

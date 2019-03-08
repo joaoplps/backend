@@ -11,6 +11,7 @@ public class TrucoCard extends Card {
 
     @Override
     public boolean GreaterThan(Card c) {
+        //Logic decisions for comparing Truco cards:
         if(iVal == c.iVal)
             return iNipe > c.iNipe;
         

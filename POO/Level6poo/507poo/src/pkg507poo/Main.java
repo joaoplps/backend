@@ -22,8 +22,7 @@ public class Main {
         System.out.println(c2.equals(c1));
         
         Card c3 = new PifCard(2, 8);
-        Card c4= new TrucoCard(2, 9);
         
-        
+        System.out.println(c3.equals(c2));
     }
 }
