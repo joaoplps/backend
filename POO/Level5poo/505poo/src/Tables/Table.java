@@ -10,13 +10,13 @@ import Players.Player;
  * @author LPS
  */
 public class Table {
-    public ArrayList<Card> defaultPack;
+    public ArrayList<Card> tablePack;
     public ArrayList<Card> descartPack;
     public ArrayList<Player> tablePlayers;
     
     public void DefaultTable(){
-        defaultPack = new ArrayList<>();
-        defaultPack.addAll(CardPack.completeDefault());
+        tablePack = new ArrayList<>();
+        tablePack.addAll(CardPack.completeDefault());
         descartPack = new ArrayList<>();
         tablePlayers = new ArrayList<>();
     }
