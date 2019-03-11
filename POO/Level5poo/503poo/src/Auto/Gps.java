@@ -24,7 +24,7 @@ public enum Gps implements Control {
         MainDir = dir;
     }
     
-    //Método de modificação de direção do carro:
+    //Método de modificação da direção do carro:
     public void MudaDir(Automovel auto) {
         if (MainDir != auto.CarDir)
             auto.CarDir = MainDir;
@@ -34,10 +34,10 @@ public enum Gps implements Control {
     public void ChangeCarState(Camera cam) {
         switch (cam.iCamObst){
             case JACU:
-                
+                //
                 break;
             case PEDESTRE:
-                //Logic for the obstacle here
+                //Full stop
                 break; 
             //(...)
         }
