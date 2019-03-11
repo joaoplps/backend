@@ -3,7 +3,7 @@ package Auto;
 import Obstacle.Obstacle;
 
 /**
- * São três as câmeras, uma frontal e duas laterais.
+ * Câmeras, frontal / lateral.
  *
  * @author LPS
  */

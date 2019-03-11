@@ -5,11 +5,10 @@ package Auto;
  * @author LPS
  */
 public enum Gps implements Control {
-    GPS01("G-ID01", Direction.FRENTE);
+    GPS01("G-ID01");
     
     //Atributos do GPS:
     public final String sGpsId;
-    Direction MainDir; //FRENTE, DIREITA, PARADO ou ESQUERDA
     Sensor GpsSensor;
     
     //Renomeando:
@@ -19,15 +18,8 @@ public enum Gps implements Control {
     }
     
     //Construtor:
-    private Gps(String id, Direction dir){
+    private Gps(String id){
         sGpsId = id;
-        MainDir = dir;
-    }
-    
-    //Método de modificação da direção do carro:
-    public void MudaDir(Automovel auto) {
-        if (MainDir != auto.CarDir)
-            auto.CarDir = MainDir;
     }
 
     @Override
@@ -41,4 +33,5 @@ public enum Gps implements Control {
                 break;
         }
     }
+    
 }

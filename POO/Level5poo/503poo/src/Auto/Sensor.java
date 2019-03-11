@@ -6,7 +6,8 @@ package Auto;
  * @author LPS
  */
 public enum Sensor implements Control {
-    SENS01("S-ID01");
+    SENS01("S-ID01-FRN"),
+    SENS02("S-ID02-LAT");
     
     //Atributos do GPS:
     public final String sSensId;

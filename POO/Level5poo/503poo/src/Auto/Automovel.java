@@ -9,22 +9,24 @@ package Auto;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE);
+    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE, Position.CENTER);
     
     //Atributos de um objeto carro:
     public final String sCarId;
     Gps CarGps;
     Sensor CarSens;
-    int iCarVel;
+    int iCarVel; //0-Parado, 1-Devagar, 2-Rápido;
     public Direction CarDir;
+    public Position CarPos;
     
     //Construtor:
-    private Automovel(String id, Gps gps, Sensor sens, int v, Direction dir){
+    private Automovel(String id, Gps gps, Sensor sens, int v, Direction dir, Position pos){
         sCarId = id;
         CarGps = gps;
         CarSens = sens;
         iCarVel = v;
         CarDir = dir;
+        CarPos = pos;
     }
     
     //Renomeando:
@@ -61,5 +63,9 @@ public enum Automovel {
     
     public void KeepFoward(){
         CarDir = Direction.FRENTE;
+    }
+    
+    public void StayCenter(){
+        CarPos = Position.CENTER;
     }
 }
