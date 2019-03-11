@@ -34,12 +34,11 @@ public enum Gps implements Control {
     public void ChangeCarState(Camera cam) {
         switch (cam.iCamObst){
             case JACU:
-                //
+                
                 break;
             case PEDESTRE:
-                //Full stop
-                break; 
-            //(...)
+                
+                break;
         }
     }
 }

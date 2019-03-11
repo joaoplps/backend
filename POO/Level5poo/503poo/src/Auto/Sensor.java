@@ -6,16 +6,14 @@ package Auto;
  * @author LPS
  */
 public enum Sensor implements Control {
-    SENS01("S-ID01", 0);
+    SENS01("S-ID01");
     
     //Atributos do GPS:
     public final String sSensId;
-    int iMainVel; //(2)RÁPIDO, (1)DEVAGAR e (0)PARADO
     
     //Construtor:
-    private Sensor(String id, int vel){
+    private Sensor(String id){
         sSensId = id;
-        iMainVel = vel;
     }
     
     //Renomeando:
@@ -24,20 +22,23 @@ public enum Sensor implements Control {
         return sSensId;
     }
 
-    //Método de modificação da velocidade do carro:
-    public void MudaVel(Automovel auto) {
-        if (iMainVel != auto.iCarVel)
-            auto.iCarVel = iMainVel;
-    }
-
     @Override
     public void ChangeCarState(Camera cam) {
         switch (cam.iCamObst){
             case JACU:
+                Automovel.CARRO.KeepSpeed();
                 
                 break;
             case PEDESTRE:
-                //Full stop
+                if (Automovel.CARRO.iCarVel > 1)
+                    Automovel.CARRO.StepOnBreak();
+                else
+                    Automovel.CARRO.FullStop();
+                
+                break;
+            case ESTRADA:
+                Automovel.CARRO.SpeedUp();
+                
                 break;
         }
     }

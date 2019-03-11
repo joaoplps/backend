@@ -42,6 +42,15 @@ public enum Automovel {
         iCarVel--;
     }
     
+    public void KeepSpeed(){
+        System.out.println("Keeping the speed!");
+    }
+       
+    public void FullStop(){
+        CarDir = Direction.FRENTE;
+        iCarVel = 0;
+    }
+    
     public void TurnRight(){
         CarDir = Direction.DIREITA;
     }
@@ -52,10 +61,5 @@ public enum Automovel {
     
     public void KeepFoward(){
         CarDir = Direction.FRENTE;
-    }
-    
-    public void FullStop(){
-        CarDir = Direction.FRENTE;
-        iCarVel = 0;
     }
 }
