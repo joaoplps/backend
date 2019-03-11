@@ -68,4 +68,8 @@ public enum Automovel {
     public void StayCenter(){
         CarPos = Position.CENTER;
     }
+    
+    public void PullSide(){
+        CarPos = Position.SIDE;
+    }
 }

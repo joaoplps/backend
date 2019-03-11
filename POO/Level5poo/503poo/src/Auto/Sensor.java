@@ -27,19 +27,25 @@ public enum Sensor implements Control {
     public void ChangeCarState(Camera cam) {
         switch (cam.iCamObst){
             case JACU:
-                Automovel.CARRO.KeepSpeed();
-                
+                if (cam == Camera.CAMF)
+                    Automovel.CARRO.KeepSpeed();
+                else if (cam == Camera.CAML)
+                    Automovel.CARRO.StayCenter();
+
                 break;
             case PEDESTRE:
-                if (Automovel.CARRO.iCarVel > 1)
-                    Automovel.CARRO.StepOnBreak();
-                else
-                    Automovel.CARRO.FullStop();
-                
+                if (cam == Camera.CAMF){
+                    if (Automovel.CARRO.iCarVel > 1)
+                        Automovel.CARRO.StepOnBreak();
+                    else
+                        Automovel.CARRO.FullStop();
+                }
+
                 break;
             case ESTRADA:
-                Automovel.CARRO.SpeedUp();
-                
+                if (cam == Camera.CAMF)
+                    Automovel.CARRO.SpeedUp();
+
                 break;
         }
     }
