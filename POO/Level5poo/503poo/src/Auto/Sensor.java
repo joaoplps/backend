@@ -28,7 +28,7 @@ public enum Sensor implements Control {
         switch (cam.iCamObst){
             case JACU:
                 if (cam == Camera.CAMF)
-                    Automovel.CARRO.KeepSpeed();
+                    Automovel.CARRO.MatchFrontVel();
                 else if (cam == Camera.CAML)
                     Automovel.CARRO.StayCenter();
 

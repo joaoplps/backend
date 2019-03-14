@@ -24,11 +24,11 @@ public enum Camera {
         return sCamId;
     }
     
-    public Obstacle getCamObstCod(){
-        return iCamObst;
+    public Obstacle getCamObstCod(Camera cam){
+        return cam.iCamObst;
     }
     
-    public void FilmObstacle(Obstacle obst){
-        iCamObst = obst;
+    public void FilmObstacle(Camera cam, Obstacle obst){
+        cam.iCamObst = obst;
     }
 }

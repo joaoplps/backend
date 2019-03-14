@@ -9,7 +9,8 @@ package Auto;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE, Position.CENTER);
+    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE, Position.CENTER),
+    OTHER("J-ID01", 0, AutoState.SEM_INTENCOES);
     
     //Atributos de um objeto carro:
     public final String sCarId;
@@ -18,13 +19,20 @@ public enum Automovel {
     int iCarVel; //0-Parado, 1-Devagar, 2-Rápido;
     public Direction CarDir;
     public Position CarPos;
+    AutoState CarState;
     
-    //Construtor:
-    private Automovel(String id, Gps gps, Sensor sens, int v, Direction dir, Position pos){
+    //Construtores:
+    private Automovel(String id, int vel, AutoState state){
+        sCarId = id;
+        iCarVel = vel;
+        CarState = state;
+    }
+    
+    private Automovel(String id, Gps gps, Sensor sens, int vel, Direction dir, Position pos){
         sCarId = id;
         CarGps = gps;
         CarSens = sens;
-        iCarVel = v;
+        iCarVel = vel;
         CarDir = dir;
         CarPos = pos;
     }
@@ -36,16 +44,14 @@ public enum Automovel {
     }   
     
     //Métodos:
+    
+    //CARRO:
     public void SpeedUp(){
         iCarVel++;
     }
     
     public void StepOnBreak(){
         iCarVel--;
-    }
-    
-    public void KeepSpeed(){
-        System.out.println("Keeping the speed!");
     }
        
     public void FullStop(){
@@ -71,5 +77,18 @@ public enum Automovel {
     
     public void PullSide(){
         CarPos = Position.SIDE;
+    }
+    
+    public void MatchFrontVel(){
+        CARRO.iCarVel = OTHER.iCarVel;
+    }
+    
+    //OTHER:
+    public void setOtherVel(int vel) {
+        OTHER.iCarVel = vel;
+    }
+    
+    public void setOtherState(AutoState state) {
+        OTHER.CarState = state;
     }
 }

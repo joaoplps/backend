@@ -4,13 +4,20 @@ package Obstacle;
  * @author LPS
  */
 public enum Obstacle {
-    ESTRADA(0),
-    JACU(1),
-    PEDESTRE(2);
+    ESTRADA(0, "estrada"),
+    JACU(1, "jacu"),
+    PEDESTRE(2, "pedestre");
 
     public final int iObstCod;
+    public final String sObstId;
     
-    Obstacle(int id){
-        iObstCod = id;
+    Obstacle(int cod, String id){
+        iObstCod = cod;
+        sObstId = id;
+    }
+    
+    @Override
+    public String toString(){
+        return sObstId;
     }
 }
