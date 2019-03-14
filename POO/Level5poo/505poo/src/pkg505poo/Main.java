@@ -49,7 +49,7 @@ public class Main {
         table1.TableGetsPlayer(pl3, table1);
         table1.TableGetsPlayer(pl4, table1);
         
-        table1.StartCanastraGame();
+        table1.StartCanastraGame(table1);
         
         System.out.println(table1);
     }
