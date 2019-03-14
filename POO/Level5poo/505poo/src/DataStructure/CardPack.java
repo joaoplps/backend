@@ -12,6 +12,11 @@ import java.util.ArrayList;
  * ArrayList <int> arrayId = new ArrayList <int> ();
  * 
  * See more for manage items in the list.
+ * 
+ * ***A classe Carta deve ter um método de classe (static)
+ * "geraBaralho" capaz de criar uma lista (ArrayList) de cartas
+ * com 1 instância de cada possível carta sem repetir duas cartas
+ * com o mesmo naipe e valor (completeDefault()).
  *
  * @author LPS
  */

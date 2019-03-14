@@ -1,5 +1,7 @@
 package DataStructure;
-/**
+/** 
+ * ***A Carta é composta por dois atributos imutáveis e públicos,
+ * um Naipe e um Valor.
  *
  * @author LPS
  */

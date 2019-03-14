@@ -1,5 +1,6 @@
 package DataStructure;
 /**
+ * ***Os Naipe são Ouro, Paus, Copas e Espadas.
  *
  * @author LPS
  */

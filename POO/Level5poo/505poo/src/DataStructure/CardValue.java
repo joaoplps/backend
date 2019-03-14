@@ -12,6 +12,9 @@ import java.util.ArrayList;
  * ArrayList <int> arrayId = new ArrayList <int> ();
  * 
  * See more for manage items in the list.
+ * 
+ * ***Os Valores são: As, Dois, Tres, Quatro, Cinco, Seis, Sete,
+ * Oito, Nove, Dez, Valete, Dama e Rei.
  *
  * @author LPS
  */
