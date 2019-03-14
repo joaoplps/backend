@@ -16,16 +16,20 @@ public class Datasheet {
         sDAuth = auth;
     }
     
+    public boolean CheckDS(Datasheet ds){
+        return sDName == ds.sDName && sDEd == ds.sDEd && sDAuth == ds.sDAuth;
+    }
+    
     @Override
     public boolean equals(Object o){
         if (o instanceof Datasheet){
             Datasheet d = (Datasheet) o;
-            return (sDName == d.sDName && sDEd == d.sDEd && sDAuth == d.sDAuth);
+            return CheckDS(d);
         }
         
         else if (o instanceof Book){
             Book b = (Book) o;
-            return (equals(b.BDataS));
+            b.BDataS.CheckDS(this);
         }
             
         return false;

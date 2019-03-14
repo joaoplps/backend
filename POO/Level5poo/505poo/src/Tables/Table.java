@@ -73,9 +73,9 @@ public class Table {
             //In da GAME:
             
             //Dando as cartas:
-            for (Player pl : tablePlayers){
-                pl.BuyCard(t);
-            }
+            for (int i = 0; i < 11; i++)
+                for (Player pl : tablePlayers)
+                    pl.BuyCard(t);
         }
     }
 }

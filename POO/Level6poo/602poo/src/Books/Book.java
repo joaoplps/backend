@@ -19,12 +19,12 @@ public class Book {
     public boolean equals(Object o){
         if (o instanceof Book){
             Book b = (Book) o;
-            return (BDataS.equals(b.BDataS));
+            return BDataS.equals(b.BDataS);
         }
         
         else if (o instanceof Datasheet){
             Datasheet d = (Datasheet) o;
-            return (BDataS.equals(d));
+            return BDataS.equals(d);
         }
             
         return false;

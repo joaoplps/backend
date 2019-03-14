@@ -33,6 +33,7 @@ public class Player {
     }
     
     public void BuyCard(Table t){
-        t.tablePack.remove(0);
+        Card c = t.tablePack.remove(0);
+        Hand.add(c);
     }
 }

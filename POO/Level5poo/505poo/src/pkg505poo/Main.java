@@ -51,6 +51,6 @@ public class Main {
         
         table1.StartCanastraGame(table1);
         
-        System.out.println(table1);
+        System.out.println(table1.tablePlayers);
     }
 }
