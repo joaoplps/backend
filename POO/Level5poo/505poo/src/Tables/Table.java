@@ -61,17 +61,21 @@ public class Table {
         t.tablePlayers.add(p);
     }
     
-    public void StartCanastraGame(){
+    public void StartCanastraGame(Table t){
         //Testando exeções:
-        if (tablePlayers.size() != 2 && tablePlayers.size() != 4 )
+        if (t.tablePlayers.size() != 2 && t.tablePlayers.size() != 4 )
             System.out.println("Número inválido de jogadores.");
         
-        else if (tablePack.size() != 104)
+        else if (t.tablePack.size() != 104)
             System.out.println("As configurações do baralho não são compatíveis com o jogo de canastra");
         
         else{
             //In da GAME:
             
+            //Dando as cartas:
+            for (Player pl : tablePlayers){
+                pl.BuyCard(t);
+            }
         }
     }
 }
