@@ -24,8 +24,9 @@ public enum Gps implements Control {
 
     @Override
     public void ChangeCarState(Camera cam) {
-        switch (cam.iCamObst){
+        switch (cam.CamObst){
             case JACU:
+                
                 
                 break;
             case PEDESTRE:

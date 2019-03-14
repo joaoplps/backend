@@ -1,4 +1,7 @@
 package Auto;
+
+import Obstacle.Obstacle;
+
 /**
  * Os sensores servem para detecção de velocidade:
  * Rápido / Devagar.
@@ -25,13 +28,24 @@ public enum Sensor implements Control {
 
     @Override
     public void ChangeCarState(Camera cam) {
-        switch (cam.iCamObst){
+        switch (cam.CamObst){
             case JACU:
                 if (cam == Camera.CAMF)
                     Automovel.CARRO.MatchFrontVel();
                 else if (cam == Camera.CAML)
-                    Automovel.CARRO.StayCenter();
-
+                    if (cam.CamObst.JacuState == AutoState.ULTRAPASSANDO){
+                        Automovel.CARRO.StayCenter();
+                        Automovel.CARRO.MatchFrontVel();
+                    }
+                    else if (cam.CamObst.JacuState == AutoState.SEM_INTENCOES)
+                        System.out.println("That's ok dude...");
+                    else if (cam.CamObst.JacuState == AutoState.SE_PREPARANDO){
+                        if (Automovel.CARRO.iCarVel > Obstacle.JACU.iJacuVel)
+                            System.out.println("Holding on...");
+                        else
+                            Automovel.CARRO.PullSide();
+                    }
+                
                 break;
             case PEDESTRE:
                 if (cam == Camera.CAMF){

@@ -1,4 +1,7 @@
 package Auto;
+
+import Obstacle.Obstacle;
+
 /**
  * Classe pública automóvel terá objeto carro, que por sua vez terá
  * um objeto do tipo GPS abordo (embutido). É este equipamento que
@@ -9,8 +12,7 @@ package Auto;
  * @author LPS
  */
 public enum Automovel {
-    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE, Position.CENTER),
-    OTHER("J-ID01", 0, AutoState.SEM_INTENCOES);
+    CARRO("C-ID01", Gps.GPS01, Sensor.SENS01, 0, Direction.FRENTE, Position.CENTER);
     
     //Atributos de um objeto carro:
     public final String sCarId;
@@ -19,14 +21,6 @@ public enum Automovel {
     int iCarVel; //0-Parado, 1-Devagar, 2-Rápido;
     public Direction CarDir;
     public Position CarPos;
-    AutoState CarState;
-    
-    //Construtores:
-    private Automovel(String id, int vel, AutoState state){
-        sCarId = id;
-        iCarVel = vel;
-        CarState = state;
-    }
     
     private Automovel(String id, Gps gps, Sensor sens, int vel, Direction dir, Position pos){
         sCarId = id;
@@ -80,15 +74,6 @@ public enum Automovel {
     }
     
     public void MatchFrontVel(){
-        CARRO.iCarVel = OTHER.iCarVel;
-    }
-    
-    //OTHER:
-    public void setOtherVel(int vel) {
-        OTHER.iCarVel = vel;
-    }
-    
-    public void setOtherState(AutoState state) {
-        OTHER.CarState = state;
+        CARRO.iCarVel = Obstacle.JACU.iJacuVel;
     }
 }

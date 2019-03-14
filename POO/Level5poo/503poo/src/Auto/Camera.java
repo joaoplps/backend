@@ -12,11 +12,11 @@ public enum Camera {
     CAML(Obstacle.ESTRADA, "lateral");
     
     public final String sCamId;
-    Obstacle iCamObst;
+    Obstacle CamObst;
     
     private Camera(Obstacle obst, String id){
         sCamId = id;
-        iCamObst = obst;
+        CamObst = obst;
     }
     
     @Override
@@ -25,10 +25,10 @@ public enum Camera {
     }
     
     public Obstacle getCamObstCod(Camera cam){
-        return cam.iCamObst;
+        return cam.CamObst;
     }
     
     public void FilmObstacle(Camera cam, Obstacle obst){
-        cam.iCamObst = obst;
+        cam.CamObst = obst;
     }
 }
