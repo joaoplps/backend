@@ -19,9 +19,25 @@ import java.util.ArrayList;
 public class Player {
     public ArrayList<Card> Hand;
     
-        //Criador de mesa default:
+    //Construtor do jogador:
     public Player(){
         Hand = new ArrayList<>();
+    }
+    
+    //I AM MY HAND Identificador
+    @Override
+    public String toString() {
+        String hand = "";
+        
+        if (!Hand.isEmpty()){
+            for (Card c : Hand){
+                hand += c.toString() + " ";
+            }
+            
+            return hand + "\n";
+        }
+        
+        return "A mão do jogador está vazia";
     }
 
     //Métodos de compra e descarte de cartas:
@@ -33,7 +49,7 @@ public class Player {
     }
     
     public void BuyCard(Table t){
-        Card c = t.tablePack.remove(0);
-        Hand.add(c);
+        Card c = t.tablePack.remove(0); //Remove a primeira carta da pilha;
+        Hand.add(c); //Coloca na mão;
     }
 }

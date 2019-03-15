@@ -14,6 +14,7 @@ public class Card {
         value = v;
     }
     
+    //Identificador:
     @Override
     public String toString() {
         return value + " de " + nipe;

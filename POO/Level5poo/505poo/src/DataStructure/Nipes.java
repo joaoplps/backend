@@ -13,11 +13,13 @@ public enum Nipes {
     public final int iNipeValue;
     public final String sNipeName;
     
+    //Construtor:
     private Nipes(int val, String n){
         iNipeValue = val;
         sNipeName = n;
     }
     
+    //Identificador:
     @Override
     public String toString() {
         return sNipeName;

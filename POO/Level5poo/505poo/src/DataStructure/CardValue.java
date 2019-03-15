@@ -36,11 +36,13 @@ public enum CardValue {
     public final int iCardValue;
     public final String sCardId;
     
+    //Construtor:
     private CardValue(int val, String n){
         iCardValue = val;
         sCardId = n;
     }
     
+    //Identificador:
     @Override
     public String toString() {
         return sCardId;

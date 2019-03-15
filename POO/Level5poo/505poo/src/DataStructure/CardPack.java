@@ -33,6 +33,7 @@ public class CardPack {
     //Construtor Privado, impedindo criações externas:
     private CardPack (){}
     
+    //Identificador:
     @Override
     public String toString(){
         return "I'm a Card Pack!";

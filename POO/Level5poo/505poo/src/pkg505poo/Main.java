@@ -36,21 +36,20 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        Table table1 = new Table();
-        table1.CanastraTable(4);
+        Table table1 = new Table(4);
         
         Player pl1 = new Player();
         Player pl2 = new Player();
         Player pl3 = new Player();
         Player pl4 = new Player();
         
-        table1.TableGetsPlayer(pl1, table1);
-        table1.TableGetsPlayer(pl2, table1);
-        table1.TableGetsPlayer(pl3, table1);
-        table1.TableGetsPlayer(pl4, table1);
+        table1.GetPlayer(pl1);
+        table1.GetPlayer(pl2);
+        table1.GetPlayer(pl3);
+        table1.GetPlayer(pl4);
         
-        table1.StartCanastraGame(table1);
+        table1.StartGame();
         
-        System.out.println(table1.tablePlayers);
+        System.out.println(table1);
     }
 }

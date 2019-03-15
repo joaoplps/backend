@@ -31,16 +31,8 @@ public class Table {
     public ArrayList<Card> descartPack;
     public ArrayList<Player> tablePlayers;
     
-    //Criador de mesa default:
-    public void DefaultTable(){
-        tablePack = new ArrayList<>();
-        tablePack.addAll(CardPack.completeDefault());
-        descartPack = new ArrayList<>();
-        tablePlayers = new ArrayList<>();
-    }
-    
     //Criador de mesa de canastra:
-    public void CanastraTable(int iNpl){
+    public Table(int iNpl){
         if (iNpl == 2 || iNpl == 4){
             tablePack = new ArrayList<>();
             tablePack.addAll(CardPack.canastra());
@@ -57,16 +49,31 @@ public class Table {
             System.out.println("Essa mesa aceita apenas 2 ou 4 jogadores.");
     }
     
-    public void TableGetsPlayer(Player p, Table t){
-        t.tablePlayers.add(p);
+    //Identificador:
+    @Override
+    public String toString() {
+        String hands = "Mesa de Canastra\n";
+        int aux = 0;
+        
+        if (!tablePlayers.isEmpty())
+            for (Player pl : tablePlayers){
+                hands += "Jogador " + aux + ": " + pl.toString();
+                aux++;
+            }
+        
+        return hands;
     }
     
-    public void StartCanastraGame(Table t){
+    public void GetPlayer(Player p){
+        tablePlayers.add(p);
+    }
+    
+    public void StartGame(){
         //Testando exeções:
-        if (t.tablePlayers.size() != 2 && t.tablePlayers.size() != 4 )
+        if (tablePlayers.size() != 2 && tablePlayers.size() != 4 )
             System.out.println("Número inválido de jogadores.");
         
-        else if (t.tablePack.size() != 104)
+        else if (tablePack.size() != 104)
             System.out.println("As configurações do baralho não são compatíveis com o jogo de canastra");
         
         else{
@@ -75,7 +82,7 @@ public class Table {
             //Dando as cartas:
             for (int i = 0; i < 11; i++)
                 for (Player pl : tablePlayers)
-                    pl.BuyCard(t);
+                    pl.BuyCard(this);
         }
     }
 }
