@@ -1,4 +1,6 @@
-package Books;
+package Characteristics;
+
+import Books.Identity;
 
 /**
  *

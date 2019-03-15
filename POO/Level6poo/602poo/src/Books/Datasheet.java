@@ -1,6 +1,8 @@
 
 package Books;
 
+import Characteristics.Comparable;
+
 /**
  *
  * @author LPS
