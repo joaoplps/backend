@@ -7,18 +7,20 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public class Collection {
+public class Collection implements IdxInterface {
     ArrayList<Book> collection;
     
     public Collection(){
         collection = new ArrayList();
     }
     
-    public void AddBook(Book b){
-        if (collection.contains(b))
+    @Override
+    public boolean AddBook(Book b){
+        if (!collection.contains(b))
             collection.add(b);
         
         else
             System.out.println("O livro já existe na coleção!");
     }
+   
 }
