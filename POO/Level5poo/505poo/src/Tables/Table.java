@@ -4,6 +4,7 @@ import DataStructure.Card;
 import DataStructure.CardPack;
 import java.util.ArrayList;
 import Players.Player;
+import static java.lang.System.exit;
 
 /**
  * ***A modelagem da Mesa deve conter três listas. A primeira é
@@ -53,36 +54,49 @@ public class Table {
     @Override
     public String toString() {
         String hands = "Mesa de Canastra\n";
+
         int aux = 0;
         
         if (!tablePlayers.isEmpty())
             for (Player pl : tablePlayers){
-                hands += "Jogador " + aux + ": " + pl.toString();
+                hands += "Jogador " + aux + ": " + pl.toString() + "\n";
                 aux++;
             }
         
         return hands;
     }
     
+    //Adicionar jogador:
     public void GetPlayer(Player p){
         tablePlayers.add(p);
     }
     
-    public void StartGame(){
-        //Testando exeções:
-        if (tablePlayers.size() != 2 && tablePlayers.size() != 4 )
-            System.out.println("Número inválido de jogadores.");
+    //Teste de funcionamento:
+    private boolean WillHappen(){
+        final int n = tablePlayers.size();
         
-        else if (tablePack.size() != 104)
-            System.out.println("As configurações do baralho não são compatíveis com o jogo de canastra");
-        
-        else{
-            //In da GAME:
+        return n == 2 && n == 4;
+    }
             
-            //Dando as cartas:
-            for (int i = 0; i < 11; i++)
-                for (Player pl : tablePlayers)
-                    pl.BuyCard(this);
+    private void Distribute(){
+        //Dando as cartas:
+        for (int i = 0; i < 11; i++)
+            for (Player pl : tablePlayers)
+                pl.BuyCard(this);
+    }
+    
+    public void StartGame(){
+        if (WillHappen()){
+            System.out.println("Número inválido de jogadores.");
+            exit(1); //Stop program with error (1)
         }
+        
+        if (tablePack.size() != 104){
+            System.out.println("As configurações do baralho não são compatíveis com o jogo de canastra");
+            exit(1); //Stop program with error (1)
+        }
+        
+        //In da GAME:
+        Distribute();
     }
 }

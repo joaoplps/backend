@@ -34,18 +34,19 @@ public class Player {
                 hand += c.toString() + " ";
             }
             
-            return hand + "\n";
+            return hand;
         }
         
         return "A mão do jogador está vazia";
     }
 
     //Métodos de compra e descarte de cartas:
-    public void DescartCard(int n, Table t){
-        //Criando referência para remover da mão ecolocar na pilha de descarte:
-        Card c = Hand.get(n);
-        Hand.remove(n);
-        t.descartPack.add(0, c);
+    public boolean DescartCard(int n, Table t){
+        if (Hand.size() < n)
+            return false;
+
+        t.descartPack.add(0, Hand.remove(n));
+        return true;
     }
     
     public void BuyCard(Table t){

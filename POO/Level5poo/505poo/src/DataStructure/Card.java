@@ -19,4 +19,17 @@ public class Card {
     public String toString() {
         return value + " de " + nipe;
     }
+    
+    // 
+    @Override
+    public boolean equals(Object o){
+        if (o instanceof Card){
+            Card c = (Card) o;
+            return c.nipe == nipe && c.value == value;
+        }
+        
+        else{
+            return false;
+        }
+    }
 }
