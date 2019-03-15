@@ -5,34 +5,30 @@ package Books;
  *
  * @author LPS
  */
-public class Datasheet {
+public class Datasheet extends Comparable {
     public final String sDName;
-    public final String sDEd;
     public final String sDAuth;
+    public final int iDEd;
 
-    public Datasheet(String name, String ed, String auth) {
+    public Datasheet(String name, int ed, String auth) {
         sDName = name;
-        sDEd = ed;
+        iDEd = ed;
         sDAuth = auth;
-    }
-    
-    public boolean CheckDS(Datasheet ds){
-        return sDName == ds.sDName && sDEd == ds.sDEd && sDAuth == ds.sDAuth;
     }
     
     @Override
     public boolean equals(Object o){
-        if (o instanceof Datasheet){
-            Datasheet d = (Datasheet) o;
-            return CheckDS(d);
-        }
-        
-        else if (o instanceof Book){
-            Book b = (Book) o;
-            b.BDataS.CheckDS(this);
+        if(o instanceof Identity) {
+            Datasheet d = ((Identity) o).id();
+            return sDName.equals(d.sDName) && sDAuth.equals(d.sDAuth) && iDEd == d.iDEd;
         }
             
         return false;
     }
-        
+
+    @Override
+    public Datasheet id() {
+        return this;
+    }
+    
 }

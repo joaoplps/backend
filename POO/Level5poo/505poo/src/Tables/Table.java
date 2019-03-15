@@ -77,9 +77,9 @@ public class Table {
         
         return n == 2 && n == 4;
     }
-            
+
+    //Dando as cartas:
     private void Distribute(){
-        //Dando as cartas:
         for (int i = 0; i < 11; i++)
             for (Player pl : tablePlayers)
                 pl.BuyCard(this);

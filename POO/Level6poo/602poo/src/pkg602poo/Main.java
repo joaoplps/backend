@@ -1,5 +1,9 @@
 package pkg602poo;
 
+import Books.Book;
+import Books.Datasheet;
+import Books.Gender;
+
 /**
  * HASH MAP!
  * 
@@ -19,12 +23,17 @@ package pkg602poo;
  * @author LPS
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Datasheet ds0 = new Datasheet("Nome", 1, "Autor");
+        Datasheet ds1 = new Datasheet("Nome", 1, "Autor");
+        
+        Book bk0 = new Book(ds1, Gender.HORROR, 1987);
+        
+        
+        System.out.println(bk0.equals(ds0));
+        System.out.println(ds0.equals(bk0));
+        System.out.println(ds1.equals(ds0));
+        System.out.println(bk0.equals(ds1));
+
     }
-    
 }

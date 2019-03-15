@@ -4,29 +4,20 @@ package Books;
  *
  * @author LPS
  */
-public class Book {
+public class Book extends Comparable {  //Extende qualidade comparável:
     public final Datasheet BDataS;
-    public final String sBGender;
+    public final Gender BGender;
     public final int iBYear;
     
-    public Book(Datasheet ds, String gen, int y){
+    public Book(Datasheet ds, Gender gen, int y){
         BDataS = ds;
-        sBGender = gen;
+        BGender = gen;
         iBYear = y;
     }
-    
+
+    //Retorna a ficha técnica:
     @Override
-    public boolean equals(Object o){
-        if (o instanceof Book){
-            Book b = (Book) o;
-            return BDataS.equals(b.BDataS);
-        }
-        
-        else if (o instanceof Datasheet){
-            Datasheet d = (Datasheet) o;
-            return BDataS.equals(d);
-        }
-            
-        return false;
+    public Datasheet id() {
+        return BDataS;
     }
 }
