@@ -3,6 +3,7 @@ package Players;
 import DataStructure.Card;
 import Tables.Table;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * ***A modelagem do jogador se resume a sua mão, que é uma lista
@@ -52,5 +53,16 @@ public class Player {
     public void BuyCard(Table t){
         Card c = t.tablePack.remove(0); //Remove a primeira carta da pilha;
         Hand.add(c); //Coloca na mão;
+    }
+    
+    public void BuyDesCard(Table t){
+        for (Card c : t.descartPack){
+            c = t.descartPack.remove(0); //Remove a primeira carta da pilha;
+            Hand.add(c); //Coloca na mão;
+        }
+    }
+    
+    public void SortHand(ArrayList hand){
+        Collections.sort(hand);
     }
 }
