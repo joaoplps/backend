@@ -21,6 +21,19 @@ import java.util.Collections;
  * ***Modifique também a classe Jogador para que cada objeto jogador saiba em
  * qual time ele está A ou B. Este atributo deve ser inicializado no
  * construtor da classe Jogador.
+ * 
+ * ***Na canastra, para "baixar" cartas da mão e começar uma "canastra", um
+ * Jogador deve ter 3 ou mais cartas da mão em ordem de valor e do mesmo naipe.
+ * Existe também cartas coringas, mas esqueça-as agora.
+ * 
+ * ***Crie um método testarJogada no Jogador recebendo uma lista de int 
+ * (jogada) que retorna um boolean. O retorno do método jogar deve ser true se
+ * é possível fazer esta jogada e false caso contrário.
+ * 
+ * ***Crie também um método jogar, recebendo uma lista de int (jogada) que
+ * retorna void. Este método deve chamar o testarJogada. Caso o retorno de
+ * testarJogada seja true, a jogada é válida. Para isso, retire as cartas da
+ * mão do jogador (o método jogar por enquanto não faz mais nada).
  *
  * @author LPS
  */
@@ -69,7 +82,20 @@ public class Player {
         t.descartPack.clear();  //Remove do descarte;
     }
     
-    public void SortPlay(){
-        //Collections.sort(HandPlay);
+    public boolean TestPlay(ArrayList play){
+        
+        
+        for (Card c : Hand)
+            if (c.nipe == play.)
+        
+        return true;
+        
+        return false;
+        //Retorno true se possível fazer a jogada, false do contrário;
+    }
+    
+    public void PlAY(ArrayList play){
+        if (TestPlay(play))
+            Hand.removeAll(play);
     }
 }
