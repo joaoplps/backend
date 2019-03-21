@@ -1,9 +1,10 @@
 package Tables;
 
-import DataStructure.Card;
-import DataStructure.CardPack;
+import Cards.Card;
+import Cards.CardPack;
 import java.util.ArrayList;
 import Players.Player;
+import Players.Team;
 import static java.lang.System.exit;
 
 /**
@@ -30,50 +31,35 @@ import static java.lang.System.exit;
 public class Table {
     public ArrayList<Card> tablePack;
     public ArrayList<Card> descartPack;
-    public ArrayList<Player> tablePlayers;
+    public Team TeamA, TeamB;
     
     //Criador de mesa de canastra:
     public Table(int iNpl){
-        if (iNpl == 2 || iNpl == 4){
+        if (iNpl == 2 || iNpl == 4){    //Controla número de jogadores;
+            //Cria e adiciona baralho de canastra na mesa:
             tablePack = new ArrayList<>();
             tablePack.addAll(CardPack.canastra());
+            
+            //Cria a pilha para descarte das cartas:
             descartPack = new ArrayList<>();
             
-            if (iNpl == 2)
-                tablePlayers = new ArrayList<>(2);
-            
-            else if (iNpl == 4)
-                tablePlayers = new ArrayList<>(4);
+            //Confere mínimo de jogadores:
         }
         
         else
             System.out.println("Essa mesa aceita apenas 2 ou 4 jogadores.");
     }
     
-    //Identificador:
+    //Identificador: 
     @Override
     public String toString() {
-        String hands = "Mesa de Canastra\n";
+        return "Mesa de Canastra\n";
+    }
 
-        int aux = 0;
-        
-        if (!tablePlayers.isEmpty())
-            for (Player pl : tablePlayers){
-                hands += "Jogador " + aux + ": " + pl.toString() + "\n";
-                aux++;
-            }
-        
-        return hands;
-    }
-    
-    //Adicionar jogador:
-    public void GetPlayer(Player p){
-        tablePlayers.add(p);
-    }
     
     //Teste de funcionamento:
     private boolean WillHappen(){
-        final int n = tablePlayers.size();
+        final int n = TeamA.playerz.size();
         
         return n == 2 && n == 4;
     }
@@ -81,7 +67,7 @@ public class Table {
     //Dando as cartas:
     private void Distribute(){
         for (int i = 0; i < 11; i++)
-            for (Player pl : tablePlayers)
+            for (Player pl : TeamA.playerz)
                 pl.BuyCard(this);
     }
     

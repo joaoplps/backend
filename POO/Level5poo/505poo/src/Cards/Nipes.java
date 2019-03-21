@@ -1,4 +1,4 @@
-package DataStructure;
+package Cards;
 /**
  * ***Os Naipe são Ouro, Paus, Copas e Espadas.
  *

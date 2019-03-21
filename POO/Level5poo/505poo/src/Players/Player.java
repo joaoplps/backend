@@ -1,6 +1,6 @@
 package Players;
 
-import DataStructure.Card;
+import Cards.Card;
 import Tables.Table;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,15 +14,24 @@ import java.util.Collections;
  * ***O jogador deve sempre comprar da primeira carta do Baralho
  * (índice 0) e deve também sempre descartar para o topo da pilha
  * de descarte (índice 0).
+ * 
+ * 
+ * -- 2a parte --
+ * 
+ * ***Modifique também a classe Jogador para que cada objeto jogador saiba em
+ * qual time ele está A ou B. Este atributo deve ser inicializado no
+ * construtor da classe Jogador.
  *
  * @author LPS
  */
 public class Player {
     public ArrayList<Card> Hand;
+    public TeamType Team;
     
     //Construtor do jogador:
-    public Player(){
-        Hand = new ArrayList<>();
+    public Player(TeamType t){
+        Hand = new ArrayList();
+        Team = t;
     }
     
     //I AM MY HAND Identificador
@@ -56,13 +65,11 @@ public class Player {
     }
     
     public void BuyDesCard(Table t){
-        for (Card c : t.descartPack){
-            c = t.descartPack.remove(0); //Remove a primeira carta da pilha;
-            Hand.add(c); //Coloca na mão;
-        }
+        Hand.addAll(t.descartPack); //Coloca na mão;
+        t.descartPack.clear();  //Remove do descarte;
     }
     
-    public void SortHand(ArrayList hand){
-        Collections.sort(hand);
+    public void SortPlay(){
+        //Collections.sort(HandPlay);
     }
 }

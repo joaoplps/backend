@@ -1,11 +1,15 @@
-package DataStructure;
+package Cards;
 /** 
  * ***A Carta é composta por dois atributos imutáveis e públicos,
  * um Naipe e um Valor.
+ * 
+ * **Implementação de interface do java: Comparable; Sobrescreve
+ * o método compareTo() esplanando as características da abstração
+ * da diferença.
  *
  * @author LPS
  */
-public class Card {
+public class Card implements Comparable<Card> {
     public final Nipes nipe;
     public final CardValue value;
     
@@ -32,4 +36,12 @@ public class Card {
             return false;
         }
     }
+
+    @Override
+    public int compareTo(Card o) {
+        return value.iCardValue - o.value.iCardValue;
+    }
+
+    
+    
 }

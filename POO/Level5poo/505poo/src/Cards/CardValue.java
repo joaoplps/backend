@@ -1,4 +1,4 @@
-package DataStructure;
+package Cards;
 
 import java.util.ArrayList;
 

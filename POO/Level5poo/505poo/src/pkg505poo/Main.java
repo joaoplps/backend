@@ -1,7 +1,7 @@
 package pkg505poo;
 
-import DataStructure.Card;
-import DataStructure.CardPack;
+import Cards.Card;
+import Cards.CardPack;
 import Players.Player;
 import Tables.Table;
 import java.util.ArrayList;
