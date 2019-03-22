@@ -35,8 +35,8 @@ public class Table {
     public Team TeamA, TeamB;
     
     //Criador de mesa de canastra:
-    public Table(int iNpl){
-        if (iNpl == 2 || iNpl == 4){    //Controla número de jogadores;
+    public Table(int n){
+        if (n == 2 || n == 4){    //Controla número de jogadores;
             //Cria e adiciona baralho de canastra na mesa:
             tablePack = new ArrayList<>();
             tablePack.addAll(CardPack.canastra());
@@ -45,14 +45,14 @@ public class Table {
             descartPack = new ArrayList<>();
             
             //Registrando times:
-            switch (iNpl){
+            switch (n){
                 case 2:
-                    TeamA = new Team(2);
-                    TeamB = new Team(2);  
+                    TeamA = new Team(1);
+                    TeamB = new Team(1);  
                     break;
                 case 4:
-                    TeamA = new Team(4);
-                    TeamB = new Team(4);
+                    TeamA = new Team(2);
+                    TeamB = new Team(2);
                     break;
             }
         }
