@@ -1,6 +1,6 @@
 package Cards;
 /**
- * ***Os Naipe são Ouro, Paus, Copas e Espadas.
+ * ***Os Naipes são Ouro, Paus, Copas e Espadas.
  *
  * @author LPS
  */
@@ -23,5 +23,5 @@ public enum Nipes {
     @Override
     public String toString() {
         return sNipeName;
-}
+    }
 }

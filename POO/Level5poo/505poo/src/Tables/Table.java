@@ -43,7 +43,17 @@ public class Table {
             //Cria a pilha para descarte das cartas:
             descartPack = new ArrayList<>();
             
-            //Confere mínimo de jogadores:
+            //Registrando times:
+            switch (iNpl){
+                case 2:
+                    TeamA = new Team(2);
+                    TeamB = new Team(2);
+                    break;
+                case 4:
+                    TeamA = new Team(4);
+                    TeamB = new Team(4);
+                    break;
+            }
         }
         
         else
@@ -59,15 +69,17 @@ public class Table {
     
     //Teste de funcionamento:
     private boolean WillHappen(){
-        final int n = TeamA.playerz.size();
+        final int n = TeamA.playerz.size() + TeamB.playerz.size();
         
-        return n == 2 && n == 4;
+        return n == 2 || n == 4;
     }
 
-    //Dando as cartas:
-    private void Distribute(){
+    //Dando as cartas para os jogadores do time:
+    private void Distribute(Team a, Team b){
         for (int i = 0; i < 11; i++)
-            for (Player pl : TeamA.playerz)
+            for (Player pl : a.playerz)
+                pl.BuyCard(this);
+            for (Player pl : b.playerz)
                 pl.BuyCard(this);
     }
     
@@ -83,6 +95,6 @@ public class Table {
         }
         
         //In da GAME:
-        Distribute();
+        Distribute(TeamA, TeamB);
     }
 }

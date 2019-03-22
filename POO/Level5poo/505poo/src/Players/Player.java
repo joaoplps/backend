@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * -- 1a parte --
+ * 
  * ***A modelagem do jogador se resume a sua mão, que é uma lista
  * de cartas inicialmente vazia. Um jogador deve ser capaz de
  * comprar de uma pilha de compra da mesa e descartar uma carta
@@ -34,6 +36,29 @@ import java.util.Collections;
  * retorna void. Este método deve chamar o testarJogada. Caso o retorno de
  * testarJogada seja true, a jogada é válida. Para isso, retire as cartas da
  * mão do jogador (o método jogar por enquanto não faz mais nada).
+ * 
+ * ***Verifique se a lista de posiçoes contém 3 ou mais cartas (usando o size).
+ * Caso a lista tenha 2 ou menos cartas, retorne false.
+ * 
+ * ***Verifique se todas são do mesmo naipe, se elas não forem, a jogada é
+ * inválida e o método deve retornar false.
+ * 
+ * ***Agora resta verificar se as cartas tem valores em sequência (2,3,4
+ * ou 6,7,8 ou Valete, Rainha, Rei, Ás).
+ * 
+ * ***Obtenha as cartas jogadas utilizando os índices das cartas passados por
+ * parâmetro, colocando-as em uma lista própria para Cartas.
+ * 
+ * ***Ordene as cartas da menor para a maior.
+ * 
+ * ***Em seguida percorra a lista de cartas começando da segunda até a última. A
+ * cada iteração do laço for, verifique se a carta no índice atual tem como
+ * diferença do valor de uma para outra igual a 1 (Ver Seção Comparable).
+ * 
+ * ***Se a diferença for qualquer valor que não 1, retorne false.
+ * 
+ * ***Se o o laço inteiro executar e não retornar false, é seguro assumir
+ * que a jogada é válida, neste caso a função retorna true.
  *
  * @author LPS
  */
@@ -77,21 +102,38 @@ public class Player {
         Hand.add(c); //Coloca na mão;
     }
     
-    public void BuyDesCard(Table t){
+    public void BuyDescart(Table t){
         Hand.addAll(t.descartPack); //Coloca na mão;
         t.descartPack.clear();  //Remove do descarte;
     }
     
-    public boolean TestPlay(ArrayList play){
+    public boolean TestPlay(ArrayList<Card> play){
+        if (play.size() > 3) //Garante que a jogada tenha 3 ou mais cartas;
+            return false;
+          
+        //Mesmo Nipe:
+        for (int i = 1; i < play.size(); i++){
+            Card c1 = play.get(i);   //Criando referência para pegar os nipes;
+            Card c2 = play.get(i-1);
+            
+            if (c1.nipe.iNipeValue != c2.nipe.iNipeValue)
+                return false;
+        }
         
+        //Sequenciamento de valores:
+        ArrayList<Card> aux = new ArrayList();  //Criação de nova lista auxiliar;
+        for (Card c : play) //Adicionando cartas em aux;
+            aux.add(c);
         
-        for (Card c : Hand)
-            if (c.nipe == play.)
+        Collections.sort(aux);  //Ordenação de ArrayList *NOT SURE
         
-        return true;
+        for (int i = 1; i < play.size(); i++){
+            Card c = play.get(i);   //Ref. para carta do índice atual;
+            if (c.compareTo(play.get(i-1)) != 1)
+                return false;
+        }
         
-        return false;
-        //Retorno true se possível fazer a jogada, false do contrário;
+        return true;    //Caso todo o laço execute sem sair, é seguro assumir true;
     }
     
     public void PlAY(ArrayList play){

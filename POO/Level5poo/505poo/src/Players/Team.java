@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class Team {
     public ArrayList<Player> playerz;
     
-    public Team(){
-        playerz = new ArrayList();
+    public Team(int q){
+        playerz = new ArrayList(q);
     }
         
     //Identifica os jogadores pela sua mão:
