@@ -7,6 +7,7 @@ import Players.Player;
 import Players.Team;
 import Players.TeamType;
 import static java.lang.System.exit;
+import java.util.HashMap;
 
 /**
  * ***A modelagem da Mesa deve conter três listas. A primeira é
@@ -32,7 +33,7 @@ import static java.lang.System.exit;
 public class Table {
     public ArrayList<Card> tablePack;
     public ArrayList<Card> descartPack;
-    public Team TeamA, TeamB;
+    public final HashMap<TeamType, Team> teamMap;
     
     //Criador de mesa de canastra:
     public Table(int n){
@@ -45,16 +46,9 @@ public class Table {
             descartPack = new ArrayList<>();
             
             //Registrando times:
-            switch (n){
-                case 2:
-                    TeamA = new Team(1);
-                    TeamB = new Team(1);  
-                    break;
-                case 4:
-                    TeamA = new Team(2);
-                    TeamB = new Team(2);
-                    break;
-            }
+            teamMap = new HashMap();
+            for (TeamType t : TeamType.values())
+                teamMap.put(t, new Team(t, n));
         }
         
         else
@@ -71,20 +65,17 @@ public class Table {
     
     //Teste de funcionamento:
     private boolean WillHappen(){
-        final int n = TeamA.playerz.size() + TeamB.playerz.size();
-        
-        return n != 2 && n != 4;
+        final int nPl = ;
+        return nPl == 2 || nPl == 4;
     }
 
     //Dando as cartas para os jogadores do time:
-    private void Distribute(Team a, Team b){
-        for (int i = 0; i < 11; i++){
-            for (Player pl : a.playerz)
-                pl.BuyCard(this);
-            
-            for (Player pl : b.playerz)
-                pl.BuyCard(this);
-        }
+    private void Distribute(){
+        for (Team t : teamMap.values())
+            for (int i = 0; i < t.playerz.size(); i++){
+                for (Player p : t.playerz)
+                    p.BuyCard(this);
+            }
     }
     
     public void StartGame(){
@@ -99,6 +90,6 @@ public class Table {
         }
         
         //In da GAME:
-        Distribute(TeamA, TeamB);
+        Distribute();
     }
 }

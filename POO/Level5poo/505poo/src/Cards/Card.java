@@ -57,8 +57,5 @@ public class Card implements Comparable<Card> {
     @Override
     public int compareTo(Card o) {
         return value.iCardValue - o.value.iCardValue;
-    }
-
-    
-    
+    }    
 }

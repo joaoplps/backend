@@ -1,6 +1,7 @@
 package Players;
 
 import Cards.Card;
+import Cards.CardValue;
 import Cards.Nipes;
 import Tables.Table;
 import java.util.ArrayList;
@@ -108,24 +109,30 @@ public class Player {
         t.descartPack.clear();  //Remove do descarte;
     }
     
-    public boolean TestPlay(ArrayList<Card> play){
+    private boolean TestPlay(ArrayList<Card> play){
         if (play.size() < 3) //Garante que a jogada tenha 3 ou mais cartas;
             return false;
           
         //Mesmo Nipe:
         Nipes n1 = play.get(0).nipe;   //Criando referência para o nipe;
         
-        for (int i = 1; i < play.size(); i++){
+        for (int i = 1; i < play.size(); i++)
             if (!n1.equals(play.get(i).nipe))
                 return false;
-        }
         
         //Sequenciamento de valores:
         Collections.sort(play);  //Ordenação de ArrayList;
         
-        for (int i = 1; i < play.size(); i++){
+        //Garantindo jogada especial:
+        int kingAS = 0;
+        if (play.get(play.size()-1).value.equals(CardValue.REI) && play.get(0).value.equals(CardValue.AS))
+            kingAS = 1;
+        
+        //Comparação de valores:
+        Card c0 = play.get(0);   //Atribuir valor Card para utilizar compareTo;
+        for (int i = 1 + kingAS; i < play.size(); i++){
             Card c = play.get(i);   //Ref. para carta do índice atual;
-            if (c.compareTo(play.get(i-1)) != 1)
+            if (c0.compareTo(c) != -1)
                 return false;
         }
         

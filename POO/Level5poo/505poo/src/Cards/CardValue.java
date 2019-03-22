@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @author LPS
  */
 public enum CardValue {
-    AS0(0, "Às"),
+    AS(0, "Às"),
     DOIS(1, "Dois"),
     TRES(2, "Três"),
     QUATRO(3, "Quatro"),

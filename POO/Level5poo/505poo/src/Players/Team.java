@@ -14,11 +14,13 @@ import java.util.ArrayList;
  */
 public class Team {
     public ArrayList<Player> playerz;
+    public final TeamType teamtype;
     
-    public Team(int q){
+    public Team(TeamType t, int q){
         playerz = new ArrayList(q);
+        teamtype = t;
     }
-        
+  
     //Identifica os jogadores pela sua mão:
     @Override
     public String toString(){
