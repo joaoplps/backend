@@ -5,6 +5,7 @@ import Cards.CardPack;
 import java.util.ArrayList;
 import Players.Player;
 import Players.Team;
+import Players.TeamType;
 import static java.lang.System.exit;
 
 /**
@@ -47,7 +48,7 @@ public class Table {
             switch (iNpl){
                 case 2:
                     TeamA = new Team(2);
-                    TeamB = new Team(2);
+                    TeamB = new Team(2);  
                     break;
                 case 4:
                     TeamA = new Team(4);
@@ -63,7 +64,8 @@ public class Table {
     //Identificador: 
     @Override
     public String toString() {
-        return "Mesa de Canastra\n";
+        String showme = "Mesa de Canastra\n Time A:\n" + TeamA.toString() + "\nTime B:\n" + TeamB.toString();
+        return showme;
     }
 
     
@@ -71,16 +73,18 @@ public class Table {
     private boolean WillHappen(){
         final int n = TeamA.playerz.size() + TeamB.playerz.size();
         
-        return n == 2 || n == 4;
+        return n != 2 && n != 4;
     }
 
     //Dando as cartas para os jogadores do time:
     private void Distribute(Team a, Team b){
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 11; i++){
             for (Player pl : a.playerz)
                 pl.BuyCard(this);
+            
             for (Player pl : b.playerz)
                 pl.BuyCard(this);
+        }
     }
     
     public void StartGame(){
