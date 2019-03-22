@@ -37,6 +37,9 @@ public class Team {
         return hands;
     }
     
+    //Numero de jogadores:
+    
+    
     //Adicionar jogador:
     public void RegisterPlayer(Player p){
         playerz.add(p);

@@ -58,10 +58,9 @@ public class Table {
     //Identificador: 
     @Override
     public String toString() {
-        String showme = "Mesa de Canastra\n Time A:\n" + TeamA.toString() + "\nTime B:\n" + TeamB.toString();
+        String showme = "Mesa de Canastra\n";
         return showme;
     }
-
     
     //Teste de funcionamento:
     private boolean WillHappen(){
