@@ -1,9 +1,8 @@
-package Players;
+package Game;
 
 import Cards.Card;
 import Cards.CardValue;
 import Cards.Nipes;
-import Tables.Table;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -65,52 +64,53 @@ import java.util.Collections;
  * @author LPS
  */
 public class Player {
-    public ArrayList<Card> Hand;
-    public TeamType Team;
+    public ArrayList<Card> hand;
+    public TeamType team;
+    private Table table;
     
     //Construtor do jogador:
-    public Player(TeamType t){
-        Hand = new ArrayList();
-        Team = t;
+    public Player(){
+        hand = new ArrayList();
     }
     
     //I AM MY HAND Identificador
     @Override
     public String toString() {
-        String hand = "";
-        
-        if (!Hand.isEmpty()){
-            for (Card c : Hand){
-                hand += c.toString() + " ";
-            }
-            
-            return hand;
-        }
-        
-        return "A mão do jogador está vazia";
+        return hand.toString();
     }
 
     //Métodos de compra e descarte de cartas:
     public boolean DescartCard(int n, Table t){
-        if (Hand.size() < n)
+        if (hand.size() < n)
             return false;
 
-        t.descartPack.add(0, Hand.remove(n));
+        t.descartPack.add(0, hand.remove(n));
         return true;
     }
     
+    private void AnalizeState(){
+        if(table == null)
+            throw new IllegalStateException("The Player needs to be on a table to buy a Card.");
+        
+    }
+    
     public void BuyCard(Table t){
+        AnalizeState();
+        
         Card c = t.tablePack.remove(0); //Remove a primeira carta da pilha;
-        Hand.add(c); //Coloca na mão;
+        hand.add(c); //Coloca na mão;
     }
     
     public void BuyDescart(Table t){
-        Hand.addAll(t.descartPack); //Coloca na mão;
+        AnalizeState();
+        
+        hand.addAll(t.descartPack); //Coloca na mão;
         t.descartPack.clear();  //Remove do descarte;
     }
     
     private boolean TestPlay(ArrayList<Card> play){
-        if (play.size() < 3) //Garante que a jogada tenha 3 ou mais cartas;
+        //Garante que a jogada tenha 3 ou mais cartas;
+        if (play.size() < 3)
             return false;
           
         //Mesmo Nipe:
@@ -139,8 +139,21 @@ public class Player {
         return true;    //Caso todo o laço execute sem sair, é seguro assumir true;
     }
     
-    public void PlAY(ArrayList play){
+    public boolean PlAY(ArrayList play){
+        AnalizeState();
+        ArrayList<Card> cards;
+        
+        //Tratamento de exceção:
+
         if (TestPlay(play))
-            Hand.removeAll(play);
+            hand.removeAll(play);
+    }
+
+    void IsOnTeam(TeamType t) {
+        team = t;
+    }
+    
+    public TeamType getTeam(){
+        return team;
     }
 }

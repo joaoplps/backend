@@ -1,7 +1,4 @@
 package Cards;
-
-import java.util.ArrayList;
-
 /**
  * Data Structure & ArrayList!
  * 

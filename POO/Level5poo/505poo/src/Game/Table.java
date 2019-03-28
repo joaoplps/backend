@@ -1,11 +1,8 @@
-package Tables;
+package Game;
 
 import Cards.Card;
 import Cards.CardPack;
 import java.util.ArrayList;
-import Players.Player;
-import Players.Team;
-import Players.TeamType;
 import static java.lang.System.exit;
 import java.util.HashMap;
 
@@ -31,35 +28,37 @@ import java.util.HashMap;
  * @author LPS
  */
 public class Table {
-    public ArrayList<Card> tablePack;
-    public ArrayList<Card> descartPack;
+    public ArrayList<Card> tablePack, descartPack;
     public final HashMap<TeamType, Team> teamMap;
     
     //Criador de mesa de canastra:
     public Table(int n){
-        if (n == 2 || n == 4){    //Controla número de jogadores;
             //Cria e adiciona baralho de canastra na mesa:
             tablePack = new ArrayList<>();
             tablePack.addAll(CardPack.canastra());
-            
+
             //Cria a pilha para descarte das cartas:
             descartPack = new ArrayList<>();
-            
+
             //Registrando times:
             teamMap = new HashMap();
             for (TeamType t : TeamType.values())
-                teamMap.put(t, new Team(t, n));
-        }
-        
-        else
-            System.out.println("Essa mesa aceita apenas 2 ou 4 jogadores.");
+                teamMap.put(t, new Team(t));
     }
     
-    //Identificador: 
+    //Identificador:
     @Override
     public String toString() {
-        String showme = "Mesa de Canastra\n";
+        String showme = "Mesa de Canastra";
         return showme;
+    }
+    
+    //Criação de jogadores:
+    public void NewPlayer(Player p){
+        if(p == null)
+            throw new IllegalArgumentException("Null Player cant't be created.");
+        
+        
     }
     
     //Teste de funcionamento:

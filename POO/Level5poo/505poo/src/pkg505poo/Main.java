@@ -2,10 +2,10 @@ package pkg505poo;
 
 import Cards.Card;
 import Cards.CardPack;
-import Players.Player;
-import Players.Team;
-import Players.TeamType;
-import Tables.Table;
+import Game.Player;
+import Game.Team;
+import Game.TeamType;
+import Game.Table;
 import java.util.ArrayList;
 
 /**
@@ -39,16 +39,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Table table1 = new Table(4);
-        
-        Player PA1 = new Player(TeamType.A);
-        table1.TeamA.RegisterPlayer(PA1);
-        Player PA2 = new Player(TeamType.A);
-        table1.TeamA.RegisterPlayer(PA2);
-
-        Player PB1 = new Player(TeamType.B);
-        table1.TeamB.RegisterPlayer(PB1);
-        Player PB2 = new Player(TeamType.B);
-        table1.TeamB.RegisterPlayer(PB2);
         
         table1.StartGame();
         

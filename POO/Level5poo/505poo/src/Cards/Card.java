@@ -28,8 +28,8 @@ public class Card implements Comparable<Card> {
     public final Nipes nipe;
     public final CardValue value;
     
-    //Construtor:
-    public Card (Nipes n, CardValue v){
+    //Construtor friendly, pois somente o baralho cria as cartas:
+    Card (Nipes n, CardValue v){
         nipe = n;
         value = v;
     }
@@ -43,6 +43,10 @@ public class Card implements Comparable<Card> {
     //Comparador com outra carta:
     @Override
     public boolean equals(Object o){
+        //Tratamento de exceção:
+        if (o == null)
+            return false;
+        
         if (o instanceof Card){
             Card c = (Card) o;
             return c.nipe == nipe && c.value == value;
@@ -56,6 +60,10 @@ public class Card implements Comparable<Card> {
     //Implementação da interface:
     @Override
     public int compareTo(Card o) {
+        //Tratamento de exceções:
+        if(o == null)
+            throw new IllegalArgumentException("A Card can't be compared to null.");
+        
         return value.iCardValue - o.value.iCardValue;
     }    
 }
