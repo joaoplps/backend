@@ -20,11 +20,6 @@ public class Continent extends Territory {
         if(c.size() < 1)
             throw new IllegalArgumentException("Continents must have at least one country.");
     }
-    
-    @Override
-    public ArrayList<Country> countries(){
-        return countries;
-    }
 
     @Override
     public Color conquered() {
