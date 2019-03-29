@@ -19,6 +19,14 @@ public class Country extends Territory {
         return army;
     }
     
+    public void assignArmy(Army a){
+        if(army == null)
+            army = a;
+        
+        else
+            throw new IllegalStateException("A Country can't recieve this Army.");
+    }
+    
     public ArrayList<Country> neighboors(){
         return countries();
     }

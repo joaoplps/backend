@@ -12,12 +12,11 @@ public class Continent extends Territory {
         super(n);
         validate(c);
         
-        for(Country x : c)
-            countries.add(x);
+        countries.addAll(c);
     }
     
     private void validate(ArrayList<Country> c) {
-        if(c.size() < 1)
+        if(c == null || c.size() < 1)
             throw new IllegalArgumentException("Continents must have at least one country.");
     }
 
