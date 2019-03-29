@@ -1,5 +1,7 @@
-package model;
+package model.board;
 
+import model.player.Army;
+import model.player.Color;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +20,7 @@ public class Country extends Territory {
     }
     
     public ArrayList<Country> neighboors(){
-        return territories;
+        return countries();
     }
 
     @Override
@@ -26,7 +28,6 @@ public class Country extends Territory {
         if(army == null)
             return null;
         
-        else
-            return army.color;
+        return army.color;
     }
 }

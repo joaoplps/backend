@@ -1,5 +1,6 @@
-package model;
+package model.board;
 
+import model.player.Color;
 import java.util.ArrayList;
 
 /**
@@ -8,22 +9,22 @@ import java.util.ArrayList;
  */
 public abstract class Territory {
     public final String name;
-    protected ArrayList<Country> territories;
+    protected ArrayList<Country> countries;
     
     protected Territory(String n){
         name = n;
-        validateCreation();
+        validate();
         
-        territories = new ArrayList();
+        countries = new ArrayList();
     }
     
-    private void validateCreation(){
+    private void validate(){
         if(name == null)
             throw new IllegalStateException("The name can't be null.");
     }
     
-    public ArrayList territories(){
-        return territories;
+    public ArrayList<Country> countries(){
+        return countries;
     }
     
     public abstract Color conquered();

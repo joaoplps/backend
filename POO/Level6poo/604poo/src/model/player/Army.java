@@ -1,4 +1,4 @@
-package model;
+package model.player;
 /**
  *
  * @author LPS
@@ -12,10 +12,10 @@ public class Army {
         quantity = q;
         color = c;
 
-        validateCreation();
+        validate();
     }
     
-    private void validateCreation(){
+    private void validate(){
         if(color == null)
             throw new IllegalStateException("The color can't be null.");
         
