@@ -1,4 +1,4 @@
-package Cards;
+package model.Cards;
 /**
  * ***Os Naipes são Ouro, Paus, Copas e Espadas.
  *

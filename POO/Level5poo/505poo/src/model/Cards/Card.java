@@ -1,4 +1,4 @@
-package Cards;
+package model.Cards;
 /** 
  * -- 1a parte --
  * 

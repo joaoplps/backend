@@ -1,4 +1,4 @@
-package Game;
+package model.Game;
 
 /**
  * -- 2a parte --

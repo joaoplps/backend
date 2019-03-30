@@ -1,4 +1,4 @@
-package Game;
+package model.Game;
 
 import java.util.ArrayList;
 
@@ -32,5 +32,9 @@ public class Team {
     
     public Player getPlayer(int i){
         return playerz.get(i);
+    }
+    
+    public int NumberOfPlayerz(){
+        return playerz.size();
     }
 }

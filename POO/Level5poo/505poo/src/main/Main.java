@@ -1,12 +1,4 @@
-package pkg505poo;
-
-import Cards.Card;
-import Cards.CardPack;
-import Game.Player;
-import Game.Team;
-import Game.TeamType;
-import Game.Table;
-import java.util.ArrayList;
+package main;
 
 /**
  * Data Structure & ArrayList!
@@ -38,12 +30,6 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        Table table1 = new Table(4);
-        
-        table1.StartGame();
-        
-        System.out.println(table1);
-        
-        
+
     }
 }

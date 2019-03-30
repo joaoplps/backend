@@ -1,7 +1,7 @@
-package Game;
+package model.Game;
 
-import Cards.Card;
-import Cards.CardPack;
+import model.Cards.Card;
+import model.Cards.CardPack;
 import java.util.ArrayList;
 import static java.lang.System.exit;
 import java.util.HashMap;
@@ -49,8 +49,15 @@ public class Table {
     //Identificador:
     @Override
     public String toString() {
-        String showme = "Mesa de Canastra";
-        return showme;
+        String id = "Table\n";
+        id += "\tDescart\n";
+        id += "\t\t" + descartPack.toString() + "\n";
+        id += "\n\tPlayers";
+
+        for(Team t : teamMap.values())
+            id += t.toString();
+        
+        return id;
     }
     
     //Criação de jogadores:
@@ -61,9 +68,18 @@ public class Table {
         
     }
     
+    private int NumberOfPlayers(){
+        int i = 0;
+        
+        for (Team t : teamMap.values())
+            i += t.NumberOfPlayerz();
+        
+        return i;
+    }
+    
     //Teste de funcionamento:
     private boolean WillHappen(){
-        final int nPl = ;
+        final int nPl = NumberOfPlayers();
         return nPl == 2 || nPl == 4;
     }
 
@@ -81,12 +97,7 @@ public class Table {
             System.out.println("Número inválido de jogadores.");
             exit(1); //Stop program with error (1)
         }
-        
-        if (tablePack.size() != 104){
-            System.out.println("As configurações do baralho não são compatíveis com o jogo de canastra");
-            exit(1); //Stop program with error (1)
-        }
-        
+
         //In da GAME:
         Distribute();
     }

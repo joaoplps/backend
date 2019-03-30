@@ -1,8 +1,8 @@
-package Game;
+package model.Game;
 
-import Cards.Card;
-import Cards.CardValue;
-import Cards.Nipes;
+import model.Cards.Card;
+import model.Cards.CardValue;
+import model.Cards.Nipes;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -97,8 +97,7 @@ public class Player {
     public void BuyCard(Table t){
         AnalizeState();
         
-        Card c = t.tablePack.remove(0); //Remove a primeira carta da pilha;
-        hand.add(c); //Coloca na mão;
+        hand.add(t.tablePack.remove(0)); //Coloca na mão, removendo a primeira carta da pilha;
     }
     
     public void BuyDescart(Table t){
@@ -139,18 +138,43 @@ public class Player {
         return true;    //Caso todo o laço execute sem sair, é seguro assumir true;
     }
     
+    private ArrayList<Card> CardByIndex(ArrayList<Integer> move) {
+        ArrayList<Card> cards = new ArrayList();
+        
+        if(move == null)
+            throw new IllegalArgumentException();
+        
+        for(Integer i : move)
+            if(hand.size() > i && i > 0)
+                cards.add(hand.get(i));
+        
+        return cards;
+    }
+    
     public boolean PlAY(ArrayList play){
         AnalizeState();
         ArrayList<Card> cards;
         
         //Tratamento de exceção:
-
-        if (TestPlay(play))
-            hand.removeAll(play);
+        try {
+            cards = CardByIndex(play);
+        } catch(IllegalArgumentException e) {
+            return false;
+        }
+        
+        if (!TestPlay(play))
+            return false;
+            
+        hand.removeAll(play);
+        return true;
     }
 
-    void IsOnTeam(TeamType t) {
-        team = t;
+    void IsOnTeam(TeamType tt) {
+        team = tt;
+    }
+    
+    void IsOnTable(Table t){
+        table = t;
     }
     
     public TeamType getTeam(){
