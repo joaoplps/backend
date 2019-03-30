@@ -1,8 +1,8 @@
 package main;
 
-import Books.Book;
-import Books.Datasheet;
-import Books.Gender;
+import model.book.Book;
+import model.book.DataSheet;
+import model.book.Gender;
 
 /**
  * HASH MAP!
@@ -24,16 +24,14 @@ import Books.Gender;
  */
 public class Main {
     public static void main(String[] args) {
-        Datasheet ds0 = new Datasheet("Nome", 1, "Autor");
-        Datasheet ds1 = new Datasheet("Nome", 1, "Autor");
+        DataSheet ds0 = new DataSheet("Name", "Author", 1);
+        DataSheet ds1 = new DataSheet("Name", "Author", 1);
         
-        Book bk0 = new Book(ds1, Gender.HORROR, 1987);
+        Book b = new Book(ds1, Gender.HORROR, 1999);
         
-        
-        System.out.println(bk0.equals(ds0));
-        System.out.println(ds0.equals(bk0));
+        System.out.println(b.equals(ds0));
+        System.out.println(ds0.equals(b));
         System.out.println(ds1.equals(ds0));
-        System.out.println(bk0.equals(ds1));
-
+        System.out.println(b.equals(ds1));
     }
 }

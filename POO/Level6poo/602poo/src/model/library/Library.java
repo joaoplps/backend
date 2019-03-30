@@ -1,8 +1,9 @@
-package model.Library;
+package model.library;
 
-import Books.Book;
-import com.sun.java.util.jar.pack.ConstantPool.Index;
 import java.util.ArrayList;
+import model.book.Book;
+import model.shelf.IdxConstructor;
+import model.shelf.Index;
 
 /**
  *
@@ -12,7 +13,7 @@ public class Library {
     private final ArrayList<Index> indexes;
     
     public Library () {
-        indexes = IndexConstructor.createIndexes();
+        indexes = IdxConstructor.createIndexes();
     }
     
     public void RegisterBook(Book b){

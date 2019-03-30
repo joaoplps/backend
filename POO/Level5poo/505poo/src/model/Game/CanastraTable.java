@@ -27,12 +27,12 @@ import java.util.HashMap;
  *
  * @author LPS
  */
-public class Table {
+public class CanastraTable {
     public ArrayList<Card> tablePack, descartPack;
     public final HashMap<TeamType, Team> teamMap;
     
     //Criador de mesa de canastra:
-    public Table(int n){
+    public CanastraTable(int n){
             //Cria e adiciona baralho de canastra na mesa:
             tablePack = new ArrayList<>();
             tablePack.addAll(CardPack.canastra());

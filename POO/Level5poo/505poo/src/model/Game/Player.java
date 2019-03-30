@@ -66,7 +66,7 @@ import java.util.Collections;
 public class Player {
     public ArrayList<Card> hand;
     public TeamType team;
-    private Table table;
+    private CanastraTable table;
     
     //Construtor do jogador:
     public Player(){
@@ -80,7 +80,7 @@ public class Player {
     }
 
     //Métodos de compra e descarte de cartas:
-    public boolean DescartCard(int n, Table t){
+    public boolean DescartCard(int n, CanastraTable t){
         if (hand.size() < n)
             return false;
 
@@ -94,13 +94,13 @@ public class Player {
         
     }
     
-    public void BuyCard(Table t){
+    public void BuyCard(CanastraTable t){
         AnalizeState();
         
         hand.add(t.tablePack.remove(0)); //Coloca na mão, removendo a primeira carta da pilha;
     }
     
-    public void BuyDescart(Table t){
+    public void BuyDescart(CanastraTable t){
         AnalizeState();
         
         hand.addAll(t.descartPack); //Coloca na mão;
@@ -173,7 +173,7 @@ public class Player {
         team = tt;
     }
     
-    void IsOnTable(Table t){
+    void IsOnTable(CanastraTable t){
         table = t;
     }
     
