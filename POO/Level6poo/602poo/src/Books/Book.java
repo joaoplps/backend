@@ -1,6 +1,6 @@
 package Books;
 
-import Characteristics.Comparable;
+import control.Characteristic.Comparable;
 
 /**
  *

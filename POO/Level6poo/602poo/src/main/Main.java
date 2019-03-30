@@ -1,4 +1,4 @@
-package pkg602poo;
+package main;
 
 import Books.Book;
 import Books.Datasheet;

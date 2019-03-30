@@ -1,4 +1,4 @@
-package Characteristics;
+package control.Characteristic;
 
 import Books.Identity;
 
