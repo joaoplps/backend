@@ -151,21 +151,30 @@ public class Player {
         return cards;
     }
     
-    public boolean PlAY(ArrayList play){
+    public boolean PlAY(ArrayList cards){
         AnalizeState();
-        ArrayList<Card> cards;
+        ArrayList<Card> move;
         
         //Tratamento de exceção:
         try {
-            cards = CardByIndex(play);
+            move = CardByIndex(cards);
         } catch(IllegalArgumentException e) {
             return false;
         }
         
-        if (!TestPlay(play))
+        if (!TestPlay(move))
             return false;
-            
-        hand.removeAll(play);
+        
+        hand.removeAll(move);
+        
+        switch (team) {
+            case A:
+                break;
+            case B:
+                break;
+            default:
+                return false;
+        }
         return true;
     }
 
