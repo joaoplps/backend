@@ -2,7 +2,7 @@ package model.player;
 
 /**
  *
- * @author LPs
+ * @author LPS
  */
 public enum Color {
     //Opções de cor para os jogadores / exércitos:

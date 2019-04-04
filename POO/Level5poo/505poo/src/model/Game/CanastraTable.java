@@ -77,6 +77,10 @@ public class CanastraTable {
         return i;
     }
     
+    public getPlayerTeam(){
+        
+    }
+    
     //Teste de funcionamento:
     private boolean WillHappen(){
         final int nPl = NumberOfPlayers();

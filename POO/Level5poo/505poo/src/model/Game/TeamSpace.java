@@ -18,15 +18,22 @@ import model.Cards.Card;
  *
  * @author LPS
  */
-public class TeamGame {
-    public ArrayList<ArrayList<Card>> plays;
+public class TeamSpace {
+    private final Move moves;
     
-    TeamGame(){
-        plays = new ArrayList();
+    TeamSpace(){
+        moves = new ArrayList();
     }
     
-    public void GetMove(ArrayList<Card> play){
-        plays.add(play);
+    public void GetMove(ArrayList<Card> move){
+        if (move == null)
+            return;
+        
+        moves.add(move);
+    }
+    
+    public ArrayList<Move> moves(){
+        return moves;
     }
     
     @Override

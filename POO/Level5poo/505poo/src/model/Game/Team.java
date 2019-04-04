@@ -1,7 +1,6 @@
 package model.Game;
 
 import java.util.ArrayList;
-import model.Cards.Card;
 
 /**
  * -- 2a parte --
@@ -20,12 +19,17 @@ import model.Cards.Card;
 public class Team {
     public ArrayList<Player> playerz;
     public final TeamType teamtype;
-    public TeamGame teamgame;
+    public TeamSpace teamspace;
     
     Team(TeamType t){
         playerz = new ArrayList();
         teamtype = t;
-        teamgame = new TeamGame();
+        teamspace = new TeamSpace();
+    }
+    
+    public void getMove(Move m, Player p){
+        if(playerz.contains(p))
+            RegisterPlayer(p);
     }
 
     //Adicionar jogador:

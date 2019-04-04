@@ -64,13 +64,13 @@ import java.util.Collections;
  * @author LPS
  */
 public class Player {
-    public ArrayList<Card> hand;
+    public Move hand;
     public TeamType team;
     private CanastraTable table;
     
     //Construtor do jogador:
     public Player(){
-        hand = new ArrayList();
+        hand = new Move();
     }
     
     //I AM MY HAND Identificador
@@ -107,37 +107,6 @@ public class Player {
         t.descartPack.clear();  //Remove do descarte;
     }
     
-    private boolean TestPlay(ArrayList<Card> play){
-        //Garante que a jogada tenha 3 ou mais cartas;
-        if (play.size() < 3)
-            return false;
-          
-        //Mesmo Nipe:
-        Nipes n1 = play.get(0).nipe;   //Criando referência para o nipe;
-        
-        for (int i = 1; i < play.size(); i++)
-            if (!n1.equals(play.get(i).nipe))
-                return false;
-        
-        //Sequenciamento de valores:
-        Collections.sort(play);  //Ordenação de ArrayList;
-        
-        //Garantindo jogada especial:
-        int kingAS = 0;
-        if (play.get(play.size()-1).value.equals(CardValue.REI) && play.get(0).value.equals(CardValue.AS))
-            kingAS = 1;
-        
-        //Comparação de valores:
-        Card c0 = play.get(0);   //Atribuir valor Card para utilizar compareTo;
-        for (int i = 1 + kingAS; i < play.size(); i++){
-            Card c = play.get(i);   //Ref. para carta do índice atual;
-            if (c0.compareTo(c) != -1)
-                return false;
-        }
-        
-        return true;    //Caso todo o laço execute sem sair, é seguro assumir true;
-    }
-    
     private ArrayList<Card> CardByIndex(ArrayList<Integer> move) {
         ArrayList<Card> cards = new ArrayList();
         
@@ -153,16 +122,16 @@ public class Player {
     
     public boolean PlAY(ArrayList cards){
         AnalizeState();
-        ArrayList<Card> move;
+        Move move;
         
         //Tratamento de exceção:
         try {
-            move = CardByIndex(cards);
+            move = new Move(CardByIndex(cards));
         } catch(IllegalArgumentException e) {
             return false;
         }
         
-        if (!TestPlay(move))
+        if (!validate(move))
             return false;
         
         hand.removeAll(move);
