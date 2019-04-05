@@ -1,54 +1,48 @@
--- MySQL Workbench Forward Engineering
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema War
+-- Schema war
 -- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `war` DEFAULT CHARACTER SET utf8 ;
+USE `war` ;
 
 -- -----------------------------------------------------
--- Schema War
+-- Table `war`.`continent`
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `War` DEFAULT CHARACTER SET utf8 ;
-USE `War` ;
-
--- -----------------------------------------------------
--- Table `War`.`Continente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `War`.`Continente` (
-`idContinente` INT NOT NULL,
-`Nome` VARCHAR(45) NULL,
-PRIMARY KEY (`idContinente`))
+CREATE TABLE IF NOT EXISTS `war`.`continent` (
+`idcontinent` INT AUTO_INCREMENT,
+`name` VARCHAR(45) NULL,
+PRIMARY KEY (`idcontinent`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `War`.`Tropa`
+-- Table `war`.`army`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `War`.`Tropa` (
-`idTropa` INT NOT NULL,
-`Unidades` INT NULL,
-`Cor` INT NULL,
-PRIMARY KEY (`idTropa`))
+CREATE TABLE IF NOT EXISTS `war`.`army` (
+`idarmy` INT AUTO_INCREMENT,
+`units` INT NULL,
+`color` INT NULL,
+PRIMARY KEY (`idarmy`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `War`.`Pais`
+-- Table `war`.`country`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `War`.`Pais` (
-`idPais` INT NOT NULL,
-`Nome` VARCHAR(45) NULL,
-`Tropa` INT NOT NULL,
-PRIMARY KEY (`idPais`),
-INDEX `fk_Pais_Tropa1_idx` (`Tropa` ASC),
-CONSTRAINT `fk_Pais_Tropa1`
-FOREIGN KEY (`Tropa`)
-REFERENCES `War`.`Tropa` (`idTropa`)
+CREATE TABLE IF NOT EXISTS `war`.`country` (
+`idcountry` INT AUTO_INCREMENT,
+`name` VARCHAR(45) NULL,
+`army` INT,
+PRIMARY KEY (`idcountry`),
+INDEX `fk_country_army1_idx` (`army` ASC),
+CONSTRAINT `fk_country_army1`
+FOREIGN KEY (`army`)
+REFERENCES `war`.`army` (`idarmy`)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -56,23 +50,23 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `War`.`Territorio`
+-- Table `war`.`territory`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `War`.`Territorio` (
-`idTerritorio` INT NOT NULL,
-`Continente` INT NOT NULL,
-`Pais` INT NOT NULL,
-PRIMARY KEY (`idTerritorio`),
-INDEX `fk_Territorio_Continente1_idx` (`Continente` ASC),
-INDEX `fk_Territorio_Pais1_idx` (`Pais` ASC),
-CONSTRAINT `fk_Territorio_Continente1`
-FOREIGN KEY (`Continente`)
-REFERENCES `War`.`Continente` (`idContinente`)
+CREATE TABLE IF NOT EXISTS `war`.`territory` (
+`idterritory` INT AUTO_INCREMENT,
+`continent` INT NOT NULL,
+`country` INT NOT NULL,
+PRIMARY KEY (`idterritory`),
+INDEX `fk_territory_continent1_idx` (`continent` ASC),
+INDEX `fk_territory_country1_idx` (`country` ASC),
+CONSTRAINT `fk_territory_continent1`
+FOREIGN KEY (`continent`)
+REFERENCES `war`.`continent` (`idcontinent`)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION,
-CONSTRAINT `fk_Territorio_Pais1`
-FOREIGN KEY (`Pais`)
-REFERENCES `War`.`Pais` (`idPais`)
+CONSTRAINT `fk_territory_country1`
+FOREIGN KEY (`country`)
+REFERENCES `war`.`country` (`idcountry`)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION)
 ENGINE = InnoDB
