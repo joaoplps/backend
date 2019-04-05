@@ -6,10 +6,16 @@ package model.player;
  */
 public enum Color {
     //Opções de cor para os jogadores / exércitos:
-    VERMELHO,
-    VERDE,
-    AZUL,
-    AMARELO;
+    RED("Vermelho"),
+    GREEN("Verde"),
+    BLUE("Azul"),
+    YELLOW("Amarelo");
+    
+    public final String name;
+    
+    private Color(String n){
+        name = n;
+    }
     
     public static Color colorByIndex(int i){
         if(i < 0 || i >= Color.values().length)
