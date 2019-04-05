@@ -1,6 +1,7 @@
 package model.player;
 
 /**
+ * Enums = Constantes: não depende de banco de dados!!!
  *
  * @author LPS
  */
