@@ -8,7 +8,23 @@ public class Car {
     private Totem totem;
     public final String plate;
     
-    public void park(Totem t){}
+    public Car(String p){
+        plate = p;
+        validate();
+    }
     
-    public void leave(){}
+    private void validate(){
+        if(plate == null)
+            throw new IllegalArgumentException("Plate cannot be null.");
+    }
+    
+    public void park(Totem t){
+        totem = t;
+        totem.regEntry(this);
+    }
+    
+    public void leave(){
+        totem.regLeave(this);
+        totem = null;
+    }
 }
