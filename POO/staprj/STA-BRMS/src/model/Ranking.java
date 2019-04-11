@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public class Ranking {
+public abstract class Ranking {
     public String name;
     public ArrayList<Offer> offers;
     

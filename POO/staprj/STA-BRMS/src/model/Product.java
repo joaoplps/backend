@@ -18,7 +18,7 @@ public class Product {
     
     private void validate(){
         if(name == null || detail == null)
-            throw new IllegalArgumentException("Any of the product's attributes cannot be empty.");
+            throw new IllegalArgumentException("Product's attributes cannot be empty.");
         if(price < 0)
             throw new IllegalArgumentException("Product price cannot be negative.");
     }

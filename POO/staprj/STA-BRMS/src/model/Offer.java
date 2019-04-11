@@ -30,4 +30,9 @@ public class Offer {
         }
         return s += "There is no product in stock.";
     }
+    
+    public void updateStock(){
+        if(stock && quantity == 0)
+            stock = false;
+    }
 }
