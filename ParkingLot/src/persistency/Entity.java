@@ -17,7 +17,8 @@ public abstract class Entity {
     protected Connection conn;
     
     protected Statement createCmd() throws SQLException {
-        conn = DriverManager.getConnection(url, user, passwd);
+        if(conn == null)
+            conn = DriverManager.getConnection(url, user, passwd);
         return conn.createStatement();
     }
     
