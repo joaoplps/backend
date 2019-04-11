@@ -23,11 +23,11 @@ public class CountryEntity extends Entity {
             Statement cmd = createCmd();
 
             //Executar consulta (cmd) atribuindo ao resultado "res":
-            ResultSet res = cmd.executeQuery("select * from country where idcountry=" + id + ";");
+            ResultSet result = cmd.executeQuery("select * from country where idcountry=" + id + ";");
 
-            while(res.next()){
-                String name = res.getString("name");
-                Integer army = res.getInt("army");
+            while(result.next()){
+                String name = result.getString("name");
+                Integer army = result.getInt("army");
                 country = createCountry(name, army);
             }
         }

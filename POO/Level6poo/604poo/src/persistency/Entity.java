@@ -25,5 +25,6 @@ public abstract class Entity {
     protected void closeConn() throws SQLException {
         if(conn != null)
             conn.close();
+        conn = null; //Perde referência SOMENTE APÓS fechar a conexão;
     }
 }
