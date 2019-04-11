@@ -13,6 +13,14 @@ public class Product {
         name = n;
         detail = d;
         price = p;
+        validate();
+    }
+    
+    private void validate(){
+        if(name == null || detail == null)
+            throw new IllegalArgumentException("Any of the product's attributes cannot be empty.");
+        if(price < 0)
+            throw new IllegalArgumentException("Product price cannot be negative.");
     }
 
     @Override

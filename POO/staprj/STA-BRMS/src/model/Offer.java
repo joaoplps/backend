@@ -9,10 +9,16 @@ public class Offer {
     public int quantity;
     public Product product;
     
-    public Offer(boolean s, int q, Product p){
-        stock = s;
+    public Offer(int q, Product p){
         quantity = q;
         product = p;
+        validate();
+    }
+    
+    private void validate(){
+        if(quantity < 0)
+            throw new IllegalArgumentException("Quantity cannot be null or negative.");
+        stock = true;
     }
 
     @Override
@@ -22,6 +28,6 @@ public class Offer {
             s += "Quantity: " + quantity;
             return s;
         }
-        return s;
-    } 
+        return s += "There is no product in stock.";
+    }
 }
