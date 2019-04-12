@@ -5,7 +5,6 @@ package model;
  * @author LPS
  */
 public class Offer {
-    public boolean stock;
     public int quantity;
     public Product product;
     
@@ -18,21 +17,15 @@ public class Offer {
     private void validate(){
         if(quantity < 0)
             throw new IllegalArgumentException("Quantity cannot be null or negative.");
-        stock = true;
     }
 
     @Override
     public String toString() {
         String s = product.name + "\n\t";
-        if(stock){
+        if(quantity == 0){
             s += "Quantity: " + quantity;
             return s;
         }
         return s += "There is no product in stock.";
-    }
-    
-    public void updateStock(){
-        if(stock && quantity == 0)
-            stock = false;
     }
 }

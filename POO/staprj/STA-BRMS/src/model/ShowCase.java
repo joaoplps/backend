@@ -6,19 +6,12 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public abstract class Ranking {
+public abstract class ShowCase {
     public String name;
     public ArrayList<Offer> offers;
     
-    public Ranking(String n){
+    public ShowCase(String n){
         offers = new ArrayList();
-        name = n;
-        validate();
-    }
-    
-    private void validate(){
-        if(name == null)
-            throw new IllegalArgumentException("The ranking's name cannot be empty.");
     }
     
     public void addOffer(Offer o){
