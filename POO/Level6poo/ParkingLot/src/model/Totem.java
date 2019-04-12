@@ -32,8 +32,10 @@ class Totem {
     }
     
     public void regEntry(Car c){
-        if(c != null && !cars.containsKey(c))
+        if(c != null && !cars.containsKey(c)){
             cars.put(c, time);
+            System.out.println("The car " + c.plate + " parked at " + street + ".");
+        }
     }
 
     public void regLeave(Car c){
@@ -48,6 +50,8 @@ class Totem {
         
         regs.add(new Registry(entry, leave, c.plate));
         cars.remove(c);
+        
+        System.out.println("The car " + c.plate + " left " + street + ".");
     }
     
     public void increaseTime(){

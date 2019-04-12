@@ -18,6 +18,8 @@ class Registry {
         leaveTime = l;
         plate = p;
         validate();
+        
+        System.out.println("A new registry has been created:\n\tCar Plate: " + plate + "Arrival: " + entryTime + "\n\tExit: " + leaveTime);
     }
 
     @Override
