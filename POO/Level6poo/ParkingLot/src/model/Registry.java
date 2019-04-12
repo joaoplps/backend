@@ -5,12 +5,25 @@ package model;
  * @author LPS
  */
 class Registry {
-    private int entryTime;
-    private int leaveTime;
+    private int entryTime, leaveTime;
     private String plate;
 
-    Registry(int entry, int leave) {
-        entryTime = entry;
-        leaveTime = leave;
+    private void validate() {
+        if(entryTime < 0 || leaveTime < 0)
+            throw new IllegalArgumentException("Time cannot be negative.");
     }
+    
+    Registry(int e, int l, String p) {
+        entryTime = e;
+        leaveTime = l;
+        plate = p;
+        validate();
+    }
+
+    @Override
+    public String toString() {
+        return "[ " + entryTime + ", " + leaveTime + " ]";
+    }
+    
+    
 }
