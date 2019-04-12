@@ -13,7 +13,7 @@ public class Offer extends OfferSubject {
         validate();
     }
     
-    private void validate(){
+    private void validate(){ //Validate offer;
         if(quantity < 0)
             throw new IllegalArgumentException("Quantity cannot be negative.");
     }
@@ -22,14 +22,17 @@ public class Offer extends OfferSubject {
     public String toString() {
         String s = product.name + "\n\t";
         if(quantity > 0){
-            s += "Quantity: " + quantity;
+            s += "Quantity: " + quantity + "\n";
             return s;
         }
-        return s += "There is no product in stock.";
+        return s += "No product in stock.\n";
     }
     
-    public void endOffer(){
-        if(quantity == 0)
-            notification();
+    public boolean endedOffer(){ //The offer ended?
+        if(quantity <= 0){ //Make sure of that;
+            notification(); //Notify the list of observers;
+            return true;
+        }
+        return false; //If quantity is greater than 0, the offer exists;
     }
 }

@@ -3,7 +3,7 @@ package model;
 /**
  * @author LPS
  */
-public class Product {
+public class Product { //A Product representation;
     public String name;
     public String detail;
     public double price;
@@ -15,7 +15,7 @@ public class Product {
         validate();
     }
     
-    private void validate(){
+    private void validate(){ //Validate object;
         if(name == null || detail == null)
             throw new IllegalArgumentException("Product's attributes cannot be empty.");
         if(price < 0)
