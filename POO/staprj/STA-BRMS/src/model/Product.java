@@ -4,9 +4,9 @@ package model;
  * @author LPS
  */
 public class Product { //A Product representation;
-    public String name;
-    public String detail;
-    public double price;
+    public final String name;
+    public final String detail;
+    public final double price;
     
     public Product(String n, String d, int p){
         name = n;
@@ -16,9 +16,9 @@ public class Product { //A Product representation;
     }
     
     private void validate(){ //Validate object;
-        if(name == null || detail == null)
+        if(name == null || name.isEmpty())
             throw new IllegalArgumentException("Product's attributes cannot be empty.");
-        if(price < 0)
+        if(price <= 0)
             throw new IllegalArgumentException("Product price cannot be negative.");
     }
 

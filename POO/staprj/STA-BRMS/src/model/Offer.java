@@ -4,8 +4,8 @@ package model;
  * @author LPS
  */
 public class Offer extends ObservedImpl {
-    public int quantity;
-    public Product product;
+    private int quantity;
+    public final Product product;
     
     public Offer(int q, Product p){
         quantity = q;
@@ -16,6 +16,12 @@ public class Offer extends ObservedImpl {
     private void validate(){ //Validate offer;
         if(quantity < 0)
             throw new IllegalArgumentException("Quantity cannot be negative.");
+        if(product == null)
+            throw new IllegalArgumentException("Product cannot be null.");
+    }
+    
+    public int quantity(){
+        return quantity;
     }
 
     @Override
@@ -29,11 +35,13 @@ public class Offer extends ObservedImpl {
     }
     
     public void sell(int q){ //Sell method;
-        if(quantity >= 0 + q){
+        if(quantity >= q){
             quantity-= q;
             if(quantity == 0)
                 endOffer();
         }
+        else
+            throw new IllegalArgumentException("");
     }
     
     public void endOffer(){ //End the offer;

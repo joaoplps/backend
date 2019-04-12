@@ -6,9 +6,9 @@ import java.util.ArrayList;
  * @author LPS
  */
 public abstract class ShowCase implements Observer { //Showcase model, offer dependent;
-    public ArrayList<Offer> offers;
+    private ArrayList<Offer> offers;
     
-    public ShowCase(String n){
+    public ShowCase(){
         offers = new ArrayList();
     }
     
@@ -22,7 +22,10 @@ public abstract class ShowCase implements Observer { //Showcase model, offer dep
         Offer ofr = (Offer) o;
         ofr.unregister(this);
         offers.remove(ofr);
-        
+    }
+    
+    public ArrayList<Offer> offers(){
+        return offers;
     }
     
     @Override
