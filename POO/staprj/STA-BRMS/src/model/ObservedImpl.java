@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author aluno
  */
-public abstract class ObservedImpl implements Observed {
+public abstract class ObservedImpl implements Observed { //Implementation: type of observation)
     private final ArrayList<Observer> observers;
     
     protected ObservedImpl(){

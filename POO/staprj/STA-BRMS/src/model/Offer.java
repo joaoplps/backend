@@ -23,16 +23,6 @@ public class Offer extends ObservedImpl {
     public int quantity(){
         return quantity;
     }
-
-    @Override
-    public String toString() {
-        String s = product.name + "\n\t";
-        if(quantity > 0){
-            s += "Quantity: " + quantity + "\n";
-            return s;
-        }
-        return s += "No product in stock.\n";
-    }
     
     public void sell(int q){ //Sell method;
         if(quantity >= q){
@@ -46,5 +36,15 @@ public class Offer extends ObservedImpl {
     
     public void endOffer(){ //End the offer;
         notification(); //Notify the list of observers;
+    }
+    
+    @Override
+    public String toString() {
+        String s = product.name + "\n\t";
+        if(quantity > 0){
+            s += "Quantity: " + quantity + "\n";
+            return s;
+        }
+        return s += "No product in stock.\n";
     }
 }
