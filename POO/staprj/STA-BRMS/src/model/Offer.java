@@ -1,7 +1,6 @@
 package model;
 
 /**
- *
  * @author LPS
  */
 public class Offer extends OfferSubject {

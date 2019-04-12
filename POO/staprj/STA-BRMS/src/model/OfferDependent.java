@@ -1,9 +1,8 @@
 package model;
 
 /**
- *
  * @author LPS
  */
 public interface OfferDependent {
-    public void update(Object o);
+    public void updateOffers(Object o);
 }

@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 /**
- *
  * @author LPS
  */
 public abstract class ShowCase implements OfferDependent {
@@ -24,7 +23,7 @@ public abstract class ShowCase implements OfferDependent {
     }
     
     @Override
-    public void update(Object o){
+    public void updateOffers(Object o){
         Offer ofr = (Offer) o;
         offers.remove(ofr);
     }

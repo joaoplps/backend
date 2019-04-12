@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 /**
- *
  * @author LPS
  */
 public abstract class OfferSubject {
@@ -23,6 +22,6 @@ public abstract class OfferSubject {
     
     protected void notification(){
         for(OfferDependent o : observers)
-            o.update(this);
+            o.updateOffers(this);
     }
 }
