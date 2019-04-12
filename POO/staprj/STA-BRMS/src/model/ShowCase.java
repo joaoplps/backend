@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public abstract class ShowCase {
+public abstract class ShowCase implements OfferDependent {
     public String name;
     public ArrayList<Offer> offers;
     
@@ -21,5 +21,11 @@ public abstract class ShowCase {
     @Override
     public String toString() {
         return name;
+    }
+    
+    @Override
+    public void update(Object o){
+        Offer ofr = (Offer) o;
+        offers.remove(ofr);
     }
 }
