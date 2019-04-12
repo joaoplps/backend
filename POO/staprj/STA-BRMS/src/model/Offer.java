@@ -3,7 +3,7 @@ package model;
 /**
  * @author LPS
  */
-public class Offer extends OfferSubject {
+public class Offer extends ObservedImpl {
     public int quantity;
     public Product product;
     
@@ -28,11 +28,15 @@ public class Offer extends OfferSubject {
         return s += "No product in stock.\n";
     }
     
-    public boolean endedOffer(){ //The offer ended?
-        if(quantity <= 0){ //Make sure of that;
-            notification(); //Notify the list of observers;
-            return true;
+    public void sell(int q){ //Sell method;
+        if(quantity >= 0 + q){
+            quantity-= q;
+            if(quantity == 0)
+                endOffer();
         }
-        return false; //If quantity is greater than 0, the offer exists;
+    }
+    
+    public void endOffer(){ //End the offer;
+        notification(); //Notify the list of observers;
     }
 }
