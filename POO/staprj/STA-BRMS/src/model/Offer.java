@@ -4,7 +4,8 @@ package model;
  * Offer object
  *  Corresponds a product with its existence
  * 
- *  An offer is the quantity of a product
+ *  An offer is the 
+ * quantity of a product
  * 
  * @author LPS
  */

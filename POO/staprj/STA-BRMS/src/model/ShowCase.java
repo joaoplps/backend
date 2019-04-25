@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 
 /**
+ * Showcase
+ * 
+ *  A Showcase has a list of Offers
+ * 
  * @author LPS
  */
 public abstract class ShowCase implements Observer { //Showcase model, offer dependent;
