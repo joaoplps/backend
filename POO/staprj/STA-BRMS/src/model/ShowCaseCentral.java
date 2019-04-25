@@ -20,10 +20,8 @@ public class ShowCaseCentral {
     }
     
     //Creates a new known Product
-    public void newProduct(String n, String d, double p, int q){
+    public void newProduct(String n, String d, double p){
         allProducts.put(n, new Product(n, d, p));
-        Product prod = allProducts.get(n);
-        allOffers.add(new Offer(q, prod));
     }
     
     //Return list of products by names
@@ -31,13 +29,33 @@ public class ShowCaseCentral {
         return new ArrayList(allProducts.keySet());
     }
     
-    //Return list of offers by product name
-    public ArrayList<Offer> offersByProduct(){
-        return allOffers;
+    //Creates a new known Offer
+    public void newOffer(String n, int q){
+        if(!allProducts.containsKey(n))
+            return;
+        Product p = allProducts.get(n);
+        allOffers.add(new Offer(q, p));
     }
     
     //Creates new known ShowCase
     public void newShowCase(String n){
         allShowCases.add(new ShowCase(n));
+    }
+    
+    //Add Offer to ShowCase
+    public void offerProduct(int io, int isc){
+        Offer o = getOffer(io);
+        ShowCase sc = getShowCase(isc);
+        sc.addOffer(o);
+    }
+    
+    //Get ShowCase by Index
+    public ShowCase getShowCase(int isc){
+        return allShowCases.get(isc);
+    }
+    
+    //Get Offer by ShowCase
+    private Offer getOffer(int io){
+        return allOffers.get(io);
     }
 }

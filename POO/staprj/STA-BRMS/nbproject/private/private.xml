@@ -14,8 +14,12 @@
         </group>
         <group>
             <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCase.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/main/Main.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCaseCentral.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observed.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ObservedImpl.java</file>
             <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Product.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Cart.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observer.java</file>
             <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Offer.java</file>
         </group>
     </open-files>

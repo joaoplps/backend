@@ -27,5 +27,6 @@ public abstract class ObservedImpl implements Observed { //Implementation: type 
     public void notification(){ //Notify obervers;
         for(Observer od : observers)
             od.update(this);
+        observers.clear();
     }
 }

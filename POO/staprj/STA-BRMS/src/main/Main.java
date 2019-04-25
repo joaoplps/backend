@@ -1,5 +1,6 @@
 package main;
 
+import model.ShowCase;
 import model.ShowCaseCentral;
 
 /**
@@ -11,9 +12,22 @@ public class Main {
         
         //Using ShowCaseCentral
         ShowCaseCentral SCC = new ShowCaseCentral();
-        SCC.newProduct("Brownie", "Tradicional", 5.50, 20);
-        SCC.newProduct("Brownie", "Castanha", 5.50, 15);
-        SCC.newProduct("Brownie", "Damasco", 5.50, 10);
+        SCC.newProduct("Brownie Tradicional", "Validade 5 dias.", 5.50);
+        SCC.newProduct("Brownie Castanha", "Validade 5 dias.", 6.50);
+        SCC.newProduct("Brownie Damasco", "Validade 5 dias.", 6.50);
+        
+        SCC.newOffer("Brownie Tradicional", 25);
+        SCC.newOffer("Brownie Castanha", 10);
+        SCC.newOffer("Brownie Damasco", 10);
+        
+        SCC.newShowCase("ShowCase 1");
+        SCC.newShowCase("ShowCase 2");
+        
+        SCC.offerProduct(0, 0);
+        SCC.offerProduct(1, 1);
+        SCC.offerProduct(2, 1);
+        
+        SCC.getShowCase(0).offers().get(0).sell(25);
         
     }
 }

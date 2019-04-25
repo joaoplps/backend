@@ -26,7 +26,6 @@ public class ShowCase implements Observer { //Showcase model, offer dependent;
     @Override
     public void update(Object o){ //Remove offer from showcase;
         Offer ofr = (Offer) o;
-        ofr.unregister(this);
         offers.remove(ofr);
     }
     
