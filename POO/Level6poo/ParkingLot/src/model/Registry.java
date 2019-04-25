@@ -1,6 +1,8 @@
 package model;
 
 /**
+ * Objeto para o db
+ *  REGISTROS!
  *
  * @author LPS
  */

@@ -1,6 +1,10 @@
 package model;
 
 /**
+ * Product object def
+ * 
+ *  A product has name, price and details
+ * 
  * @author LPS
  */
 public class Product { //A Product representation;

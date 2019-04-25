@@ -7,10 +7,10 @@ import java.util.HashMap;
  * Facade pattern:
  * 
  *  Classe necessária porém última a ser desenvolvida. Serve para unir
- * as informações contidas na modelagem do problema. Geralmente é uma 
- * classe extensa de muitas funcionalidades, é referência para todos os
- * outros objetos (mesmo que indiretamente) que interessam para a 
- * execução da solução.
+ * as informações contidas na modelagem do problema com o usuário. 
+ * Geralmente é uma classe extensa de muitas funcionalidades, é referência
+ * para todos os outros objetos (mesmo que indiretamente) que interessam
+ * para a execução da solução.
  *  Lembrando o princípio da única responsabilidade, a fachada permite
  * que os objetos modelados guardem somente suas definições padrões,
  * encapsulando a funcionalidade do programa.
@@ -18,6 +18,14 @@ import java.util.HashMap;
  * @author LPS
  */
 public class TotemCentral {
+    /**
+     * HashMap:
+     *  A duplicação do nome da rua (também em cada totem, além do hashmap)
+     * permite poupar processamento (em loopings e meios de acesso) utilizando
+     * um pouco mais de armazenamento.
+     *  Outro problema resolvido é a duplicação de ruas em totens. Porém não
+     * é possivel haver mais de um totem por rua no escopo deste programa.
+    */
     private HashMap<String, Totem> totens;
     private HashMap<String, Car> cars;
     
@@ -29,18 +37,28 @@ public class TotemCentral {
         totens.put("Y Street", new Totem("X Street"));
     }
     
+    public void newTotem(String street){
+        Totem t = new Totem(street);
+        totens.put(street, t);
+    }
+    
     public void newCar(String plate){
         Car c = new Car(plate);
         cars.put(plate, c);
     }
     
     public void parkCar(String plate, String street){
+        if(!cars.containsKey(plate) && !totens.containsKey(street))
+            return;
+        //Exste um carro com determinada placa e uma rua com determinado nome
         Car c = cars.get(plate);
         Totem t = totens.get(street);
         c.park(t);
     }
     
     public void leavePark(String plate){
+        if(!cars.containsKey(plate))
+            return;
         Car c = cars.get(plate);
         c.leave();
     }
@@ -51,16 +69,14 @@ public class TotemCentral {
     }
     
     public ArrayList<String> streets(){
-        ArrayList<String> streets = new ArrayList();
-        streets.addAll(totens.keySet());
-        return streets;
+        //Keyset é o índice String correspondente à rua no mapeamento de totens
+        return new ArrayList(totens.keySet());
     }
     
     public ArrayList<String> plates(){
-        ArrayList<String> plates = new ArrayList();
-        plates.addAll(cars.keySet());
-        return plates;
+        return new ArrayList(cars.keySet());
     }
     
+    //Salva no db
     public void saveTotens(){}
 }
