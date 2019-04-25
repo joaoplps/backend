@@ -12,7 +12,7 @@ public class Product { //A Product representation;
     public final String detail;
     public final double price;
     
-    public Product(String n, String d, int p){
+    public Product(String n, String d, double p){
         name = n;
         detail = d;
         price = p;

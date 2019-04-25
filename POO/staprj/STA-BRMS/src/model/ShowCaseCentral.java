@@ -1,10 +1,10 @@
-
 package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
+ * Facade Pattern
  *
  * @author aluno
  */
@@ -20,21 +20,15 @@ public class ShowCaseCentral {
     }
     
     //Creates a new known Product
-    public void newProduct(String n, String d, int p){
+    public void newProduct(String n, String d, double p, int q){
         allProducts.put(n, new Product(n, d, p));
+        Product prod = allProducts.get(n);
+        allOffers.add(new Offer(q, prod));
     }
     
     //Return list of products by names
     public ArrayList<String> productsByName(){
         return new ArrayList(allProducts.keySet());
-    }
-    
-    //Creates a new known Offer
-    public void newOffer(String n, int q){
-        if(!allProducts.containsKey(n))
-            return;
-        Product p = allProducts.get(n);
-        allOffers.add(new Offer(q, p));
     }
     
     //Return list of offers by product name
@@ -43,7 +37,7 @@ public class ShowCaseCentral {
     }
     
     //Creates new known ShowCase
-    public void newShowCase(String r){
-        allShowCases.add(new ShowCase(r));
+    public void newShowCase(String n){
+        allShowCases.add(new ShowCase(n));
     }
 }

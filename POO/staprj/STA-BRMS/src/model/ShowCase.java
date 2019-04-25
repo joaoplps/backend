@@ -10,11 +10,11 @@ import java.util.ArrayList;
  * @author LPS
  */
 public class ShowCase implements Observer { //Showcase model, offer dependent;
-    private String ref;
-    private ArrayList<Offer> offers;
+    private final String name;
+    private final ArrayList<Offer> offers;
     
-    public ShowCase(String r){
-        ref = r;
+    public ShowCase(String n){
+        name = n;
         offers = new ArrayList();
     }
     
