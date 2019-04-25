@@ -14,8 +14,7 @@ public class Cart {
     
     public void addItem(Offer o, int q){
         if(items.containsKey(o))
-            ;
-        items.put(o, q);
+            items.put(o, q);
     }
     
     private void sell(){

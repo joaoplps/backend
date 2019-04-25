@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
+ * Facade pattern:
+ * 
+ *  Classe necessária porém última a ser desenvolvida. Serve para unir
+ * as informações contidas na modelagem do problema. Geralmente é uma 
+ * classe extensa de muitas funcionalidades, é referência para todos os
+ * outros objetos (mesmo que indiretamente) que interessam para a 
+ * execução da solução.
+ *  Lembrando o princípio da única responsabilidade, a fachada permite
+ * que os objetos modelados guardem somente suas definições padrões,
+ * encapsulando a funcionalidade do programa.
+ * 
  * @author LPS
  */
 public class TotemCentral {
