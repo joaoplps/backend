@@ -28,7 +28,7 @@ public class TotemCentral {
      * é possivel haver mais de um totem por rua no escopo deste programa.
     */
     private HashMap<String, Totem> totens;
-    private HashMap<String, Car> cars;
+    private HashMap<String, Vehicle> cars;
     
     TotemCentral(){
         totens = new HashMap();
@@ -42,7 +42,7 @@ public class TotemCentral {
     }
     
     public void newCar(String plate){
-        Car c = new Car(plate);
+        Vehicle c = new Vehicle(plate);
         cars.put(plate, c);
     }
     
@@ -50,7 +50,7 @@ public class TotemCentral {
         if(!cars.containsKey(plate) && !totens.containsKey(street))
             return;
         //Exste um carro com determinada placa e uma rua com determinado nome
-        Car c = cars.get(plate);
+        Vehicle c = cars.get(plate);
         Totem t = totens.get(street);
         c.park(t);
     }
@@ -58,7 +58,7 @@ public class TotemCentral {
     public void leavePark(String plate){
         if(!cars.containsKey(plate))
             return;
-        Car c = cars.get(plate);
+        Vehicle c = cars.get(plate);
         c.leave();
     }
     

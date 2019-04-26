@@ -14,7 +14,7 @@ public class Totem {
     private int time;
     public final String street;
     
-    private HashMap<Car, Integer> cars;
+    private HashMap<Vehicle, Integer> cars;
     private ArrayList<Registry> regs;
         
     private void validate(){
@@ -36,14 +36,14 @@ public class Totem {
         return regs;
     }
     
-    public void regEntry(Car c){
+    public void regEntry(Vehicle c){
         if(c != null && !cars.containsKey(c)){
             cars.put(c, time);
             System.out.println("The car " + c.plate + " parked at " + street + ".");
         }
     }
 
-    public void regLeave(Car c){
+    public void regLeave(Vehicle c){
         int entry;
         int leave;
         

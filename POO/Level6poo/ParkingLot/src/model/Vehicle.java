@@ -4,7 +4,7 @@ package model;
  *
  * @author LPS
  */
-public class Car {
+public class Vehicle {
     private Totem totem;
     public final String plate;
     
@@ -13,7 +13,7 @@ public class Car {
             throw new IllegalArgumentException("Plate cannot be null.");
     }
     
-    public Car(String p){
+    public Vehicle(String p){
         plate = p;
         validate();
     }
