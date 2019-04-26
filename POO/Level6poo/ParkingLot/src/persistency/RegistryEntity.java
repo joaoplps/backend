@@ -20,7 +20,7 @@ public class RegistryEntity extends Entity {
             Statement cmd = createCmd();
             
             for(Registry r : t.regs()){
-                int result = cmd.executeUpdate(
+                cmd.executeUpdate(
                 "INSERT INTO registro VALUES ("
                 +r.entryTime+","+r.leaveTime+","+r.plate);
                 
