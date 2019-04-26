@@ -13,6 +13,7 @@ import model.Totem;
  */
 public class TotemEntity extends Entity {
     private final HashMap<Totem, Integer> dbMapping;
+    //Public totem list
     public final ArrayList<Totem> totens;
     
     TotemEntity() {

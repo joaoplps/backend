@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import persistency.PersistencyLayer;
 
 /**
  * Facade pattern:
@@ -35,11 +36,10 @@ public class TotemCentral {
         //Creating two initical totens at time 00:00
         totens.put("X Street", new Totem("X Street"));
         totens.put("Y Street", new Totem("X Street"));
-    }
-    
-    public void newTotem(String street){
-        Totem t = new Totem(street);
-        totens.put(street, t);
+        
+        for (Totem t : PersistencyLayer.totem.totens)
+            totens.put();
+        
     }
     
     public void newCar(String plate){
@@ -78,5 +78,9 @@ public class TotemCentral {
     }
     
     //Salva no db - populating Registry Table
-    public void saveTotens(){}
+    public void saveTotens(){
+//        ArrayList<Totem> totensList = new ArrayList(totens.values());
+        for(Totem t : totens.values())
+            PersistencyLayer.registry.saveRegs(t);
+    }
 }

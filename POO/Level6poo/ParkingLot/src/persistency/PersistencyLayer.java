@@ -6,5 +6,6 @@ package persistency;
  */
 public class PersistencyLayer {
      public static final TotemEntity totem = new TotemEntity();
+     public static final RegistryEntity registry = new RegistryEntity();
 }
 

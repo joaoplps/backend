@@ -32,6 +32,10 @@ public class Totem {
         validate();
     }
     
+    public ArrayList<Registry> regs(){
+        return regs;
+    }
+    
     public void regEntry(Car c){
         if(c != null && !cars.containsKey(c)){
             cars.put(c, time);

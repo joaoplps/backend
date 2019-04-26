@@ -6,7 +6,7 @@ package model;
  *
  * @author LPS
  */
-class Registry {
+public class Registry {
     private int entryTime, leaveTime;
     private String plate;
 
