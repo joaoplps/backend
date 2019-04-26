@@ -38,8 +38,7 @@ public class TotemCentral {
         totens.put("Y Street", new Totem("X Street"));
         
         for (Totem t : PersistencyLayer.totem.totens)
-            totens.put();
-        
+            totens.put(t.street, t);
     }
     
     public void newCar(String plate){
@@ -79,7 +78,6 @@ public class TotemCentral {
     
     //Salva no db - populating Registry Table
     public void saveTotens(){
-//        ArrayList<Totem> totensList = new ArrayList(totens.values());
         for(Totem t : totens.values())
             PersistencyLayer.registry.saveRegs(t);
     }
