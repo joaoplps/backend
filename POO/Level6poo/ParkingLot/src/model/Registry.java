@@ -7,8 +7,8 @@ package model;
  * @author LPS
  */
 public class Registry {
-    private int entryTime, leaveTime;
-    private String plate;
+    public final int entryTime, leaveTime;
+    public final String plate;
 
     private void validate() {
         if(entryTime < 0 || leaveTime < 0)

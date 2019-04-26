@@ -12,7 +12,7 @@ import model.Totem;
  * @author aluno
  */
 public class TotemEntity extends Entity {
-    private final HashMap<Totem, Integer> dbMapping;
+    final HashMap<Totem, Integer> dbMapping;
     //Public totem list
     public final ArrayList<Totem> totens;
     
