@@ -12,15 +12,6 @@
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/OfferSubject.java</file>
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/OfferDependent.java</file>
         </group>
-        <group>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCase.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/main/Main.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCaseCentral.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observed.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ObservedImpl.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Product.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observer.java</file>
-            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Offer.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

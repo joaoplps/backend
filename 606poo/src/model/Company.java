@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * Facade Pattern
  * 
@@ -14,5 +16,12 @@ package model;
  * @author LPS
  */
 public class Company {
+    public final ArrayList<CompanyVehicle> vehicles;
+    public final ArrayList<Street> streets;
     
+            
+    Company(){
+        vehicles = new ArrayList();
+        streets = new ArrayList();
+    }
 }
