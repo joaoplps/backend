@@ -8,7 +8,7 @@ import java.util.HashMap;
  *
  * @author LPS
  */
-class Totem {
+public class Totem {
     private static final int firsthour = 0;
     
     private int time;

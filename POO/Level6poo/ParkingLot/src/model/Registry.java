@@ -28,6 +28,4 @@ class Registry {
     public String toString() {
         return "[ " + entryTime + ", " + leaveTime + " ]";
     }
-    
-    
 }

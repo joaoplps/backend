@@ -1,5 +1,6 @@
 package persistency;
 
+import static java.lang.System.exit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,15 +17,26 @@ public abstract class Entity {
     
     protected Connection conn;
     
-    protected Statement createCmd() throws SQLException {
-        if(conn == null)
+    protected void openConn() throws SQLException {
+        if(conn == null) {
             conn = DriverManager.getConnection(url, user, passwd);
-        return conn.createStatement();
+        }
     }
     
-    protected void closeConn() throws SQLException {
+    protected Statement createCmd() throws SQLException {
         if(conn != null)
-            conn.close();
-        conn = null; //Perde referência SOMENTE APÓS fechar a conexão;
+            return conn.createStatement();
+        return null;
+    }
+    
+    protected void closeConn() {
+        try {
+            if(conn != null){
+                conn.close();
+                conn = null; //Perde referência SOMENTE APÓS fechar a conexão;
+            }
+        } catch (SQLException ex) {
+            exit(-1);
+        }
     }
 }

@@ -77,6 +77,6 @@ public class TotemCentral {
         return new ArrayList(cars.keySet());
     }
     
-    //Salva no db
+    //Salva no db - populating Registry Table
     public void saveTotens(){}
 }
