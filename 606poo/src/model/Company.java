@@ -16,12 +16,16 @@ import java.util.ArrayList;
  * @author LPS
  */
 public class Company {
-    public final ArrayList<CompanyVehicle> vehicles;
+    public final ArrayList<Vehicle> vehicles;
     public final ArrayList<Street> streets;
     
             
     Company(){
         vehicles = new ArrayList();
         streets = new ArrayList();
+    }
+    
+    public void register(String plate, VehicleType type) {
+        vehicles.add(new Vehicle(type, plate));
     }
 }

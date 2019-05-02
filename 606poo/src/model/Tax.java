@@ -9,10 +9,19 @@ public enum Tax {
     Tax2(VehicleType.CAR, 2);
     
     private final VehicleType type;
-    private final int value;
+    final int value;
     
     Tax(VehicleType vt, int val){
         type = vt;
         value = val;
+    }
+    
+    public static Tax byType(VehicleType vt) {
+        switch(vt) {
+            case CAR:
+                return Tax2;
+            default:
+                return Tax1;
+        }
     }
 }
