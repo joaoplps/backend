@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import persistency.ParkOccurrencesEntity;
+import persistency.PersistencyLayer;
 
 /**
  * Facade Pattern
@@ -19,13 +21,16 @@ public class Company {
     public final ArrayList<Vehicle> vehicles;
     public final ArrayList<Street> streets;
     
-            
     Company(){
         vehicles = new ArrayList();
         streets = new ArrayList();
     }
     
     public void register(String plate, VehicleType type) {
-        vehicles.add(new Vehicle(type, plate));
+        Vehicle v = new Vehicle(type, plate); //Getting ref
+        vehicles.add(v); //Adding to the company list of vehicles
+        ArrayList<ParkOccurrences> pos = PersistencyLayer.registry.getRegisters(v);
+        for(ParkOccurrences po : pos) //Adding all po in query result to vehicle
+            v.registerOccr(po);
     }
 }

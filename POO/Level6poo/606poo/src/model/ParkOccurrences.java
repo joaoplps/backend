@@ -4,10 +4,10 @@ package model;
  *
  * @author LPS
  */
-public class ParkOccr {
+public class ParkOccurrences {
     public final int entryTime, leaveTime;
     
-    ParkOccr(int e, int l){
+    public ParkOccurrences(int e, int l){
         entryTime = e;
         leaveTime = l;
     }

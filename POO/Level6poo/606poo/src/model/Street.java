@@ -6,17 +6,17 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public class Street implements OccrContainer {
+public class Street implements OccurrencesContainer {
     public final String name;
-    private final ArrayList<ParkOccr> occurrences;
+    private final ArrayList<ParkOccurrences> occurrences;
     
-    Street(String n){
+    public Street(String n){
         name = n;
         occurrences = new ArrayList();
     }
     
     @Override
-    public void registerOccr(ParkOccr po) {
+    public void registerOccr(ParkOccurrences po) {
         occurrences.add(po);
     }
     

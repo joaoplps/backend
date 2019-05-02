@@ -6,12 +6,12 @@ import java.util.ArrayList;
  *
  * @author LPS
  */
-public class Vehicle implements OccrContainer {
+public class Vehicle implements OccurrencesContainer {
     private final VehicleType type;
-    private final String plate;
-    private final ArrayList<ParkOccr> occurrences;
+    public final String plate;
+    private final ArrayList<ParkOccurrences> occurrences;
     
-    Vehicle(VehicleType t, String p){
+    public Vehicle(VehicleType t, String p){
         type = t;
         plate = p;
         occurrences = new ArrayList();
@@ -19,7 +19,7 @@ public class Vehicle implements OccrContainer {
     
     public int parkedTime() {
         int sum = 0;
-        for(ParkOccr po : occurrences)
+        for(ParkOccurrences po : occurrences)
             sum += po.period();
         return sum;
     }
@@ -29,7 +29,7 @@ public class Vehicle implements OccrContainer {
     }
 
     @Override
-    public void registerOccr(ParkOccr po) {
+    public void registerOccr(ParkOccurrences po) {
         occurrences.add(po);
     }
 }

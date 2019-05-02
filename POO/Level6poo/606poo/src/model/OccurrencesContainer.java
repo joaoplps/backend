@@ -5,6 +5,6 @@ package model;
  *
  * @author LPS
  */
-public interface OccrContainer {
-    public void registerOccr(ParkOccr po);
+public interface OccurrencesContainer {
+    public void registerOccr(ParkOccurrences po);
 }
