@@ -1,6 +1,7 @@
 package main;
 
-import view.MainScreen;
+import control.LoginControl;
+import view.LoginForm;
 
 /**
  *
@@ -8,6 +9,6 @@ import view.MainScreen;
  */
 public class Main {
     public static void main(String[] args) {
-        new MainScreen();
+        new LoginControl().start();
     }   
 }
