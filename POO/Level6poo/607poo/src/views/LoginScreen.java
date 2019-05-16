@@ -71,12 +71,12 @@ public class LoginScreen extends JFrame implements ActionListener {
     
     public LoginScreen () {
         setLayout(null); //No container layout manager
-        setVisible(true); //Be visible
         
         setSize(400, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); //Screen close mode
         
         initComponents();
+        setVisible(true); //Be visible
     }
 
     @Override
