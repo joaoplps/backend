@@ -16,6 +16,12 @@ public class ShowCase implements Observer { //Showcase model, offer dependent;
     public ShowCase(String n){
         name = n;
         offers = new ArrayList();
+        validate();
+    }
+    
+    private void validate(){ //Validate object;
+        if(name == null || name.isEmpty())
+            throw new IllegalArgumentException("ShowCase's attributes cannot be empty.");
     }
     
     public void addOffer(Offer o){ //Method to add one offer in the showcase;

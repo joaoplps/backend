@@ -44,18 +44,18 @@ public class ShowCaseCentral {
     
     //Add Offer to ShowCase
     public void offerProduct(int io, int isc){
-        Offer o = getOffer(io);
-        ShowCase sc = getShowCase(isc);
+        Offer o = getOfferByIndex(io);
+        ShowCase sc = getShowCaseByIndex(isc);
         sc.addOffer(o);
     }
     
     //Get ShowCase by Index
-    public ShowCase getShowCase(int isc){
+    private ShowCase getShowCaseByIndex(int isc){
         return allShowCases.get(isc);
     }
     
-    //Get Offer by ShowCase
-    private Offer getOffer(int io){
+    //Get Offer by Index
+    private Offer getOfferByIndex(int io){
         return allOffers.get(io);
     }
 }
