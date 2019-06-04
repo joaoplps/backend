@@ -5,12 +5,12 @@
         <group name="staprj">
             <file>file:/home/jp/STA-BRMS/src/main/Main.java</file>
         </group>
-        <group/>
         <group name="Level6poo">
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Cart.java</file>
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ObservedImpl.java</file>
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observed.java</file>
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observer.java</file>
         </group>
+        <group/>
     </open-files>
 </project-private>
