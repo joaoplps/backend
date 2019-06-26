@@ -17,15 +17,24 @@ public class ShowCaseCentral {
 
     public ShowCaseCentral() {
         allProducts = new HashMap();
-        EntityCentral.scc.getProductsFromDB();
-        
-        allOffers = new ArrayList();
-        allShowCases = new ArrayList();
+        for (Product p : EntityCentral.scc.getProductsFromDB()) {
+            allProducts.put(p.name, p);
+        }
 
+        allOffers = new ArrayList();
+        for (Offer o : EntityCentral.scc.getOffersFromDB()) {
+            allOffers.add(o);
+        }
+
+        allShowCases = new ArrayList();
+        for (ShowCase sc : EntityCentral.scc.getShowCasesFromDB()) {
+            allShowCases.add(sc);
+        }
     }
 
     //Creates a new known Product
     public void newProduct(String n, String d, double p) {
+        EntityCentral.scc.insertProductInDB(n, d, p);
         allProducts.put(n, new Product(n, d, p));
     }
 

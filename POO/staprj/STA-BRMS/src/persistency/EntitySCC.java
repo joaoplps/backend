@@ -3,6 +3,7 @@ package persistency;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import model.Offer;
 import model.Product;
 import model.ShowCase;
@@ -21,7 +22,7 @@ public class EntitySCC extends Entity {
             openConn();
 
             Statement cmd = createCmd();
-            ResultSet rs = cmd.executeQuery("SELECT name, description, price FROM product;");
+            ResultSet rs = cmd.executeQuery("SELECT id, name, description, price FROM product;");
 
             while (rs.next()) {
 
@@ -34,6 +35,24 @@ public class EntitySCC extends Entity {
         }
 
         return products;
+    }
+
+    public void insertProductInDB(String n, String d, double p) {
+
+        final Product product = new Product(n, d, p);
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("INSERT INTO product (" + n + ", " + d + ", " + p + ");");
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+
     }
 
     public ArrayList<ShowCase> getShowCasesFromDB() {
@@ -80,5 +99,23 @@ public class EntitySCC extends Entity {
         }
 
         return offers;
+    }
+
+    public void insertOfferInDB(HashMap<Product, Integer> hm) {
+
+        final Offer offer = new Offer(q, p);
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("INSERT INTO offer (" + q + ", " + p.name + ");");
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+
     }
 }

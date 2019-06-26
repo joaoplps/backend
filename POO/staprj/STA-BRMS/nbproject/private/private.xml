@@ -11,6 +11,18 @@
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observed.java</file>
             <file>file:/home/jp/.prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observer.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCase.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/persistency/Entity.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/persistency/EntitySCC.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ShowCaseCentral.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observed.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/persistency/EntityCentral.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/ObservedImpl.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Product.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Observer.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Cart.java</file>
+            <file>file:/home/aluno/.jp/prjs/pub/stdy./backend/POO/staprj/STA-BRMS/src/model/Offer.java</file>
+        </group>
     </open-files>
 </project-private>
