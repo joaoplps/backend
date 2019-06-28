@@ -37,9 +37,9 @@ public class ShowCaseCentral {
         EntityCentral.scc.insertProductInDB(n, d, p);
         allProducts.put(n, new Product(n, d, p));
     }
-    
+
     //Remove a product from the system (hashmap and db)
-    public void removeProduct(String n){
+    public void removeProduct(String n) {
         allProducts.remove(n);
         EntityCentral.scc.removeProductFromDB(n);
     }
@@ -56,6 +56,19 @@ public class ShowCaseCentral {
         }
         Product p = allProducts.get(n);
         allOffers.add(new Offer(q, p));
+        EntityCentral.scc.insertOfferInDB(q, p);
+    }
+
+    //Remove offer from system (db and endOffer method)
+    public void removeOffer(Offer o) {
+        EntityCentral.scc.removeOfferFromDB(o);
+        o.endOffer();
+    }
+
+    //Updating offer
+    public void updateOffer(Offer o, int i) {
+        int q = allOffers.get(i).quantity();
+        EntityCentral.scc.updateOfferFromDB(o, q);
     }
 
     //Creates new known ShowCase

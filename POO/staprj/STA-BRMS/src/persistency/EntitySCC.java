@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import model.Offer;
 import model.Product;
 import model.ShowCase;
@@ -29,7 +28,7 @@ public class EntitySCC extends Entity {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             closeConn();
@@ -53,7 +52,7 @@ public class EntitySCC extends Entity {
         }
 
     }
-    
+
     public void removeProductFromDB(String n) {
 
         try {
@@ -84,7 +83,7 @@ public class EntitySCC extends Entity {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             closeConn();
@@ -107,7 +106,7 @@ public class EntitySCC extends Entity {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             closeConn();
@@ -116,9 +115,7 @@ public class EntitySCC extends Entity {
         return offers;
     }
 
-    public void insertOfferInDB(HashMap<Product, Integer> hm) {
-
-        final Offer offer = new Offer(q, p);
+    public void insertOfferInDB(int q, Product p) {
 
         try {
             openConn();
@@ -126,11 +123,41 @@ public class EntitySCC extends Entity {
             Statement cmd = createCmd();
             cmd.executeUpdate("INSERT INTO offer (" + q + ", " + p.name + ");");
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             closeConn();
         }
 
+    }
+
+    public void removeOfferFromDB(Offer o) {
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("DELETE FROM offer WHERE name = " + o.product.name + ";");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+    }
+
+    public void updateOfferFromDB(Offer o, int q) {
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("UPDATE offer SET quantity = " + q + " WHERE name = " + o.product.name + ";");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
     }
 }
