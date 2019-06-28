@@ -26,8 +26,6 @@ public class Main {
         SCC.offerProduct(0, 0);
         SCC.offerProduct(1, 1);
         SCC.offerProduct(2, 1);
-        
-        SCC.getShowCase(0).offers().get(0).sell(25);
-        
+  
     }
 }

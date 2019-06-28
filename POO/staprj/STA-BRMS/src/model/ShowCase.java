@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class ShowCase implements Observer { //Showcase model, offer dependent;
 
-    private final String name;
+    final String name;
     private final ArrayList<Offer> offers;
 
     public ShowCase(String n) {
@@ -29,6 +29,10 @@ public class ShowCase implements Observer { //Showcase model, offer dependent;
     public void addOffer(Offer o) { //Method to add one offer in the showcase;
         o.register(this);
         offers.add(o);
+    }
+    
+    public String myName(){
+        return name;
     }
 
     @Override

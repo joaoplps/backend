@@ -74,6 +74,16 @@ public class ShowCaseCentral {
     //Creates new known ShowCase
     public void newShowCase(String n) {
         allShowCases.add(new ShowCase(n));
+        EntityCentral.scc.addShowCaseInDB(n);
+    }
+    
+    public void removeShowCase(int i){
+        String n = allShowCases.get(i).name;
+        EntityCentral.scc.removeShowCaseFromDB(n);
+    }
+    
+    public void updateShowCase(ShowCase sc, int i) {
+        EntityCentral.scc.updateShowCaseFromDB(allShowCases.get(i));
     }
 
     //Add Offer to ShowCase

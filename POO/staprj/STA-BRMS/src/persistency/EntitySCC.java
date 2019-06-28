@@ -69,29 +69,6 @@ public class EntitySCC extends Entity {
 
     }
 
-    public ArrayList<ShowCase> getShowCasesFromDB() {
-
-        final ArrayList<ShowCase> showcases = new ArrayList();
-
-        try {
-            openConn();
-
-            Statement cmd = createCmd();
-            ResultSet rs = cmd.executeQuery("SELECT * FROM showcase;");
-
-            while (rs.next()) {
-
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } finally {
-            closeConn();
-        }
-
-        return showcases;
-    }
-
     public ArrayList<Offer> getOffersFromDB() {
 
         final ArrayList<Offer> offers = new ArrayList();
@@ -160,4 +137,75 @@ public class EntitySCC extends Entity {
             closeConn();
         }
     }
+    
+    public ArrayList<ShowCase> getShowCasesFromDB() {
+
+        final ArrayList<ShowCase> showcases = new ArrayList();
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            ResultSet rs = cmd.executeQuery("SELECT * FROM showcase;");
+
+            while (rs.next()) {
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+
+        return showcases;
+    }
+
+    public void addShowCaseInDB(String n) {
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("INSERT INTO showcase (" + n + ");");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+
+    }
+
+    public void removeShowCaseFromDB(String n) {
+        
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("DELETE FROM showcase WHERE name = " + n + ";");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+        
+    }
+    
+    public void updateShowCaseFromDB(ShowCase sc) {
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+//            cmd.executeUpdate("UPDATE showcase SET offer = " + ? + " WHERE name = " + sc.myName() + ";");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+    }
+
 }
