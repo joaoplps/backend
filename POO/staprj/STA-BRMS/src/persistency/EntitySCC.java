@@ -1,6 +1,7 @@
 package persistency;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,15 +40,29 @@ public class EntitySCC extends Entity {
 
     public void insertProductInDB(String n, String d, double p) {
 
-        final Product product = new Product(n, d, p);
-
         try {
             openConn();
 
             Statement cmd = createCmd();
             cmd.executeUpdate("INSERT INTO product (" + n + ", " + d + ", " + p + ");");
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            closeConn();
+        }
+
+    }
+    
+    public void removeProductFromDB(String n) {
+
+        try {
+            openConn();
+
+            Statement cmd = createCmd();
+            cmd.executeUpdate("DELETE FROM product WHERE name = " + n + ");");
+
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             closeConn();
