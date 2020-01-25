@@ -226,9 +226,7 @@ Para garantir o desvio intencional do fluxo durante a execução de um algoritim
 	
 - Seleção ou Desvío Condicional
 
-Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
-	
-Comandos:
+	Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
 
 	- se - Como dizer quando um conjunto de instruções será
 		executado.
@@ -250,15 +248,13 @@ Comandos:
 			senao se(nota >= 5){escreva("C")}
 			senao se(nota >= 3){escreva("D")}
 			senao{escreva("E")}
-		
+			
 - Laços de Repetição
 
-Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
-		
-Comandos:
+	Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
 
 	- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas.
-	
+
 		Uso:
 			enquanto(parar != "sim")
 			{
@@ -274,7 +270,7 @@ Comandos:
 				escreva("Insira o valor do lado: ")
 				leia(lado)
 			}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
-	
+
 	- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso:
 		
 		Uso: Tabuada de 3:
