@@ -1,5 +1,4 @@
-# Backend Repo
-Repositório para Backend
+# Computer Programming
 
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado introdutório ao avançado em Programação.
 O trabalho será feito em linguagens de pseudo-código e C++, observando:
