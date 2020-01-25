@@ -141,7 +141,7 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 	 	Operadores Lógicos:  
 			e	 -> conjunção;			V e F = F  
 			ou	 -> disjunção;			V ou F = V  
-			não -> negação;					não V = F  
+			não -> negação;				não V = F  
 		
 		Operadores Relacionais:  
 			==	Igual;					2 == 2		V  
@@ -154,7 +154,7 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 - Atribuições
 	
 	Como observação extra, as atribuições são nada mais que o direcionamento dos valores que compõem os dados para as variáveis:
-		
+
 		x = 4 <- O valor 4 será levado para o espaço na memória reservado com o endereço "x";  
 		x += y		x = x + y  
 		x -= y		x = x - y  
