@@ -126,7 +126,9 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 
 - Aritméticas
 
-	Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características. Operadores:
+	Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características:
+	
+	Operadores:  
 		+	Adição;  
 		-	Subtração;  
 		*	Multiplicação;  
@@ -134,16 +136,17 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 	
 - Lógicas 
 
-	Expressões que testam a veracidade ou não das mesmas. Podem resultar em Verdadeiro ou Falso e possuem tais operadores:
+	Expressões que testam a veracidade ou não das mesmas. Podem resultar em Verdadeiro ou Falso e possuem tais operadores:  
+
 	 	Operadores Lógicos:  
 			e	 -> conjunção;			V e F = F  
 			ou	 -> disjunção;			V ou F = V  
 			não -> negação;			não V = F  
-			
+
 		Operadores Relacionais:  
 			==	Igual;					2 == 2		V  
-			>=	Maior ou Igual;		2 >= 2		V  
-			<=	Menor ou Igual;		2 <= 2		V  
+			>=	Maior ou Igual;			2 >= 2		V  
+			<=	Menor ou Igual;			2 <= 2		V  
 			!=	Diferente;				2 != 2		F  
 			>	Maior;					2  > 2		F  
 			<	Menor;					2  < 2		F  
@@ -151,18 +154,18 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 - Atribuições
 	
 	Como observação extra, as atribuições são nada mais que o direcionamento dos valores que compõem os dados para as variáveis:
-		x = 4 <- O valor 4 será levado para o espaço na memória
-							reservado com o endereço "x";
-		x += y		x = x + y
-		x -= y		x = x - y
-		x /= y		x = x / y
-		x *= y		x = x * y
-		x ^= y		x = x ^ y
-		x |= y		x = x | y
-		x %= y		x = x % y
-		x &= y		x = x & y
-		x ++			x = x + 1		<- Incremento (soma 1);
-		x --			x = x - 1		<- Decremento (subtrai 1);
+
+		x = 4 <- O valor 4 será levado para o espaço na memória reservado com o endereço "x";  
+		x += y		x = x + y  
+		x -= y		x = x - y  
+		x /= y		x = x / y  
+		x *= y		x = x * y  
+		x ^= y		x = x ^ y  
+		x |= y		x = x | y  
+		x %= y		x = x % y  
+		x &= y		x = x & y  
+		x ++			x = x + 1		<- Incremento (soma 1);  
+		x --			x = x - 1		<- Decremento (subtrai 1);  
 
 
 ### Variáveis Simples
