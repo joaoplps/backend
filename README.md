@@ -87,11 +87,11 @@ Um programa pode ter o seguinte fluxo de execução:
 
 	Um exemplo simples para construção das duas primeiras formas de representação de um algoritimo feito para resolvê-lo:
 		
-	PROBLEMA:
+	Problema:
 
 		Descobrir o resultado da soma de dois números.
 
-	SOLUÇÕES:
+	Soluções:
 
 		- Descrição Narrativa:
 			1 - Definir primeiro quais os número que serão somados;  
@@ -174,7 +174,7 @@ Em nome da máquina programável entender como proceder com os dados fornecidos 
 
 O que acontece em algumas linguagens, é o auto-reconhecimento quando a entrada é feita, porém isso exige mais instruções básicas de software. Em Portugol Studio, ou em C++, é preciso declarar o tipo seguido do nome da variável que deseja estabelecer.
 	
-FÓRMULAS:
+Fórmulas:
 
 	comando ( parâmetros )
 	comando variavel = valor
@@ -225,24 +225,25 @@ Comandos:
 Para garantir o desvio intencional do fluxo durante a execução de um algoritimo, utilizamos as estruturas de controle as quais representam pré-decisões definidas pelo programador. Quando se faz necessário executar ações de acordo com os	dados que foram fornecidos pelo próprio programa, utilizamos Laços de Repetição. Pode ser o caso de querer repetir uma ação determinado número de vezes, inclusive podendo controlar e manipular a ordem com que as instruções serão executadas em função dos dados fornecidos.
 	
 - Seleção ou Desvío Condicional
-			Durante uma execução, podemos encontrar situações onde um
-		conjunto de instruções deverá ser executado caso uma 
-		condição seja verdadeira.
+
+Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
 	
-	Comandos:
-		. se - Como dizer quando um conjunto de instruções será
-			executado.
+Comandos:
+
+	- se - Como dizer quando um conjunto de instruções será
+		executado.
+		
 		Uso:
 			se(resposta = "sim"){escreva("Tchau!")}
-			
-		. se-senao - Uma das duas opções será executada.
+		
+	- se-senao - Uma das duas opções será executada.
+		
 		Uso:
 			se(hora >= 6 e hora <= 18){escreva("É dia.")}
 			senao{escreva(""É noite.)}
-		
-		. se-senao-se - A partir daí a cadeia escala para mais
-			decisões. Utilizado para definir valores de acordo com
-			limites.
+	
+	- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites.
+	
 		Uso:
 			se(nota >= 9){escreva("A")}
 			senao se(nota >= 7){escreva("B")}
@@ -251,40 +252,32 @@ Para garantir o desvio intencional do fluxo durante a execução de um algoritim
 			senao{escreva("E")}
 		
 - Laços de Repetição
-			Justamente criar um "Looping" controlado onde uma 
-		quantidade de comandos se repete até que uma determinada 
-		condição seja verdadeira.
+
+Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
 		
-	Comandos:
-		. enquanto - Simples assim, enquanto uma condição for
-			verdadeira, determinadas instruções serão executadas.
+Comandos:
+
+	- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas.
+	
 		Uso:
 			enquanto(parar != "sim")
 			{
-			escreva("Deseja parar?")
-			leia(parar)					<- Enquanto o usuário não quiser
-			}									parar, o programa perguntará 
-												novamente, e lerá nova
-												entrada.
-												
-		. faca-enquanto - Um pouco diferente na sintaxe do
-			enquanto, pois garante que ao menos uma vez o conjunto
-			de instruções dentro da estrutura será executado. O que
-			garante essa situação é que o teste lógico (enquanto) 
-			somente é feito no fim da execução do faça.
+				escreva("Deseja parar?")
+				leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.
+			}
+		
+	- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça.
+		
 		Uso:
 			faca
 			{
 				escreva("Insira o valor do lado: ")
 				leia(lado)
-			}enquanto(lado <= 4)		<- Garante a leitura dos quatro
-												lados do quadrado.
+			}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
+	
+	- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso:
 		
-		. para - O laço "para" recebe mais parâmetros para 
-		trabalhar. Em situações onde o programa necessita de um
-		contador interno por exemplo, existe a condição especial
-		conforme uso:
-		Uso: Tabuada de 3
+		Uso: Tabuada de 3:
 			para(inteiro i = 1; i < 10; i++)
 			{
 				tabuada = i * 3
@@ -292,38 +285,36 @@ Para garantir o desvio intencional do fluxo durante a execução de um algoritim
 			}
 			
 		*Leia-se:
-			Para um número inteiro i igual a um, enquanto i for menor
-			que dez (valor máximo da tabuada), executam-se as 
-			instruções, incrementa-se o valor de i e repete o teste
-			lógico e, conforme resultado, repetem-se as instruções.
+			Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
 
 Com essas informações básicas já podemos começar a abordar 
 problemas simples para enxergar as soluções nesses formatos. 
 Após, veremos o uso das variáveis compostas.
-Abaixo é um exemplo de como usar as estruturas de repetição
-para exibir os mesmos resultados em um ambiente de comando.
 
-#include<iostream>
-#include<windows.h>				//Comando Sleep = pausa temporariamente (milisegundos);
-using namespace std;
-main(){
-	int c=0;
-	while(c<=10){
-		cout<<c<<" "; c++;		//Enquanto(condição);
+Abaixo é um exemplo de como usar as estruturas de repetição
+para exibir os mesmos resultados em um ambiente de comando:
+
+	#include<iostream>
+	#include<windows.h>				//Comando Sleep = pausa temporariamente (milisegundos);
+	using namespace std;
+	main(){
+		int c=0;
+		while(c<=10){
+			cout<<c<<" "; c++;		//Enquanto(condição);
+		}
+		cout<<"\n";
+		c=0;
+		Sleep(1000);				//Sleep - 1 segundo;
+		do{
+			cout<<c<<" "; c++;		//Faça-Enquanto(condição);
+		}while(c<=10);
+		cout<<"\n";
+		c=0;
+		Sleep(1000);				//Sleep - 1 segundo;
+		for(int c=0;c<=10;c++){
+			cout<<c<<" ";			//Para(declaração;condição;incremento ou decremento);
+		}
 	}
-	cout<<"\n";
-	c=0;
-	Sleep(1000);				//Sleep - 1 segundo;
-	do{
-		cout<<c<<" "; c++;		//Faça-Enquanto(condição);
-	}while(c<=10);
-	cout<<"\n";
-	c=0;
-	Sleep(1000);				//Sleep - 1 segundo;
-	for(int c=0;c<=10;c++){
-		cout<<c<<" ";			//Para(declaração;condição;incremento ou decremento);
-	}
-}
 
 
 ### Validação de Variáveis
