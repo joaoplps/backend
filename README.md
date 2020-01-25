@@ -72,13 +72,10 @@ Para resolver uma problemática apresentada, existem algumas maneiras de entende
 	O fluxo de execução é um parâmetro interessante para ajudar a entender e trabalhar a solução de um problema qualquer. O desenho das estruturas auxilia na visualização dos "caminhos" que o próprio algoritmo pode tomar.
 	
 	- INÍCIO/FIM - Dentro de um formato oval-horizontal;
-	- ENTRADA - Dentro de um retângulo em formato envelope (com
-		uma das pontas "cortada";
-	- DECISÃO - Dentro de um losângulo com duas saídas:
-		verdadeiro e falso;
+	- ENTRADA - Dentro de um retângulo em formato envelope (com uma das pontas "cortada";
+	- DECISÃO - Dentro de um losângulo com duas saídas: verdadeiro e falso;
 	- CÁLCULO - Dentro de um retângulo;
-	- SAÍDA - Dentro de um retângulo com o lado de baixo
-		ondulado (formato de resma de papel);
+	- SAÍDA - Dentro de um retângulo com o lado de baixo ondulado (formato de resma de papel);
 	
 	Um fluxograma sempre começa no INÍCIO e termina no FIM. As estruturas de DECISÃO sempre devem ser fechadas "de fora para dentro", ou seja, da mais interna até a mais externa, garantindo que a primária englobe a(s) secundária(s) e assim por diante.
 
@@ -130,25 +127,26 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 - Aritméticas
 
 	Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características. Operadores:
-		+	Adição;
-		-	Subtração;
-		*	Multiplicação;
-		/	Divisão;
+		+	Adição;  
+		-	Subtração;  
+		*	Multiplicação;  
+		/	Divisão;  
 	
 - Lógicas 
 
 	Expressões que testam a veracidade ou não das mesmas. Podem resultar em Verdadeiro ou Falso e possuem tais operadores:
-	 	Operadores Lógicos:
-			e	 -> conjunção;			V e F = F
-			ou	 -> disjunção;			V ou F = V
-			não -> negação;			não V = F
-		Operadores Relacionais:
-			==	Igual;					2 == 2		V
-			>=	Maior ou Igual;		2 >= 2		V
-			<=	Menor ou Igual;		2 <= 2		V
-			!=	Diferente;				2 != 2		F
-			>	Maior;					2  > 2		F
-			<	Menor;					2  < 2		F
+	 	Operadores Lógicos:  
+			e	 -> conjunção;			V e F = F  
+			ou	 -> disjunção;			V ou F = V  
+			não -> negação;			não V = F  
+			
+		Operadores Relacionais:  
+			==	Igual;					2 == 2		V  
+			>=	Maior ou Igual;		2 >= 2		V  
+			<=	Menor ou Igual;		2 <= 2		V  
+			!=	Diferente;				2 != 2		F  
+			>	Maior;					2  > 2		F  
+			<	Menor;					2  < 2		F  
 			
 - Atribuições
 	
