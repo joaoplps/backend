@@ -88,7 +88,7 @@ Um programa pode ter o seguinte fluxo de execução:
 	Um exemplo simples para construção das duas primeiras formas de representação de um algoritimo feito para resolvê-lo:
 		
 	PROBLEMA:
-	
+
 		Descobrir o resultado da soma de dois números.
 
 	SOLUÇÕES:
