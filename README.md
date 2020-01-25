@@ -57,9 +57,7 @@ Um programa pode ter o seguinte fluxo de execução:
 	FIM		
 		Finalização do programa (execução finalizada).
 		
-É claro que dependendo da simplicidade do probelma podem não existir decisões lógicas, ou cálculos, ou até mesmo pode estar ausente a entrada de dados e a saída, mas com esses quatro processos básicos construímos problemas matemáticos complexos.
-
-Para resolver uma problemática apresentada, existem algumas maneiras de entender e desenvolver a solução, através de formas de representação (construções):
+É claro que dependendo da simplicidade do probelma podem não existir decisões lógicas, ou cálculos, ou até mesmo pode estar ausente a entrada de dados e a saída, mas com esses quatro processos básicos construímos problemas matemáticos complexos. Para resolver uma problemática apresentada, existem algumas maneiras de entender e desenvolver a solução, através de formas de representação (construções):
 
 - Descrição Narrativa
 
@@ -90,13 +88,15 @@ Para resolver uma problemática apresentada, existem algumas maneiras de entende
 	Um exemplo simples para construção das duas primeiras formas de representação de um algoritimo feito para resolvê-lo:
 		
 	PROBLEMA:
+	
 		Descobrir o resultado da soma de dois números.
 
 	SOLUÇÕES:
+
 		- Descrição Narrativa:
-			1 - Definir primeiro quais os número que serão somados;
-			2 - Somá-los;
-			3 - Exibir o resultado.
+			1 - Definir primeiro quais os número que serão somados;  
+			2 - Somá-los;  
+			3 - Exibir o resultado.  
 		- Fluxograma
 									INÍCIO
 			
@@ -110,11 +110,11 @@ Para resolver uma problemática apresentada, existem algumas maneiras de entende
 
 Para definirmos uma certa generalidade sobre algoritimos e diferentes linguagens, precisamos conhecer um pouco sobre sintaxe e semântica. São elementos que caracterizam a lógica de expressão das formas verbais e permitem maior controle sobre a informação contida nas mensagens de comunicação, sendo assim, amplia o controle sobre seus comandos nas soluções práticas. Facilita o aprendizado de novas ferramentas reparando nas estruturas e identações. Sintaxe:
 
-"Parte da gramática que estuda a disposição das palavras na frase e das frases entre sí."
+	"Parte da gramática que estuda a disposição das palavras na frase e das frases entre sí."
 
 Ou seja, o alvo sempre dos estudos das linguagens envolve observar as palavras/caracteres, ou estruturas, e sua ordem e harmonia no discurso completo. E ainda:
 
-"Ao emitir uma mensagem verbal, o emissor procura transmitir um significado completo e compeensível."
+	"Ao emitir uma mensagem verbal, o emissor procura transmitir um significado completo e compeensível."
 
 É essa compreensão que buscamos quando precisamos estudar os mecanismos dos comandos e estruturas para fazê-los funcionar como quisermos, e criar motores de interações altamente funcionais. Para facilitar, sintaxe pode ser pensada como uma forma de design lírico.
 
