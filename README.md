@@ -128,11 +128,11 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 
 	Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características:
 	
-	Operadores:  
-		+	Adição;  
-		-	Subtração;  
-		*	Multiplicação;  
-		/	Divisão;  
+		Operadores Aritméticos:  
+			+	Adição;  
+			-	Subtração;  
+			*	Multiplicação;  
+			/	Divisão;  
 	
 - Lógicas 
 
