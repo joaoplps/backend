@@ -28,8 +28,8 @@ Os computadores e máquinas computacionais inventadas pelo ser humano tem instru
 Para o circuito de informações funcionar, a unidade lógica recebe comandos já prevenidos de comportamentos. As linguagens surgem para facilitar a execução dos comandos por parte dos usuários. Nesse sentido, conseguimos imaginar uma "pilha":
 
 	PC	
-	Baixo Nível
-	Alto Nível
+	- Baixo Nível
+	- Alto Nível
 	USUÁRIO
 
 
@@ -170,91 +170,61 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 
 ### Variáveis Simples
 
-		Em nome da máquina programável entender como proceder com
-	os dados fornecidos externamente, é necessário que o usuário
-	especifique o tipo da informação que está lhe passando nas
-	instruções. Para cada tipo existe uma configuração diferente
-	de comportamento por parte da máquina.
-		Por exemplo, como podemos somar um número e um nome? Se
-	você separar um lugar para guardar um número, como poderá
-	guardar uma letra no mesmo lugar? O que acontece em algumas
-	linguagens, é o auto-reconhecimento quando a entrada é feita,
-	porém isso exige mais instruções básicas de software. Em
-	Portugol Studio, ou em C++ (alvo deste módulo), é preciso
-	declarar o tipo seguido do nome da variável que deseja
-	estabelecer.
-	
-			FÓRMULAS:		comando ( parâmetros )
-								comando variavel = valor
-								etc...
-	
-	Comandos:
-		. inteiro - Valor pertencente ao conjunto dos n. inteiros.
-		. Cadeia - Valor é um texto ou uma grande sequência de 
-			carácteres.
-		. vazio - Sem valor (não é a mesma coisa que zero!), null.
-		. Caracter - Valor é apenas UM carácter alfanumérico ou 
-			especial (letras, números, pontuações, etc).
-		. logico - Retorna verdadeiro ou falso (o valor é usado em
-			operação lógica e só poderá retornar um dos dois 
-			resultados).
-		. real - Valor pertence ao conjunto dos números reais, ou
-			uma fração decimal possivelmente infinita (números com 
-			casas decimais).
-		Uso:	inteiro x
-				real x, y, z
-				cadeia nome
+Em nome da máquina programável entender como proceder com os dados fornecidos externamente, é necessário que o usuário especifique o tipo da informação que está lhe passando nas instruções. Para cada tipo existe uma configuração diferente de comportamento por parte da máquina. Por exemplo, como podemos somar um número e um nome? Se você separar um lugar para guardar um número, como poderá guardar uma letra no mesmo lugar?
 
-
-Entrada e Saída
-
-		Segundo o manual de instruções do software Portugol Studio,
-	"a instrução de entrada de dados possibilita que o algoritimo
-	capture dados provenientes do ambiente externo e armazene em
-	variáveis.". A comunicação com o usuário é a chave para o 
-	controle e para a programação. É através dessa interação que os
-	computadores realizam as funções e trabalhos que designamos.
+O que acontece em algumas linguagens, é o auto-reconhecimento quando a entrada é feita, porém isso exige mais instruções básicas de software. Em Portugol Studio, ou em C++, é preciso declarar o tipo seguido do nome da variável que deseja estabelecer.
 	
-	Comandos:
-		. escreva - Escreverá o que tiver entre parênteses na tela.
+FÓRMULAS:
+
+	comando ( parâmetros )
+	comando variavel = valor
+	etc...
+	
+Comandos:
+
+	- inteiro - Valor pertencente ao conjunto dos n. inteiros.
+	- Cadeia - Valor é um texto ou uma grande sequência de carácteres.
+	- vazio - Sem valor (não é a mesma coisa que zero!), null.
+	- Caracter - Valor é apenas UM carácter alfanumérico ou especial (letras, números, pontuações, etc).
+	- logico - Retorna verdadeiro ou falso (o valor é usado em operação lógica e só poderá retornar um dos dois resultados).
+	- real - Valor pertence ao conjunto dos números reais, ou uma fração decimal possivelmente infinita (números com casas decimais).
+	
+	Uso:
+
+		inteiro x
+		real x, y, z
+		cadeia nome
+		etc...
+
+### Entrada e Saída
+
+Segundo o manual de instruções do software Portugol Studio, "a instrução de entrada de dados possibilita que o algoritimo capture dados provenientes do ambiente externo e armazene em variáveis.". A comunicação com o usuário é a chave para o controle e para a programação. É através dessa interação que os computadores realizam as funções e trabalhos que designamos.
+
+Comandos:
+
+	- escreva - Escreverá o que tiver entre parênteses na tela.
+		
 		Uso:
 			escreva("Texto mostrado.")
-			escreva(x," Texto!") <- Valor da variável x e o texto
-											todo entre aspas (espaço também).
-											
-		. leia - Ao declarar uma variável x e dizer por exemplo que
-			será um número inteiro, se quisermos que o valor desta
-			variável seja definida pelo usuário externo utilizaremos
-			o comando leia.
+			escreva(x," Texto!") <- Valor da variável x e o texto todo entre aspas (espaço também).
+										
+	- leia - Ao declarar uma variável x e dizer por exemplo que será um número inteiro, se quisermos que o valor desta variável seja definida pelo usuário externo utilizaremos o comando leia.
+		
 		Uso:
 			leia(x)
-			leia(x,y) <- Serão duas entradas, primeiro a variável x,
-								e após o Enter ser pressionado, y.
-							
-		. limpa - Em outras linguagens é um comando altamente
-			adaptado. Como o propósito do Portugol Studio é
-			educacional, e quase sempre iremos executar os programas
-			no próprio console ou terminal, é um artifício usado
-			para limpagem de tela, quando precisamos "apagar" o que
-			está escrito para exibir novas saídas. Não precisa de
-			nenhum parâmetro específico entre os parênteses.
+			leia(x,y) <- Serão duas entradas, primeiro a variável x, e após o Enter ser pressionado, y.
+						
+	- limpa - Em outras linguagens é um comando altamente adaptado. Como o propósito do Portugol Studio é educacional, e quase sempre iremos executar os programas no próprio console ou terminal, é um artifício usado para limpagem de tela, quando precisamos "apagar" o que está escrito para exibir novas saídas. Não precisa de nenhum parâmetro específico entre os parênteses.
+		
 		Uso:
 			limpa()
 
 
-Estruturas de Controle
+### Estruturas de Controle
 
-		Para garantir o desvio intencional do fluxo durante a
-	execução de um algoritimo, utilizamos as estruturas de controle
-	as quais representam pré-decisões definidas pelo programador.
-	Quando se faz necessário executar ações de acordo com os	dados
-	que foram fornecidos pelo próprio programa, utilizamos Laços
-	de Repetição. Pode ser o caso de querer repetir uma ação 
-	determinado número de vezes, inclusive podendo controlar e
-	manipular a ordem com que as instruções serão executadas em
-	função dos dados fornecidos.
+Para garantir o desvio intencional do fluxo durante a execução de um algoritimo, utilizamos as estruturas de controle as quais representam pré-decisões definidas pelo programador. Quando se faz necessário executar ações de acordo com os	dados que foram fornecidos pelo próprio programa, utilizamos Laços de Repetição. Pode ser o caso de querer repetir uma ação determinado número de vezes, inclusive podendo controlar e manipular a ordem com que as instruções serão executadas em função dos dados fornecidos.
 	
-	- Seleção ou Desvío Condicional
+- Seleção ou Desvío Condicional
 			Durante uma execução, podemos encontrar situações onde um
 		conjunto de instruções deverá ser executado caso uma 
 		condição seja verdadeira.
@@ -280,7 +250,7 @@ Estruturas de Controle
 			senao se(nota >= 3){escreva("D")}
 			senao{escreva("E")}
 		
-	- Laços de Repetição
+- Laços de Repetição
 			Justamente criar um "Looping" controlado onde uma 
 		quantidade de comandos se repete até que uma determinada 
 		condição seja verdadeira.
@@ -327,11 +297,11 @@ Estruturas de Controle
 			instruções, incrementa-se o valor de i e repete o teste
 			lógico e, conforme resultado, repetem-se as instruções.
 
-		Com essas informações básicas já podemos começar a abordar 
-	problemas simples para enxergar as soluções nesses formatos. 
-	Após, veremos o uso das variáveis compostas.
-		Abaixo é um exemplo de como usar as estruturas de repetição
-	para exibir os mesmos resultados em um ambiente de comando.
+Com essas informações básicas já podemos começar a abordar 
+problemas simples para enxergar as soluções nesses formatos. 
+Após, veremos o uso das variáveis compostas.
+Abaixo é um exemplo de como usar as estruturas de repetição
+para exibir os mesmos resultados em um ambiente de comando.
 
 #include<iostream>
 #include<windows.h>				//Comando Sleep = pausa temporariamente (milisegundos);
@@ -356,7 +326,7 @@ main(){
 }
 
 
-Validação de Variáveis
+### Validação de Variáveis
 
 		Validamos uma variável antes de prosseguir com o código para
 	que o programa responda exatamente como previsto:
