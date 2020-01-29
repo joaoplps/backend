@@ -217,51 +217,57 @@ Comandos:
 ### Estruturas de Controle
 
 Para garantir o desvio intencional do fluxo durante a execução de um algoritimo, utilizamos as estruturas de controle as quais representam pré-decisões definidas pelo programador. Quando se faz necessário executar ações de acordo com os	dados que foram fornecidos pelo próprio programa, utilizamos Laços de Repetição. Pode ser o caso de querer repetir uma ação determinado número de vezes, inclusive podendo controlar e manipular a ordem com que as instruções serão executadas em função dos dados fornecidos.
-	
-- Seleção ou Desvío Condicional
 
-	Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
+#### Seleção ou Desvío Condicional
 
-	- se - Como dizer quando um conjunto de instruções será executado. Uso:  
+Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
+
+Comandos:
+
+- se - Como dizer quando um conjunto de instruções será executado. Uso:  
 		se(resposta = "sim") {escreva("Tchau!")}
-		
-	- se-senao - Uma das duas opções será executada. Uso:  
+	
+- se-senao - Uma das duas opções será executada. Uso:  
 		se(hora >= 6 e hora <= 18) {escreva("É dia.")}  
 		senao{escreva(""É noite.)}
-	
-	- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites. Uso:  
+
+- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites. Uso:  
 		se(nota >= 9) {escreva("A")}  
 		senao se(nota >= 7) {escreva("B")}  
 		senao se(nota >= 5) {escreva("C")}  
 		senao se(nota >= 3) {escreva("D")}  
 		senao{escreva("E")}  
-			
-- Laços de Repetição
+		
+#### Laços de Repetição
 
-	Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
+Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
 
-	- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas. Uso:  
+Comandos:
+
+- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas. Uso:  
 		enquanto(parar != "sim")  
 		{  
 			escreva("Deseja parar?")  
 			leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.  
 		}
-		
-	- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça. Uso:  
+	
+- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça. Uso:  
 		faca  
 		{  
 			escreva("Insira o valor do lado: ")  
 			leia(lado)  
 		}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
 
-	- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso: Uso: Tabuada de 3:  
+- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso: Uso: Tabuada de 3:  
 		para(inteiro i = 1; i < 10; i++)  
 		{  
 			tabuada = i * 3  
 			escreva(tabuada," ")  
 		}  
-		
+	
 		*Leia-se: Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
+
+
 
 Com essas informações básicas já podemos começar a abordar problemas simples para enxergar as soluções nesses formatos. Após, veremos o uso das variáveis compostas. Abaixo é um exemplo de como usar as estruturas de repetição para exibir os mesmos resultados em um ambiente de comando:
 
@@ -301,7 +307,7 @@ Com essas informações básicas já podemos começar a abordar problemas simple
 
 Validamos uma variável antes de prosseguir com o código para que o programa responda exatamente como previsto:
 	
-Exemplo 1 - Deseja executar para uma nova empresa? (s/n): "somente s ou n":
+1 - Deseja executar para uma nova empresa? (s/n): "somente s ou n":
 	
 	#include<iostream>
 	
@@ -322,7 +328,7 @@ Exemplo 1 - Deseja executar para uma nova empresa? (s/n): "somente s ou n":
 		cout<<"OK.";
 	}
 
-Exemplo 2 - Testando validação de dados, o programa lê o nome do aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando a média. É executado até que a resposta à pergunta s/n seja n. Realiza procedimentos para:
+2 - Testando validação de dados, o programa lê o nome do aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando a média. É executado até que a resposta à pergunta s/n seja n. Realiza procedimentos para:
 
 	1.Sexo apenas m/f;
 	2.Nota entre 0 e 10;
@@ -387,7 +393,7 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 
 	tipo		nome[quantidade de dados ou colunas]
 
-	cadeia vetor[2] = {"a", "b"}
+	cadeia vetor[2] = {"a", "b"}  
 	inteiro vetor[2] = {32, 44}
 	
 	Exemplo - Entrada, saída e cálculos:
@@ -397,7 +403,8 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 		using namespace std;
 		
 		main() {
-			int n[3],np=0,ni=0,nt=0,mn=-99999999;float m;
+			int n[3], np=0, ni=0, nt=0, mn=-99999999;
+			float m;
 			
 			cout<<"Insira 3 números inteiros: ";
 			for(int i=0;i<=2;i++) {
@@ -446,173 +453,203 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 
 - Matriz (bidimensional, dois ou mais índices: linhas e colunas). Uso:
 
-	\
-	tipo	nome[qtd. de linhas][qtd. de colunas]
-	real matriz[linhas][colunas]
+	tipo	nome[qtd. de linhas][qtd. de colunas]  
+	real matriz[linhas][colunas]  
 
-	Declarações - "int m[linhas][colunas];"
-	Atribuições - "m[nl][nc]=x;"
+	Declarações - "int m[linhas][colunas];"  
+	Atribuições - "m[nl][nc]=x;"  
 
-	Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:
-	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<"Digite ... : ";cin>>m[l][c];"
-	Onde: nl - número de linhas e nc - número de colunas.
+	Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:  
+	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<"Digite ... : ";cin>>m[l][c];"  
+	Onde: nl - número de linhas e nc - número de colunas.  
 
-	Saída de dados - "cout<<endl;" finaliza a linha
-	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<m[l][c];cout<<endl;"
+	Saída de dados - "cout<<endl;" finaliza a linha  
+	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<m[l][c];cout<<endl;"  
 
-	Exemplo 1 - Testando Matriz:
+	Exemplo - Testando Matriz:
+
 		#include<iostream>
 		
 		using namespace std;
 		
 		main() {
-			int l,c,nl,nc;cout<<"Número de linhas da matriz: ";cin>>nl;
-			cout<<"Número de colunas da matriz: ";cin>>nc;int m[nl][nc];
-			for(l=0;l<nl;l++)for(c=0;c<nc;c++) {cout<<"m["<<l<<"]["<<c<<"] : ";cin>>m[l][c];}
-			for(l=0;l<nl;l++) {for(c=0;c<nc;c++)cout<<m[l][c]<<"   ";cout<<endl;}
+			int l,c,nl,nc;
+			
+			cout<<"Número de linhas da matriz: ";
+			cin>>nl;
+
+			cout<<"Número de colunas da matriz: ";
+			cin>>nc;
+			
+			int m[nl][nc];
+
+			for(l=0;l<nl;l++)
+				for(c=0;c<nc;c++) {
+					cout<<"m["<<l<<"]["<<c<<"] : ";
+					cin>>m[l][c];
+				}
+
+			for(l=0;l<nl;l++) {
+				for(c=0;c<nc;c++) cout<<m[l][c]<<"   ";
+				cout<<endl;
+			}
 		}
-	\
+
 
 - Arrays: Tridimensional (camadas de matrizes). Uso:
 
-	Declarações: tipo nome[indice]
-
+	Declarações: tipo nome[indice]  
 	Atribuição: nome[indice] = <valor>
 
-	Obs.: Índice declarado (quantidade de posições, referências):
-	contagem a partir do zero: 0, 1, 2 ... N, ou seja, a primeira
-	posição é vetor[0];
+	Obs.: Índice declarado (quantidade de posições, referências): contagem a partir do zero: 0, 1, 2 ... N, ou seja, a primeira posição é vetor[0];
 
 	
 ### Rotinas de Classificação (ordens e arranjos)
 	
-		Código para gerar a sequência de fibonacci em um vetor com
-	dez posições.
-	- Fibonacci - 0 1 1 2 3 5 8 13 ... n=(n-1)+(n-2)
+- Código para gerar a sequência de fibonacci em um vetor com dez posições.
 	
-	Obs.: Inicialização das primeiras duas posições para seguir
-	a sequência. Biblioteca windows.h permite o comando Sleep 
-	(milisegundos).
+	Fibonacci - 0 1 1 2 3 5 8 13 ... n=(n-1)+(n-2)
+		
+	Obs.: Inicialização das primeiras duas posições para seguir a sequência. Biblioteca windows.h permite o comando Sleep (milisegundos).
+		
+	Saídas Separadas:
+		#include<iostream>
+		#include<windows.h>
+		using namespace std;
+		main() {
+			int i,f[10]={0,1};cout<<f[0]<<" "<<f[1]<<" ";
+			for(i=2;i<=9;i++) {f[i]=f[i-1]+f[i-2];cout<<f[i]<<" ";Sleep(500);}cout<<"\n";
+		}
+
+	Saída única:
+		#include<iostream>
+		using namespace std;
+		main() {
+			int i,f[10]={0,1};for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
+			for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
+		}
+
+	Atribuindo os valores iniciais (posições 0 e 1):
+		#include<iostream>
+		using namespace std;
+		main() {
+			int i,f[10];f[0]=0;f[1]=1;
+			for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
+			for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
+		}
+
+- Código para um vetor de tamanho n (lido), e atribui a cada posição do vetor o seu índice elevado ao quadrado.
+
+	Função pow(a,b) onde a=base e b=expoente:
+
+		#include<iostream>
+		#include<math.h>
+		
+		using namespace std;
+		
+		main() {
+			int t;
+			cout<<"Digite o tamanho desejado do vetor: ";
+			cin>>t;
+			
+			int v[t];
+			for(int c=0;c<=t-1;c++) {
+				v[c]=pow(c,2);
+				cout<<"v["<<c<<"] = "<<v[c]<<"\n";
+			}
+		}
+
+- Classificação método "bolha": carrega valores maiores ou menores para a ultima posição por comparação entre dois valores consequentes de modo crescente ou decrescente.
+		- Note a inversão de variáveis com x;
+		- O intervalo for(int i=0;i<=t-1;i++), o teste vai até a penúltima posiçao, no caso do vetor de t posições;
+		- A expressão relacionada ao teste, garante em i<=t-1-c (c inicializado em 0) que as posições do cálculo decresçam, evitando comparações repetidas;
+		- Também funciona comparando o código ASC em vetores tipo string;
+		- Para ordem decrescente inverta os sinais de maior para menor e decremente.
+
+	Método Bolha:
+
+		#include<iostream>
+		
+		using namespace std;
+		
+		main() {
+			int c,i,x,t;
+			
+			cout<<"Digite o tamanho desejado do vetor: ";
+			cin>>t;
+			
+			int v[t];
+
+			for(i=0;i<t;i++) {
+				cout<<"v["<<i<<"] : ";
+				cin>>v[i];
+			}
+			
+			for(c=0;c<t-1;c++) {
+				for(int i=0;i<t-1-c;i++)
+					if(v[i]>v[i+1]) {
+						x=v[i];
+						v[i]=v[i+1];
+						v[i+1]=x;
+					}
+			}
+			
+			cout<<"Resultado: \n";
+			for(i=0;i<t;i++) cout<<"v["<<i<<"] = "<<v[i]<<endl;
+		}
+
+
+### Subprogramas (funções)
+
+Rotinas e programas dentro de uma função principal. Manutenção e clareza do código, pode ser usado mais de uma vez resumindo e padronizando processos para manipular melhor rotinas. Variáveis em subprogramas podem ser do tipo Local, do ponto de aparecimento em diante, ou seja, elas valem do momento que aparecem em diante, mas não serão reconhecidas fora da função nativa. Observar parâmetros em main() e fun(). Declaradas antes da main function. Nomes Técnicos: - Função (existe retorno caracterizado, tipo definido - "int", "char", etc). O parâmetro frase receberá o conteúdo (string, no caso) que será passado pelo programa principal:
+		
+	#include<iostream>
 	
-	Exemplo 1 - Saídas Separadas:
-#include<iostream>
-#include<windows.h>
-using namespace std;
-main() {
-	int i,f[10]={0,1};cout<<f[0]<<" "<<f[1]<<" ";
-	for(i=2;i<=9;i++) {f[i]=f[i-1]+f[i-2];cout<<f[i]<<" ";Sleep(500);}cout<<"\n";
-}
+	using namespace std;
+	
+	void mensagem(string frase) {
+		cout<<frase<<endl;
+	}
+	
+	main() {
+		cout<<"Testando Subprogramas\n\n";
+		mensagem("Yeah!");
+	}
+			
+Procedimento (não retorna valor algum, neutro, sem tipo, "void"):
+			
+	#include<iostream>
+	
+	using namespace std;
+	
+	void mensagem() {
+		cout<<"Yeah!\n";
+	}
+	
+	main() {
+		cout<<"Testando Subprogramas\n\n";
+		mensagem();
+	}
 
-	Exemplo 2 - Saída única:
-#include<iostream>
-using namespace std;
-main() {
-	int i,f[10]={0,1};for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
-	for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
-}
+Testando com variável: o parâmetro é levado e torna-se a variável, o que flexibiliza a utilidade da função. Aterando o parâmetro altera-se o conteúdo. No caso da função oline, c é o caractere que será utilizado e n a quantidade de repetições do mesmo. Os parâmetros podem ser constantes ou variáveis (se vierem do usuário, por exemplo):
 
-	Exemplo 3 - Atribuindo os valores iniciais (posições 0 e 1):
-#include<iostream>
-using namespace std;
-main() {
-	int i,f[10];f[0]=0;f[1]=1;
-	for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
-	for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
-}
+	#include<iostream>
+	using namespace std;
+	void mensagem(string frase) {cout<<frase<<endl;}
+	void linha() {cout<<"-------------------------------\n";}
+	void linhapersonalizada(char c,int n) {for(int i;i<=n;i++)cout<<c;cout<<endl;}
+	main() {
+		cout<<"Testando Subprogramas\n\n";linha();mensagem("Yeah!\n");
+		string texto="Oh Yeahhh!\n";linha();mensagem(texto);linha();
+		cout<<"Digite algo: ";cin>>texto;cout<<"E eu repito, ";mensagem(texto);
+		linha();char letra;int qtd;
+		cout<<"Insira uma letra: ";cin>>letra;
+		cout<<"Insira a quantidade: ";cin>>qtd;
+		linhapersonalizada(letra,qtd+5);
+		linhapersonalizada('H',30);	// Funções com parâmetros constantes (A VER).
+	}
 
-		Código para um vetor de tamanho n (lido), e atribui a cada 
-	posição do vetor o seu índice elevado ao quadrado.
-	- Função pow(a,b) onde a=base e b=expoente.
-
-#include<iostream>
-#include<math.h>
-using namespace std;
-main() {
-	int t;cout<<"Digite o tamanho desejado do vetor: ";
-	cin>>t;int v[t];
-	for(int c=0;c<=t-1;c++) {v[c]=pow(c,2);cout<<"v["<<c<<"] = "<<v[c]<<"\n";}
-}
-
-		Classificação método "bolha": carrega valores maiores ou
- 	menores para a ultima posição por comparação entre dois
- 	valores consequentes de modo crescente ou decrescente.
-	- Note a inversão de variáveis com x;
-	- O intervalo for(int i=0;i<=t-1;i++), o teste vai até a
-		penúltima posiçao, no caso do vetor de t posições;
-	- A expressão relacionada ao teste, garante em i<=t-1-c (c
-		inicializado em 0) que as posições do cálculo decresçam,
-		evitando comparações repetidas;
-	- Também funciona comparando o código ASC em vetores tipo
-		string;
-	- Para ordem decrescente inverta os sinais de maior para menor
-		e decremente.
-
-#include<iostream>
-using namespace std;
-main() {
-	int c,i,x,t;cout<<"Digite o tamanho desejado do vetor: ";cin>>t;int v[t];
-	for(i=0;i<t;i++) {cout<<"v["<<i<<"] : ";cin>>v[i];}
-	for(c=0;c<t-1;c++) {
-		for(int i=0;i<t-1-c;i++)if(v[i]>v[i+1]) {x=v[i];v[i]=v[i+1];v[i+1]=x;}
-	}cout<<"Resultado: \n";for(i=0;i<t;i++)cout<<"v["<<i<<"] = "<<v[i]<<endl;
-}
-
-
-Subprogramas (funções)
-
-		Rotinas e programas dentro de uma função principal. 
-	Manutenção e clareza do código, pode ser usado mais de uma vez
-	resumindo e padronizando processos para manipular melhor 
-	rotinas. Variáveis em subprogramas podem ser do tipo Local, do
-	ponto de aparecimento em diante, ou seja, elas valem do
-	momento que aparecem em diante, mas não serão reconhecidas
-	fora da função nativa. Observar parâmetros em main() e fun().
-	Declaradas antes da main function. Nomes Técnicos:
-	- Função (existe retorno caracterizado, tipo definido - "int",
-	"char", etc). O parâmetro frase receberá o conteúdo (string, 
-	no caso) que será passado pelo programa principal.
-		
-#include<iostream>
-using namespace std;
-void mensagem(string frase) {cout<<frase<<endl;}
-main() {
-	cout<<"Testando Subprogramas\n\n";mensagem("Yeah!");
-}
-		
-		Procedimento (não retorna valor algum, neutro, sem tipo, 
-	"void"):
-		
-#include<iostream>
-using namespace std;
-void mensagem() {cout<<"Yeah!\n";}
-main() {
-	cout<<"Testando Subprogramas\n\n";mensagem();
-}
-
-		Testando com variável: o parâmetro é levado e torna-se a
-	variável, o que flexibiliza a utilidade da função. Aterando o
-	parâmetro altera-se o conteúdo. No caso da função oline, c é o
-	caractere que será utilizado e n a quantidade de repetições do
-	mesmo. Os parâmetros podem ser constantes ou variáveis (se
-	vierem do usuário, por exemplo):
-
-#include<iostream>
-using namespace std;
-void mensagem(string frase) {cout<<frase<<endl;}
-void linha() {cout<<"-------------------------------\n";}
-void linhapersonalizada(char c,int n) {for(int i;i<=n;i++)cout<<c;cout<<endl;}
-main() {
-	cout<<"Testando Subprogramas\n\n";linha();mensagem("Yeah!\n");
-	string texto="Oh Yeahhh!\n";linha();mensagem(texto);linha();
-	cout<<"Digite algo: ";cin>>texto;cout<<"E eu repito, ";mensagem(texto);
-	linha();char letra;int qtd;
-	cout<<"Insira uma letra: ";cin>>letra;
-	cout<<"Insira a quantidade: ";cin>>qtd;
-	linhapersonalizada(letra,qtd+5);
-	linhapersonalizada('H',30);	// Funções com parâmetros constantes (A VER).
-}
-
-		Retornos:
+Retornos:
 
 #include<iostream>
 using namespace std;
