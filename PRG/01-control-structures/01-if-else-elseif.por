@@ -1,10 +1,8 @@
 /*
  * 	Avaliar se três valores dados pelo usuário formam um triângulo, e se sim, qual o tipo.
 */
-programa
-{
-	funcao inicio()
-	{
+programa {
+	funcao inicio() {
 		// Conjunto de variáveis
 		real a, b, c						
 		

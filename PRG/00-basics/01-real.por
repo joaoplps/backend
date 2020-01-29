@@ -7,10 +7,10 @@ programa
 	{
 		// Conjunto de variáveis necessárias
 		real r, h, ab, v		
-		escreva("Digite o raio de um cilindro: \n")
-		leia(r)
 		
 		// Entrada de dados: Raio (r) e Altura (h)
+		escreva("Digite o raio de um cilindro: \n")
+		leia(r)
 		escreva("Digite a altura de um cilindro: \n")				
 		leia(h)
 		

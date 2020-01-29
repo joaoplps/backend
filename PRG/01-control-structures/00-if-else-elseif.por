@@ -1,10 +1,8 @@
 /*
  * 	Calcular o valor final do consumo de energia em um período de 30 dias, dado o valor do kw/h.
 */
-programa
-{
-	funcao inicio()
-	{
+programa {
+	funcao inicio() {
 		real C, V
 		
 		escreva("Digite o consumo em kw/h: ")
