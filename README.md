@@ -16,12 +16,12 @@ esperado.
 
 @LPS
 
-## Contexto
+## Fundamentos / Pseudo-código
 
 João Pedro Lima Pacheco da Silva
 
 
-### Programação e Desenvolvimento
+### Programação & Desenvolvimento
 
 Os computadores e máquinas computacionais inventadas pelo ser humano tem instrumentos desenvolvidos para estabelecer comunicações. Esses instrumentos trabalham as informações que compõem uma mensagem de um ponto de vista organizacional matemático, ou seja, são codificações e decodificações de um simples sinal elétrico dentro um sistema binário.
 
@@ -269,7 +269,7 @@ Comandos:
 
 
 
-Com essas informações básicas já podemos começar a abordar problemas simples para enxergar as soluções nesses formatos. Após, veremos o uso das variáveis compostas. Abaixo é um exemplo de como usar as estruturas de repetição para exibir os mesmos resultados em um ambiente de comando:
+Com essas informações básicas já podemos começar a abordar problemas simples para enxergar as soluções nesses formatos. Após, veremos o uso das variáveis compostas. Abaixo é um exemplo de como usar as estruturas de repetição para exibir os mesmos resultados em um ambiente de comando, escrito em C++:
 
 	#include<iostream>
 	#include<windows.h>				// Comando Sleep = pausa temporariamente (milisegundos);
@@ -302,6 +302,8 @@ Com essas informações básicas já podemos começar a abordar problemas simple
 		}
 	}
 
+
+## C++
 
 ### Validação de Variáveis
 
@@ -459,12 +461,25 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 	Declarações - "int m[linhas][colunas];"  
 	Atribuições - "m[nl][nc]=x;"  
 
-	Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:  
-	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<"Digite ... : ";cin>>m[l][c];"  
-	Onde: nl - número de linhas e nc - número de colunas.  
+	Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:
 
-	Saída de dados - "cout<<endl;" finaliza a linha  
-	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<m[l][c];cout<<endl;"  
+		for(l=0;l<nl;l++) {
+			for(c=0;c<nc;c++) {
+				cout<<"Digite ... : ";
+				cin>>m[l][c];
+			}
+		}
+
+		Onde: nl - número de linhas e nc - número de colunas.  
+
+	Saída de dados - "cout<<endl;" finaliza a linha:
+
+		for(l=0;l<nl;l++) {
+			for(c=0;c<nc;c++){
+				cout<<m[l][c];
+				cout<<endl;"
+			}
+		}
 
 	Exemplo - Testando Matriz:
 
@@ -634,28 +649,145 @@ Procedimento (não retorna valor algum, neutro, sem tipo, "void"):
 Testando com variável: o parâmetro é levado e torna-se a variável, o que flexibiliza a utilidade da função. Aterando o parâmetro altera-se o conteúdo. No caso da função oline, c é o caractere que será utilizado e n a quantidade de repetições do mesmo. Os parâmetros podem ser constantes ou variáveis (se vierem do usuário, por exemplo):
 
 	#include<iostream>
+	
 	using namespace std;
-	void mensagem(string frase) {cout<<frase<<endl;}
-	void linha() {cout<<"-------------------------------\n";}
-	void linhapersonalizada(char c,int n) {for(int i;i<=n;i++)cout<<c;cout<<endl;}
+	
+	void mensagem(string frase) cout<<frase<<endl;
+	void linha() cout<<"-------------------------------\n";
+	void linhapersonalizada(char c,int n) {
+		for(int i;i<=n;i++) cout<<c;
+		cout<<endl;
+	}
+	
 	main() {
-		cout<<"Testando Subprogramas\n\n";linha();mensagem("Yeah!\n");
-		string texto="Oh Yeahhh!\n";linha();mensagem(texto);linha();
-		cout<<"Digite algo: ";cin>>texto;cout<<"E eu repito, ";mensagem(texto);
-		linha();char letra;int qtd;
-		cout<<"Insira uma letra: ";cin>>letra;
-		cout<<"Insira a quantidade: ";cin>>qtd;
+		cout<<"Testando Subprogramas\n\n";
+		linha();
+
+		mensagem("Yeah!\n");
+		string texto="Oh Yeahhh!\n";
+		linha();
+		
+		mensagem(texto);
+		linha();
+
+		cout<<"Digite algo: ";
+		cin>>texto;
+		cout<<"E eu repito, ";
+		mensagem(texto);
+		linha();
+		
+		char letra;
+		int qtd;
+
+		cout<<"Insira uma letra: ";
+		cin>>letra;
+		cout<<"Insira a quantidade: ";
+		cin>>qtd;
+
 		linhapersonalizada(letra,qtd+5);
 		linhapersonalizada('H',30);	// Funções com parâmetros constantes (A VER).
 	}
 
 Retornos:
 
-#include<iostream>
-using namespace std;
-int resto(int dividendo,int divisor) {int r;r=dividendo%divisor;return(r);}
-main() {
-	int valor,dd,ds;
-	cout<<"Insira o dividendo: ";cin>>dd;cout<<"Insira o divisor: ";cin>>ds;
-	valor=resto(dd,ds);cout<<"Resto = "<<valor<<endl;
-}
+	#include<iostream>
+	
+	using namespace std;
+	
+	int resto(int dividendo,int divisor) {
+		int r;
+		r=dividendo%divisor;
+		return(r);
+	}
+	
+	main() {
+		int valor,dd,ds;
+
+		cout<<"Insira o dividendo: ";
+		cin>>dd;
+		cout<<"Insira o divisor: ";
+		cin>>ds;
+
+		valor=resto(dd,ds);
+		
+		cout<<"Resto = "<<valor<<endl;
+	}
+
+
+## Orientação à Objetos
+
+### Objetos e Classes
+
+Classe define Objeto de características e comportamentos diferentes. Os métodos alteram características.
+
+- Atributos - Características de um Objeto;
+- Métodos - Definem comportamentos (funções, rotinas);
+	
+	Ex.: 
+		Pessoa: Classe
+		Atributos: Nome, Idade, Peso, Altura;
+		Métodos: fazer_aniversário(); -> Muda o atributo Idade, por exemplo;
+	
+### Linguagens
+
+- Compiladas - Compiladores específicos para cada ambiente;
+- Interpretadas - Compila em um tradutor que trabalha com diferentes ambientes;
+	
+Java não é uma linguagem, e sim uma plataforma. Possue as seguintes divisões:
+	
+	J2SE Standard Edition
+	J2EE Enterprise Edition - Pacotes Empresariais (módulos);
+	J2ME Micro Edition - Telefonia, etc;
+	Java Web Services
+	Java Fx - Efeitos Sonoros
+
+Esta plataforma é composta por dois instrumentos:
+		
+			Runtime Environment
+		JDK + JRE
+	Dev Kit
+
+### Código e Sintaxe
+
+Variáveis Primitivas:
+	. int idade = 10;
+	. float valor = 1.5;
+	. double							(aceita int e float)
+	. char letra = 'a';
+	. boolean verdade = true;	(verdadeiro ou falso)
+	. String nome = "João";		(não é primitiva, cabem textos)
+	
+Escrita básica na tela:
+	
+	public class Hello{ //Projeto
+		public void static main(String[] args) { //Método Principal
+			System.out.println("Yeah!"); //Execução
+		}
+	}
+	
+Na linguagem Java, é possível atribuir o valor de um tipo de variável a outro tipo de variável, apontando a operação ao compilador. Este processo é chamado de CASTING:
+	
+	int num;
+	num = (int) 1.234;
+
+### Controle de fluxo SWITCH CASE e Entrada de Dados:
+
+Switch case Verifica variável e age de acordo com os casos (escolha-caso). Importante não esquecer da linha "break;" para parar a execução quando o teste for verdadeiro. A linha "default" executa se nenhum teste for verdade. Para a entrada de dados é necessário importar a biblioteca Scanner, que é um método consultor.
+	
+### Classe String
+	
+Não há limite de tamanho, e suas variáveis guardam referências para objetos (espaços na memória)e não valores. Criação com new:
+	
+	String x = new String("Segunda-Feira");
+	String y = new String("Segunda-Feira");
+			
+Se compararmos as variáveis x e y (x==y) criadas com "new String", estaríamos comparando os endereços de memória, e a expressão retornaria False. Se os elementos fossem atribuídos sem o "new String", o java retornaria a expressão como True. O método "equals" alcança os valores dentro das referências:
+	
+	if(x.equals(y)){System.out.println("X e Y são iguais.");}
+	else{System.out.println("X e Y são diferentes.");}
+			
+Vamos à prática.
+Comece pelo arquivo chamado 00-start.java, abra-o no editor de texto de sua preferência e leia a documentação inclusa no código para acompanhar o passo a passo e complete a lista.
+
+
+@LPS
