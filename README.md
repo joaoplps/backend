@@ -528,29 +528,50 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 	Obs.: Inicialização das primeiras duas posições para seguir a sequência. Biblioteca windows.h permite o comando Sleep (milisegundos).
 		
 	Saídas Separadas:
+
 		#include<iostream>
 		#include<windows.h>
 		using namespace std;
 		main() {
-			int i,f[10]={0,1};cout<<f[0]<<" "<<f[1]<<" ";
-			for(i=2;i<=9;i++) {f[i]=f[i-1]+f[i-2];cout<<f[i]<<" ";Sleep(500);}cout<<"\n";
+			int i,f[10]={0,1};
+			
+			cout<<f[0]<<" "<<f[1]<<" ";
+
+			for(i=2;i<=9;i++) {
+				f[i]=f[i-1]+f[i-2];
+				cout<<f[i]<<" ";
+				Sleep(500);
+			}
+			
+			cout<<"\n";
 		}
 
 	Saída única:
+
 		#include<iostream>
 		using namespace std;
 		main() {
-			int i,f[10]={0,1};for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
-			for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
+			int i,f[10]={0,1};
+			
+			for(i=2;i<=9;i++) f[i]=f[i-1]+f[i-2];
+			for(i=0;i<=9;i++) cout<<f[i]<<" ";
+			
+			cout<<"\n";
 		}
 
 	Atribuindo os valores iniciais (posições 0 e 1):
+
 		#include<iostream>
 		using namespace std;
 		main() {
-			int i,f[10];f[0]=0;f[1]=1;
-			for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
-			for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
+			int i,f[10];
+			
+			f[0]=0;f[1]=1;
+			
+			for(i=2;i<=9;i++) f[i]=f[i-1]+f[i-2];
+			for(i=0;i<=9;i++) cout<<f[i]<<" ";
+			
+			cout<<"\n";
 		}
 
 - Código para um vetor de tamanho n (lido), e atribui a cada posição do vetor o seu índice elevado ao quadrado.
@@ -750,12 +771,12 @@ Esta plataforma é composta por dois instrumentos:
 ### Código e Sintaxe
 
 Variáveis Primitivas:
-	. int idade = 10;
-	. float valor = 1.5;
-	. double							(aceita int e float)
-	. char letra = 'a';
-	. boolean verdade = true;	(verdadeiro ou falso)
-	. String nome = "João";		(não é primitiva, cabem textos)
+	- int idade = 10;
+	- float valor = 1.5;
+	- double							(aceita int e float)
+	- char letra = 'a';
+	- boolean verdade = true;	(verdadeiro ou falso)
+	- String nome = "João";		(não é primitiva, cabem textos)
 	
 Escrita básica na tela:
 	
