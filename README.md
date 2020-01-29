@@ -771,12 +771,13 @@ Esta plataforma é composta por dois instrumentos:
 ### Código e Sintaxe
 
 Variáveis Primitivas:
-	- int idade = 10;
-	- float valor = 1.5;
-	- double							(aceita int e float)
-	- char letra = 'a';
-	- boolean verdade = true;	(verdadeiro ou falso)
-	- String nome = "João";		(não é primitiva, cabem textos)
+
+- int idade = 10;
+- float valor = 1.5;
+- double							(aceita int e float)
+- char letra = 'a';
+- boolean verdade = true;	(verdadeiro ou falso)
+- String nome = "João";		(não é primitiva, cabem textos)
 	
 Escrita básica na tela:
 	
