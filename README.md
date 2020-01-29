@@ -202,22 +202,16 @@ Segundo o manual de instruções do software Portugol Studio, "a instrução de 
 
 Comandos:
 
-	- escreva - Escreverá o que tiver entre parênteses na tela.
-		
-		Uso:
-			escreva("Texto mostrado.")
-			escreva(x," Texto!") <- Valor da variável x e o texto todo entre aspas (espaço também).
+	- escreva - Escreverá o que tiver entre parênteses na tela. Uso:
+		escreva("Texto mostrado.")
+		escreva(x," Texto!") <- Valor da variável x e o texto todo entre aspas (espaço também).
 										
-	- leia - Ao declarar uma variável x e dizer por exemplo que será um número inteiro, se quisermos que o valor desta variável seja definida pelo usuário externo utilizaremos o comando leia.
-		
-		Uso:
-			leia(x)
-			leia(x,y) <- Serão duas entradas, primeiro a variável x, e após o Enter ser pressionado, y.
+	- leia - Ao declarar uma variável x e dizer por exemplo que será um número inteiro, se quisermos que o valor desta variável seja definida pelo usuário externo utilizaremos o comando leia. Uso:
+		leia(x)
+		leia(x,y) <- Serão duas entradas, primeiro a variável x, e após o Enter ser pressionado, y.
 						
-	- limpa - Em outras linguagens é um comando altamente adaptado. Como o propósito do Portugol Studio é educacional, e quase sempre iremos executar os programas no próprio console ou terminal, é um artifício usado para limpagem de tela, quando precisamos "apagar" o que está escrito para exibir novas saídas. Não precisa de nenhum parâmetro específico entre os parênteses.
-		
-		Uso:
-			limpa()
+	- limpa - Em outras linguagens é um comando altamente adaptado. Como o propósito do Portugol Studio é educacional, e quase sempre iremos executar os programas no próprio console ou terminal, é um artifício usado para limpagem de tela, quando precisamos "apagar" o que está escrito para exibir novas saídas. Não precisa de nenhum parâmetro específico entre os parênteses. Uso:
+		limpa()
 
 
 ### Estruturas de Controle
@@ -228,225 +222,269 @@ Para garantir o desvio intencional do fluxo durante a execução de um algoritim
 
 	Durante uma execução, podemos encontrar situações onde um conjunto de instruções deverá ser executado caso uma condição seja verdadeira.
 
-	- se - Como dizer quando um conjunto de instruções será
-		executado.
+	- se - Como dizer quando um conjunto de instruções será executado. Uso:  
+		se(resposta = "sim") {escreva("Tchau!")}
 		
-		Uso:
-			se(resposta = "sim"){escreva("Tchau!")}
-		
-	- se-senao - Uma das duas opções será executada.
-		
-		Uso:
-			se(hora >= 6 e hora <= 18){escreva("É dia.")}
-			senao{escreva(""É noite.)}
+	- se-senao - Uma das duas opções será executada. Uso:  
+		se(hora >= 6 e hora <= 18) {escreva("É dia.")}  
+		senao{escreva(""É noite.)}
 	
-	- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites.
-	
-		Uso:
-			se(nota >= 9){escreva("A")}
-			senao se(nota >= 7){escreva("B")}
-			senao se(nota >= 5){escreva("C")}
-			senao se(nota >= 3){escreva("D")}
-			senao{escreva("E")}
+	- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites. Uso:  
+		se(nota >= 9) {escreva("A")}  
+		senao se(nota >= 7) {escreva("B")}  
+		senao se(nota >= 5) {escreva("C")}  
+		senao se(nota >= 3) {escreva("D")}  
+		senao{escreva("E")}  
 			
 - Laços de Repetição
 
 	Justamente criar um "Looping" controlado onde uma quantidade de comandos se repete até que uma determinada condição seja verdadeira.
 
-	- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas.
-
-		Uso:
-			enquanto(parar != "sim")
-			{
-				escreva("Deseja parar?")
-				leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.
-			}
+	- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas. Uso:  
+		enquanto(parar != "sim")  
+		{  
+			escreva("Deseja parar?")  
+			leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.  
+		}
 		
-	- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça.
+	- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça. Uso:  
+		faca  
+		{  
+			escreva("Insira o valor do lado: ")  
+			leia(lado)  
+		}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
+
+	- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso: Uso: Tabuada de 3:  
+		para(inteiro i = 1; i < 10; i++)  
+		{  
+			tabuada = i * 3  
+			escreva(tabuada," ")  
+		}  
 		
-		Uso:
-			faca
-			{
-				escreva("Insira o valor do lado: ")
-				leia(lado)
-			}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
+		*Leia-se: Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
 
-	- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso:
-		
-		Uso: Tabuada de 3:
-			para(inteiro i = 1; i < 10; i++)
-			{
-				tabuada = i * 3
-				escreva(tabuada," ")
-			}
-			
-		*Leia-se:
-			Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
-
-Com essas informações básicas já podemos começar a abordar 
-problemas simples para enxergar as soluções nesses formatos. 
-Após, veremos o uso das variáveis compostas.
-
-Abaixo é um exemplo de como usar as estruturas de repetição
-para exibir os mesmos resultados em um ambiente de comando:
+Com essas informações básicas já podemos começar a abordar problemas simples para enxergar as soluções nesses formatos. Após, veremos o uso das variáveis compostas. Abaixo é um exemplo de como usar as estruturas de repetição para exibir os mesmos resultados em um ambiente de comando:
 
 	#include<iostream>
-	#include<windows.h>				//Comando Sleep = pausa temporariamente (milisegundos);
+	#include<windows.h>				// Comando Sleep = pausa temporariamente (milisegundos);
+	
 	using namespace std;
-	main(){
+	
+	main() {
 		int c=0;
-		while(c<=10){
-			cout<<c<<" "; c++;		//Enquanto(condição);
+		
+		while(c<=10) {
+			cout<<c<<" "; 
+			c++;		// Enquanto(condição);
 		}
+		
 		cout<<"\n";
 		c=0;
-		Sleep(1000);				//Sleep - 1 segundo;
+		Sleep(1000);				// Sleep - 1 segundo;
+		
 		do{
-			cout<<c<<" "; c++;		//Faça-Enquanto(condição);
+			cout<<c<<" "; 	
+			c++;		// Faça-Enquanto(condição);
 		}while(c<=10);
+		
 		cout<<"\n";
 		c=0;
-		Sleep(1000);				//Sleep - 1 segundo;
-		for(int c=0;c<=10;c++){
-			cout<<c<<" ";			//Para(declaração;condição;incremento ou decremento);
+		Sleep(1000);				// Sleep - 1 segundo;
+		
+		for(int c=0;c<=10;c++) {
+			cout<<c<<" ";			// Para(declaração;condição;incremento ou decremento);
 		}
 	}
 
 
 ### Validação de Variáveis
 
-		Validamos uma variável antes de prosseguir com o código para
-	que o programa responda exatamente como previsto:
+Validamos uma variável antes de prosseguir com o código para que o programa responda exatamente como previsto:
 	
-	Exemplo 1 - Deseja executar para uma nova empresa? (s/n): "somente
-	s ou n":
-#include<iostream>
-using namespace std;
-main(){
-	setlocale(LC_ALL,"Portuguese");
-	char r;
-	cout<<"Perguntarei se você deseja continuar.\n\n";
-	do{
-		cout<<"Deseja continuar (s/n)? "; cin>>r;
-		if(r!='s' and r!='S' and r!='n' and r!='N'){
-			cout<<"Insira s ou n.\n";
-		}
-	}while(r!='n' and r!='N');
-	cout<<"OK.";
-}
+Exemplo 1 - Deseja executar para uma nova empresa? (s/n): "somente s ou n":
+	
+	#include<iostream>
+	
+	using namespace std;
+	
+	main() {
+		setlocale(LC_ALL,"Portuguese");
+		char r;
+		
+		cout<<"Perguntarei se você deseja continuar.\n\n";
+		do{
+			cout<<"Deseja continuar (s/n)? "; cin>>r;
+			if(r!='s' and r!='S' and r!='n' and r!='N') {
+				cout<<"Insira s ou n.\n";
+			}
+		}while(r!='n' and r!='N');
+		
+		cout<<"OK.";
+	}
 
-	Exemplo 2 - Testando validação de dados, o programa lê o nome do
-	aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando
-	a média. É executado até que a resposta à pergunta s/n seja n.
-	Realiza procedimentos para:
+Exemplo 2 - Testando validação de dados, o programa lê o nome do aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando a média. É executado até que a resposta à pergunta s/n seja n. Realiza procedimentos para:
+
 	1.Sexo apenas m/f;
 	2.Nota entre 0 e 10;
 	3.s/n aceita s ou S ou n ou N.
 
-#include<iostream>
-#include<windows.h>
-using namespace std;
-main(){
-	setlocale(LC_ALL,"Portuguese");
-	char s, r;
-	string n;
-	float n1, n2, m;
-	do{
-		cout<<"Nome: "; cin>>n,"\n";
+	#include<iostream>
+	#include<windows.h>
+	
+	using namespace std;
+	
+	main() {
+		setlocale(LC_ALL,"Portuguese");
+		char s, r;
+		string n;
+		float n1, n2, m;
+		
 		do{
-			cout<<"Nota 1: "; cin>>n1,"\n";
-			if(n1<0 or n1>10){
-				cout<<"Insira nota de 0 a 10.\n";
-			}
-		}while(n1<0 or n1>10);
-		do{
-			cout<<"Nota 2: "; cin>>n2,"\n";
-			if(n2<0 or n2>10){
-				cout<<"Insira nota de 0 a 10.\n";
-			}
-		}while(n2<0 or n2>10);
-		do{
-			cout<<"Sexo: "; cin>>s,"\n";
-			if(s!='m' and s!='M' and s!='f' and s!='F'){
-				cout<<"Insira m/M ou f/F.\n";
-			}
-		}while(s!='m' and s!='M' and s!='f' and s!='F');
-		m=(n1+n2)/2; cout<<"A media foi "<<m<<".\n";
-		Sleep(1000);		
-		do{
-			cout<<"Deseja continuar (s/n)? "; cin>>r;
-			if(r!='s' and r!='S' and r!='n' and r!='N'){
-				cout<<"Insira s ou n.\n";
-			}
-		}while(r!='s' and r!='S' and r!='n' and r!='N');
-	}while(r=='s' or r=='S');
-	cout<<"\nObrigado.";
-}
+			cout<<"Nome: "; cin>>n,"\n";
+			do{
+				cout<<"Nota 1: "; cin>>n1,"\n";
+				if(n1<0 or n1>10) {
+					cout<<"Insira nota de 0 a 10.\n";
+				}
+			}while(n1<0 or n1>10);
+			
+			do{
+				cout<<"Nota 2: "; cin>>n2,"\n";
+				if(n2<0 or n2>10) {
+					cout<<"Insira nota de 0 a 10.\n";
+				}
+			}while(n2<0 or n2>10);
+			
+			do{
+				cout<<"Sexo: "; cin>>s,"\n";
+				if(s!='m' and s!='M' and s!='f' and s!='F') {
+					cout<<"Insira m/M ou f/F.\n";
+				}
+			}while(s!='m' and s!='M' and s!='f' and s!='F');
+			
+			m=(n1+n2)/2; 
+			cout<<"A media foi "<<m<<".\n";
+			
+			Sleep(1000);		
+			
+			do{
+				cout<<"Deseja continuar (s/n)? "; cin>>r;
+				if(r!='s' and r!='S' and r!='n' and r!='N') {
+					cout<<"Insira s ou n.\n";
+				}
+			}while(r!='s' and r!='S' and r!='n' and r!='N');
+		}while(r=='s' or r=='S');
+		
+		cout<<"\nObrigado.";
+	}
 
 	
-Variáveis Compostas Homogêneas
+### Variáveis Compostas Homogêneas
 
-		São variáveis que comportam mais de uma informação do mesmo 
-	tipo, definidas na declaração, pelo usuário ou durante o
-	programa. Parâmetros a serem considerados:
+São variáveis que comportam mais de uma informação do mesmo tipo, definidas na declaração, pelo usuário ou durante o programa. Parâmetros a serem considerados:
 
-	Comandos:
-		. Vetores (unidimensionais, apenas um índice: linhas);
-		Uso:
-			tipo		nome[quantidade de dados ou colunas]
-			cadeia vetor[2] = {"a", "b"}
-			inteiro vetor[2] = {32, 44}
-			Exemplo 1 - Entrada, saída e cálculos:
+- Vetores (unidimensionais, apenas um índice: linhas). Uso:
+
+	tipo		nome[quantidade de dados ou colunas]
+
+	cadeia vetor[2] = {"a", "b"}
+	inteiro vetor[2] = {32, 44}
+	
+	Exemplo - Entrada, saída e cálculos:
+		
 		#include<iostream>
+		
 		using namespace std;
-		main(){
+		
+		main() {
 			int n[3],np=0,ni=0,nt=0,mn=-99999999;float m;
-			cout<<"Insira 3 números inteiros: ";for(int i=0;i<=2;i++){cin>>n[i];if(n[i]>mn)mn=n[i];nt+=n[i];}m=nt/3.0;
-			cout<<"\nAo contrário, ";for(int i=2;i>=1;i--)cout<<n[i]<<", ";cout<<n[0]<<".";
+			
+			cout<<"Insira 3 números inteiros: ";
+			for(int i=0;i<=2;i++) {
+				cin>>n[i];
+				
+				if(n[i]>mn) mn=n[i];
+
+				nt+=n[i];
+			}
+
+			m=nt/3.0;
+			
+			cout<<"\nAo contrário, ";
+			
+			for(int i=2;i>=1;i--) cout<<n[i]<<", ";
+			cout<<n[0]<<".";
+
 			cout<<"\nAo maior dos maiores, "<<mn<<".";
-			cout<<"\nAos pares, ";for(int i=0;i<=1;i++)if(n[i]%2==0){cout<<n[i]<<", ";np+=1;}if(n[2]%2==0){cout<<n[2]<<" ";np+=1;}
+			
+			cout<<"\nAos pares, ";
+			for(int i=0;i<=1;i++)
+				if(n[i]%2==0) {
+					cout<<n[i]<<", ";
+					np+=1;
+				}
+			if(n[2]%2==0) {
+				cout<<n[2]<<" ";
+				np+=1;
+			}
 			cout<<"(total de "<<np<<" números).";
-			cout<<"\nAos ímpares, ";for(int i=0;i<=1;i++)if(n[i]%2!=0){cout<<n[i]<<", ";ni+=1;}if(n[2]%2!=0){cout<<n[2]<<" ";ni+=1;}
+
+			cout<<"\nAos ímpares, ";
+			for(int i=0;i<=1;i++)
+				if(n[i]%2!=0) {
+					cout<<n[i]<<", ";
+					ni+=1;
+				}
+			if(n[2]%2!=0) {
+				cout<<n[2]<<" ";
+				ni+=1;
+			}
 			cout<<"(total de "<<ni<<" números).";
-			cout<<"\nÀ média, ";cout<<m<<"!\n\n";	
+
+			cout<<"\nÀ média, "<<m<<"!\n\n";	
 		}
-		
-		. Matriz (bidimensional, dois ou mais índices: linhas e
-			colunas);
-		Uso:
-			tipo	nome[qtd. de linhas][qtd. de colunas]
-			real matriz[linhas][colunas]
-	
-		Declarações - "int m[linhas][colunas];"
-		Atribuições - "m[nl][nc]=x;"
-		Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:
-		"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<"Digite ... : ";cin>>m[l][c];"
-		Onde: nl - número de linhas e nc - número de colunas.
-		Saída de dados - "cout<<endl;" finaliza a linha
-		"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<m[l][c];cout<<endl;"
-		
-			Exemplo 1 - Testando Matriz:
+
+- Matriz (bidimensional, dois ou mais índices: linhas e colunas). Uso:
+
+	\
+	tipo	nome[qtd. de linhas][qtd. de colunas]
+	real matriz[linhas][colunas]
+
+	Declarações - "int m[linhas][colunas];"
+	Atribuições - "m[nl][nc]=x;"
+
+	Estratégia para entrada de dados - Linha por linha ou Coluna por coluna:
+	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<"Digite ... : ";cin>>m[l][c];"
+	Onde: nl - número de linhas e nc - número de colunas.
+
+	Saída de dados - "cout<<endl;" finaliza a linha
+	"for(l=0;l<nl;l++)for(c=0;c<nc;c++)cout<<m[l][c];cout<<endl;"
+
+	Exemplo 1 - Testando Matriz:
 		#include<iostream>
+		
 		using namespace std;
-		main(){
+		
+		main() {
 			int l,c,nl,nc;cout<<"Número de linhas da matriz: ";cin>>nl;
 			cout<<"Número de colunas da matriz: ";cin>>nc;int m[nl][nc];
-			for(l=0;l<nl;l++)for(c=0;c<nc;c++){cout<<"m["<<l<<"]["<<c<<"] : ";cin>>m[l][c];}
-			for(l=0;l<nl;l++){for(c=0;c<nc;c++)cout<<m[l][c]<<"   ";cout<<endl;}
+			for(l=0;l<nl;l++)for(c=0;c<nc;c++) {cout<<"m["<<l<<"]["<<c<<"] : ";cin>>m[l][c];}
+			for(l=0;l<nl;l++) {for(c=0;c<nc;c++)cout<<m[l][c]<<"   ";cout<<endl;}
 		}
+	\
 
-		. Arrays: Tridimensional (camadas de matrizes).
-		
-		Declarações: tipo nome[indice]
+- Arrays: Tridimensional (camadas de matrizes). Uso:
 
-		Atribuição: nome[indice] = <valor>
-	
+	Declarações: tipo nome[indice]
+
+	Atribuição: nome[indice] = <valor>
+
 	Obs.: Índice declarado (quantidade de posições, referências):
 	contagem a partir do zero: 0, 1, 2 ... N, ou seja, a primeira
 	posição é vetor[0];
 
 	
-Rotinas de Classificação (ordens e arranjos)
+### Rotinas de Classificação (ordens e arranjos)
 	
 		Código para gerar a sequência de fibonacci em um vetor com
 	dez posições.
@@ -460,15 +498,15 @@ Rotinas de Classificação (ordens e arranjos)
 #include<iostream>
 #include<windows.h>
 using namespace std;
-main(){
+main() {
 	int i,f[10]={0,1};cout<<f[0]<<" "<<f[1]<<" ";
-	for(i=2;i<=9;i++){f[i]=f[i-1]+f[i-2];cout<<f[i]<<" ";Sleep(500);}cout<<"\n";
+	for(i=2;i<=9;i++) {f[i]=f[i-1]+f[i-2];cout<<f[i]<<" ";Sleep(500);}cout<<"\n";
 }
 
 	Exemplo 2 - Saída única:
 #include<iostream>
 using namespace std;
-main(){
+main() {
 	int i,f[10]={0,1};for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
 	for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
 }
@@ -476,7 +514,7 @@ main(){
 	Exemplo 3 - Atribuindo os valores iniciais (posições 0 e 1):
 #include<iostream>
 using namespace std;
-main(){
+main() {
 	int i,f[10];f[0]=0;f[1]=1;
 	for(i=2;i<=9;i++)f[i]=f[i-1]+f[i-2];
 	for(i=0;i<=9;i++)cout<<f[i]<<" ";cout<<"\n";
@@ -489,10 +527,10 @@ main(){
 #include<iostream>
 #include<math.h>
 using namespace std;
-main(){
+main() {
 	int t;cout<<"Digite o tamanho desejado do vetor: ";
 	cin>>t;int v[t];
-	for(int c=0;c<=t-1;c++){v[c]=pow(c,2);cout<<"v["<<c<<"] = "<<v[c]<<"\n";}
+	for(int c=0;c<=t-1;c++) {v[c]=pow(c,2);cout<<"v["<<c<<"] = "<<v[c]<<"\n";}
 }
 
 		Classificação método "bolha": carrega valores maiores ou
@@ -511,11 +549,11 @@ main(){
 
 #include<iostream>
 using namespace std;
-main(){
+main() {
 	int c,i,x,t;cout<<"Digite o tamanho desejado do vetor: ";cin>>t;int v[t];
-	for(i=0;i<t;i++){cout<<"v["<<i<<"] : ";cin>>v[i];}
-	for(c=0;c<t-1;c++){
-		for(int i=0;i<t-1-c;i++)if(v[i]>v[i+1]){x=v[i];v[i]=v[i+1];v[i+1]=x;}
+	for(i=0;i<t;i++) {cout<<"v["<<i<<"] : ";cin>>v[i];}
+	for(c=0;c<t-1;c++) {
+		for(int i=0;i<t-1-c;i++)if(v[i]>v[i+1]) {x=v[i];v[i]=v[i+1];v[i+1]=x;}
 	}cout<<"Resultado: \n";for(i=0;i<t;i++)cout<<"v["<<i<<"] = "<<v[i]<<endl;
 }
 
@@ -536,8 +574,8 @@ Subprogramas (funções)
 		
 #include<iostream>
 using namespace std;
-void mensagem(string frase){cout<<frase<<endl;}
-main(){
+void mensagem(string frase) {cout<<frase<<endl;}
+main() {
 	cout<<"Testando Subprogramas\n\n";mensagem("Yeah!");
 }
 		
@@ -546,8 +584,8 @@ main(){
 		
 #include<iostream>
 using namespace std;
-void mensagem(){cout<<"Yeah!\n";}
-main(){
+void mensagem() {cout<<"Yeah!\n";}
+main() {
 	cout<<"Testando Subprogramas\n\n";mensagem();
 }
 
@@ -560,10 +598,10 @@ main(){
 
 #include<iostream>
 using namespace std;
-void mensagem(string frase){cout<<frase<<endl;}
-void linha(){cout<<"-------------------------------\n";}
-void linhapersonalizada(char c,int n){for(int i;i<=n;i++)cout<<c;cout<<endl;}
-main(){
+void mensagem(string frase) {cout<<frase<<endl;}
+void linha() {cout<<"-------------------------------\n";}
+void linhapersonalizada(char c,int n) {for(int i;i<=n;i++)cout<<c;cout<<endl;}
+main() {
 	cout<<"Testando Subprogramas\n\n";linha();mensagem("Yeah!\n");
 	string texto="Oh Yeahhh!\n";linha();mensagem(texto);linha();
 	cout<<"Digite algo: ";cin>>texto;cout<<"E eu repito, ";mensagem(texto);
@@ -578,8 +616,8 @@ main(){
 
 #include<iostream>
 using namespace std;
-int resto(int dividendo,int divisor){int r;r=dividendo%divisor;return(r);}
-main(){
+int resto(int dividendo,int divisor) {int r;r=dividendo%divisor;return(r);}
+main() {
 	int valor,dd,ds;
 	cout<<"Insira o dividendo: ";cin>>dd;cout<<"Insira o divisor: ";cin>>ds;
 	valor=resto(dd,ds);cout<<"Resto = "<<valor<<endl;
