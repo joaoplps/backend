@@ -792,7 +792,7 @@ Na linguagem Java, é possível atribuir o valor de um tipo de variável a outro
 	int num;
 	num = (int) 1.234;
 
-### Controle de fluxo SWITCH CASE e Entrada de Dados:
+### Controle de fluxo SWITCH CASE e Entrada de Dados
 
 Switch case Verifica variável e age de acordo com os casos (escolha-caso). Importante não esquecer da linha "break;" para parar a execução quando o teste for verdadeiro. A linha "default" executa se nenhum teste for verdade. Para a entrada de dados é necessário importar a biblioteca Scanner, que é um método consultor.
 	
