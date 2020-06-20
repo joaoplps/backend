@@ -1,5 +1,9 @@
 # Computer Programming
 
+Curso 100% hands-on de programação lógica. Aprenda praticando.
+
+## Conceito
+
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado introdutório ao avançado em Programação. O trabalho será feito em linguagens de pseudo-código (Portugol Estudio), C++ e em Java, observando:
 
 	- Os códigos estão comentados descrevendo o fluxo do programa e a descrição narrativa da problemática;
@@ -10,22 +14,20 @@ efeitos práticos de cada exemplo dado. Um ou mais códigos devem estar nos loca
 
 Fique atento e siga as lições em ordem numeral, ou escolha a que deseja, abra o arquivo em seu editor de texto e leia-o atentamente!
 
-HACK IT ALL.
-
-@LPS
-
 ## Contexto
 
 ### Programação & Desenvolvimento
 
 Os computadores e máquinas computacionais inventadas pelo ser humano tem instrumentos desenvolvidos para estabelecer comunicações. Esses instrumentos trabalham as informações que compõem uma mensagem de um ponto de vista organizacional matemático, ou seja, são codificações e decodificações de um simples sinal elétrico dentro um sistema binário.
 
-Para o circuito de informações funcionar, a unidade lógica recebe comandos já prevenidos de comportamentos. As linguagens surgem para facilitar a execução dos comandos por parte dos usuários. Nesse sentido, conseguimos imaginar uma "pilha":
+Para o circuito de informações funcionar, a unidade lógica recebe comandos já prevenidos de comportamentos. As linguagens surgem para facilitar a execução dos comandos por parte dos usuários. Nesse sentido, conseguimos imaginar uma "pilha"
 
-	PC	
-	- Baixo Nível
-	- Alto Nível
-	USUÁRIO
+		PC	
+		...
+		Baixo Nível
+		Alto Nível
+		...
+		USUÁRIO
 
 
 Próximo à Máquina as linguagens são mais trabalhosas, devido à extensão da codificação binária. Como já sabemos, um Byte formado por 8 bits compreende possibilidades suficientes para armazenar números, letras, caracteres especiais, entre outras informações.
@@ -37,71 +39,71 @@ Mais próximo ao Usuário, as linguagens elevam-se no sentido de suportar comand
 
 A estrutura que compõe um código formado por instruções executáveis pode ser formada de várias maneiras. A lógica para estabelecer um padrão simples e poderoso é definida de acordo com uma característica fundamental da leitura física dos dados pela parte da máquina, de maneira linear e progressiva.
 
-Um programa pode ter o seguinte fluxo de execução:
+Um programa pode ter o seguinte fluxo de execução
 			
-	INÍCIO
-		Considerações iniciais;
-	ENTRADA DE DADOS
-		Interação com o usuário;
-	CÁLCULO	
-		Cálculos estabelecidos conforme problemática;
-	DECISÃO LÓGICA
-		Definição de curso segundo resultado lógico processado v/f;
-	SAÍDA DE DADOS
-		Interação com o usuário;
-	FIM		
-		Finalização do programa (execução finalizada).
+		INÍCIO
+			Considerações iniciais;
+		ENTRADA DE DADOS
+			Interação com o usuário;
+		CÁLCULO	
+			Cálculos estabelecidos conforme problemática;
+		DECISÃO LÓGICA
+			Definição de curso segundo resultado lógico processado v/f;
+		SAÍDA DE DADOS
+			Interação com o usuário;
+		FIM		
+			Finalização do programa (execução finalizada).
 		
 É claro que dependendo da simplicidade do probelma podem não existir decisões lógicas, ou cálculos, ou até mesmo pode estar ausente a entrada de dados e a saída, mas com esses quatro processos básicos construímos problemas matemáticos complexos. Para resolver uma problemática apresentada, existem algumas maneiras de entender e desenvolver a solução, através de formas de representação (construções):
 
 - Descrição Narrativa
 
-	Nada mais é que a instrução escrita à mão. Se temos um bolo para fazer, a idéia é comparar o algoritimo à uma receita escrita definindo todo o passo a passo para sua execução, e se possível observações e informações úteis que dão origem aos comentários em um código (a ver).
+Nada mais é que a instrução escrita à mão. Se temos um bolo para fazer, a idéia é comparar o algoritimo à uma receita escrita definindo todo o passo a passo para sua execução, e se possível observações e informações úteis que dão origem aos comentários em um código (a ver).
 
-	Se possível, é assim que começamos o desenvolvimento do problema pelo seu enunciado, eludindo todo o passo a passo na descrição dos comandos que serão executados.
+Se possível, é assim que começamos o desenvolvimento do problema pelo seu enunciado, eludindo todo o passo a passo na descrição dos comandos que serão executados.
 
 - Fluxograma
 
-	O fluxo de execução é um parâmetro interessante para ajudar a entender e trabalhar a solução de um problema qualquer. O desenho das estruturas auxilia na visualização dos "caminhos" que o próprio algoritmo pode tomar.
-	
+Um fluxograma sempre começa no INÍCIO e termina no FIM. As estruturas de DECISÃO sempre devem ser fechadas "de fora para dentro", ou seja, da mais interna até a mais externa, garantindo que a primária englobe a(s) secundária(s) e assim por diante.
+
+Em suma, um fluxograma apresentará os dados mais básicos, assim como o fluxo ou caminho que a informação percorrerá e suas interações ou alterações.
+O fluxo de execução é um parâmetro interessante para ajudar a entender e trabalhar a solução de um problema qualquer. O desenho das estruturas auxilia na visualização dos "caminhos" que o próprio algoritmo pode tomar
+
 	- INÍCIO/FIM - Dentro de um formato oval-horizontal;
 	- ENTRADA - Dentro de um retângulo em formato envelope (com uma das pontas "cortada";
 	- DECISÃO - Dentro de um losângulo com duas saídas: verdadeiro e falso;
 	- CÁLCULO - Dentro de um retângulo;
 	- SAÍDA - Dentro de um retângulo com o lado de baixo ondulado (formato de resma de papel);
-	
-	Um fluxograma sempre começa no INÍCIO e termina no FIM. As estruturas de DECISÃO sempre devem ser fechadas "de fora para dentro", ou seja, da mais interna até a mais externa, garantindo que a primária englobe a(s) secundária(s) e assim por diante.
-
-	Em suma, um fluxograma apresentará os dados mais básicos, assim como o fluxo ou caminho que a informação percorrerá e suas interações ou alterações.
 
 - Pseudocódigo
-	
-	O pseudocódigo administrado pelo software chamado Portugol Studio da UNIVALI-PR (entre outros), é um exemplo de código educativo, com carateristicas direcionadas para aprendizado onde os comandos são mais intuitivos, e no próprio vocabulário.
 
-	É claro que as intruções sempre se aplicarão à palavras de comando que expressam exatamente o que fazem, ou o mais próximo disso. Por exemplo em c++ (a ver), o comando "while" em inglês (ou "enquanto" em portugês), expressa a condição temporal de que ENQUANTO alguma expressão lógica definida for verdadeira (ou não), permanecerá executando as instruções que estão contidas dentro da estrutura deste comando.
+O pseudocódigo administrado pelo software chamado Portugol Studio da UNIVALI-PR (entre outros), é um exemplo de código educativo, com carateristicas direcionadas para aprendizado onde os comandos são mais intuitivos, e no próprio vocabulário.
 
-	Um exemplo simples para construção das duas primeiras formas de representação de um algoritimo feito para resolvê-lo:
+É claro que as intruções sempre se aplicarão à palavras de comando que expressam exatamente o que fazem, ou o mais próximo disso. Por exemplo em c++ (a ver), o comando "while" em inglês (ou "enquanto" em portugês), expressa a condição temporal de que ENQUANTO alguma expressão lógica definida for verdadeira (ou não), permanecerá executando as instruções que estão contidas dentro da estrutura deste comando.
+
+Um exemplo simples para construção das duas primeiras formas de representação de um algoritimo feito para resolvê-lo:
 		
-	Problema:
+Problema:
 
-		Descobrir o resultado da soma de dois números.
+	Descobrir o resultado da soma de dois números.
 
-	Soluções:
+Soluções:
 
-		- Descrição Narrativa:
-			1 - Definir primeiro quais os número que serão somados;  
-			2 - Somá-los;  
-			3 - Exibir o resultado.  
-		- Fluxograma
-									INÍCIO
-			
-				1			ENTRADA	->	N1, N2
-			
-				2			CÁLCULO	->	N1 + N2 = R
-			
-				3			SAÍDA		->	R
-			
-									 FIM
+	- Descrição Narrativa:
+		1 - Definir primeiro quais os número que serão somados;  
+		2 - Somá-los;  
+		3 - Exibir o resultado.  
+	- Fluxograma
+								INÍCIO
+		
+			1			ENTRADA	->	N1, N2
+		
+			2			CÁLCULO	->	N1 + N2 = R
+		
+			3			SAÍDA		->	R
+		
+									FIM
+
 
 Para definirmos uma certa generalidade sobre algoritimos e diferentes linguagens, precisamos conhecer um pouco sobre sintaxe e semântica. São elementos que caracterizam a lógica de expressão das formas verbais e permitem maior controle sobre a informação contida nas mensagens de comunicação, sendo assim, amplia o controle sobre seus comandos nas soluções práticas. Facilita o aprendizado de novas ferramentas reparando nas estruturas e identações. Sintaxe:
 
@@ -121,47 +123,46 @@ As expressões são compostas de operadores e compreendem alguns tipos, porém p
 
 - Aritméticas
 
-	Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características:
+Números como operandos e operadores aritméticos dando sempre como resultado valores numéricos. Lembre-se das regras matemáticas básicas para prioridades e o uso de (), [], {}, entre outras características:
 	
-		Operadores Aritméticos:  
-			+	Adição;  
-			-	Subtração;  
-			*	Multiplicação;  
-			/	Divisão;  
+	Operadores Aritméticos:  
+		+	Adição;  
+		-	Subtração;  
+		*	Multiplicação;  
+		/	Divisão;  
 	
-- Lógicas 
+- Lógicas
 
-	Expressões que testam a veracidade ou não das mesmas. Podem resultar em Verdadeiro ou Falso e possuem tais operadores:
+Expressões que testam a veracidade ou não das mesmas. Podem resultar em Verdadeiro ou Falso e possuem tais operadores:
 
-	 	Operadores Lógicos:  
-			e	 -> conjunção;			V e F = F  
-			ou	 -> disjunção;			V ou F = V  
-			não -> negação;				não V = F  
-		
-		Operadores Relacionais:  
-			==	Igual;					2 == 2		V  
-			>=	Maior ou Igual;				2 >= 2		V  
-			<=	Menor ou Igual;				2 <= 2		V  
-			!=	Diferente;				2 != 2		F  
-			>	Maior;					2  > 2		F  
-			<	Menor;					2  < 2		F  
+	Operadores Lógicos:  
+		e	 -> conjunção;			V e F = F  
+		ou	 -> disjunção;			V ou F = V  
+		não -> negação;				não V = F  
+	
+	Operadores Relacionais:  
+		==	Igual;					2 == 2		V  
+		>=	Maior ou Igual;				2 >= 2		V  
+		<=	Menor ou Igual;				2 <= 2		V  
+		!=	Diferente;				2 != 2		F  
+		>	Maior;					2  > 2		F  
+		<	Menor;					2  < 2		F  
 
 - Atribuições
 	
-	Como observação extra, as atribuições são nada mais que o direcionamento dos valores que compõem os dados para as variáveis:
+Como observação extra, as atribuições são nada mais que o direcionamento dos valores que compõem os dados para as variáveis:
 
-		x = 4 <- O valor 4 será levado para o espaço na memória reservado com o endereço "x";  
-		x += y		x = x + y  
-		x -= y		x = x - y  
-		x /= y		x = x / y  
-		x *= y		x = x * y  
-		x ^= y		x = x ^ y  
-		x |= y		x = x | y  
-		x %= y		x = x % y  
-		x &= y		x = x & y  
-		x ++			x = x + 1		<- Incremento (soma 1);  
-		x --			x = x - 1		<- Decremento (subtrai 1);  
-
+	x = 4 <- O valor 4 será levado para o espaço na memória reservado com o endereço "x";  
+	x += y		x = x + y  
+	x -= y		x = x - y  
+	x /= y		x = x / y  
+	x *= y		x = x * y  
+	x ^= y		x = x ^ y  
+	x |= y		x = x | y  
+	x %= y		x = x % y  
+	x &= y		x = x & y  
+	x ++			x = x + 1		<- Incremento (soma 1);  
+	x --			x = x - 1		<- Decremento (subtrai 1);  
 
 ### Variáveis Simples
 
@@ -184,12 +185,12 @@ Comandos:
 	- logico - Retorna verdadeiro ou falso (o valor é usado em operação lógica e só poderá retornar um dos dois resultados).
 	- real - Valor pertence ao conjunto dos números reais, ou uma fração decimal possivelmente infinita (números com casas decimais).
 	
-	Uso:
+Uso:
 
-		inteiro x
-		real x, y, z
-		cadeia nome
-		etc...
+	inteiro x
+	real x, y, z
+	cadeia nome
+	etc...
 
 ### Entrada e Saída
 
@@ -197,17 +198,25 @@ Segundo o manual de instruções do software Portugol Studio, "a instrução de 
 
 Comandos:
 
-	- escreva - Escreverá o que tiver entre parênteses na tela. Uso:
-		escreva("Texto mostrado.")
-		escreva(x," Texto!") <- Valor da variável x e o texto todo entre aspas (espaço também).
-										
-	- leia - Ao declarar uma variável x e dizer por exemplo que será um número inteiro, se quisermos que o valor desta variável seja definida pelo usuário externo utilizaremos o comando leia. Uso:
-		leia(x)
-		leia(x,y) <- Serão duas entradas, primeiro a variável x, e após o Enter ser pressionado, y.
-						
-	- limpa - Em outras linguagens é um comando altamente adaptado. Como o propósito do Portugol Studio é educacional, e quase sempre iremos executar os programas no próprio console ou terminal, é um artifício usado para limpagem de tela, quando precisamos "apagar" o que está escrito para exibir novas saídas. Não precisa de nenhum parâmetro específico entre os parênteses. Uso:
-		limpa()
+- escreva
 
+Escreverá o que tiver entre parênteses na tela. Uso
+
+	escreva("Texto mostrado.")
+	escreva(x," Texto!") <- Valor da variável x e o texto todo entre aspas (espaço também).
+										
+- leia
+
+Ao declarar uma variável x e dizer por exemplo que será um número inteiro, se quisermos que o valor desta variável seja definida pelo usuário externo utilizaremos o comando leia. Uso
+
+	leia(x)
+	leia(x,y) <- Serão duas entradas, primeiro a variável x, e após o Enter ser pressionado, y.
+						
+- limpa
+
+Em outras linguagens é um comando altamente adaptado. Como o propósito do Portugol Studio é educacional, e quase sempre iremos executar os programas no próprio console ou terminal, é um artifício usado para limpagem de tela, quando precisamos "apagar" o que está escrito para exibir novas saídas. Não precisa de nenhum parâmetro específico entre os parênteses. Uso
+
+	limpa()
 
 ### Estruturas de Controle
 
@@ -219,19 +228,28 @@ Durante uma execução, podemos encontrar situações onde um conjunto de instru
 
 Comandos:
 
-- se - Como dizer quando um conjunto de instruções será executado. Uso:  
-		se(resposta = "sim") {escreva("Tchau!")}
-	
-- se-senao - Uma das duas opções será executada. Uso:  
-		se(hora >= 6 e hora <= 18) {escreva("É dia.")}  
-		senao{escreva(""É noite.)}
+- se
 
-- se-senao-se - A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites. Uso:  
-		se(nota >= 9) {escreva("A")}  
-		senao se(nota >= 7) {escreva("B")}  
-		senao se(nota >= 5) {escreva("C")}  
-		senao se(nota >= 3) {escreva("D")}  
-		senao{escreva("E")}  
+Como dizer quando um conjunto de instruções será executado. Uso:  
+
+	se(resposta = "sim") {escreva("Tchau!")}
+	
+- se-senao
+
+Uma das duas opções será executada. Uso:  
+
+	se(hora >= 6 e hora <= 18) {escreva("É dia.")}  
+	senao{escreva(""É noite.)}
+
+- se-senao-se
+
+A partir daí a cadeia escala para mais decisões. Utilizado para definir valores de acordo com limites. Uso:  
+
+	se(nota >= 9) {escreva("A")}  
+	senao se(nota >= 7) {escreva("B")}  
+	senao se(nota >= 5) {escreva("C")}  
+	senao se(nota >= 3) {escreva("D")}  
+	senao{escreva("E")}  
 		
 #### Laços de Repetição
 
@@ -239,28 +257,37 @@ Justamente criar um "Looping" controlado onde uma quantidade de comandos se repe
 
 Comandos:
 
-- enquanto - Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas. Uso:  
-		enquanto(parar != "sim")  
-		{  
-			escreva("Deseja parar?")  
-			leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.  
-		}
-	
-- faca-enquanto - Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça. Uso:  
-		faca  
-		{  
-			escreva("Insira o valor do lado: ")  
-			leia(lado)  
-		}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
+- enquanto
 
-- para - O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso: Uso: Tabuada de 3:  
-		para(inteiro i = 1; i < 10; i++)  
-		{  
-			tabuada = i * 3  
-			escreva(tabuada," ")  
-		}  
+Simples assim, enquanto uma condição for verdadeira, determinadas instruções serão executadas. Uso
+
+	enquanto(parar != "sim")  
+	{  
+		escreva("Deseja parar?")  
+		leia(parar)					<- Enquanto o usuário não quiser parar, o programa perguntará novamente, e lerá nova entrada.  
+	}
 	
-		*Leia-se: Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
+- faca-enquanto
+
+Um pouco diferente na sintaxe do enquanto, pois garante que ao menos uma vez o conjunto de instruções dentro da estrutura será executado. O que garante essa situação é que o teste lógico (enquanto) somente é feito no fim da execução do faça. Uso
+
+	faca  
+	{  
+		escreva("Insira o valor do lado: ")  
+		leia(lado)  
+	}enquanto(lado <= 4)		<- Garante a leitura dos quatro lados do quadrado.
+
+- para
+
+O laço "para" recebe mais parâmetros para trabalhar. Em situações onde o programa necessita de um contador interno por exemplo, existe a condição especial conforme uso: Uso: Tabuada de 3
+
+	para(inteiro i = 1; i < 10; i++)  
+	{  
+		tabuada = i * 3  
+		escreva(tabuada," ")  
+	}  
+
+*Leia-se: Para um número inteiro i igual a um, enquanto i for menor que dez (valor máximo da tabuada), executam-se as instruções, incrementa-se o valor de i e repete o teste lógico e, conforme resultado, repetem-se as instruções.
 
 
 
@@ -302,7 +329,7 @@ Com essas informações básicas já podemos começar a abordar problemas simple
 
 Validamos uma variável antes de prosseguir com o código para que o programa responda exatamente como previsto:
 	
-1 - Deseja executar para uma nova empresa? (s/n): "somente s ou n":
+1- Deseja executar para uma nova empresa? (s/n): "somente s ou n":
 	
 	#include<iostream>
 	
@@ -323,7 +350,7 @@ Validamos uma variável antes de prosseguir com o código para que o programa re
 		cout<<"OK.";
 	}
 
-2 - Testando validação de dados, o programa lê o nome do aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando a média. É executado até que a resposta à pergunta s/n seja n. Realiza procedimentos para:
+2- Testando validação de dados, o programa lê o nome do aluno, o sexo e duas notas. Calcula e mostra uma mensagem informando a média. É executado até que a resposta à pergunta s/n seja n. Realiza procedimentos para:
 
 	1.Sexo apenas m/f;
 	2.Nota entre 0 e 10;
@@ -384,7 +411,9 @@ Validamos uma variável antes de prosseguir com o código para que o programa re
 
 São variáveis que comportam mais de uma informação do mesmo tipo, definidas na declaração, pelo usuário ou durante o programa. Parâmetros a serem considerados:
 
-- Vetores (unidimensionais, apenas um índice: linhas). Uso:
+- Vetores
+
+Unidimensionais, apenas um índice: linhas. Uso
 
 	tipo		nome[quantidade de dados ou colunas]
 
@@ -446,7 +475,9 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 			cout<<"\nÀ média, "<<m<<"!\n\n";	
 		}
 
-- Matriz (bidimensional, dois ou mais índices: linhas e colunas). Uso:
+- Matriz
+
+Bidimensional, dois ou mais índices: linhas e colunas. Uso
 
 	tipo	nome[qtd. de linhas][qtd. de colunas]  
 	real matriz[linhas][colunas]  
@@ -504,7 +535,9 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 		}
 
 
-- Arrays: Tridimensional (camadas de matrizes). Uso:
+- Arrays
+
+Tridimensional: camadas de matrizes. Uso
 
 	Declarações: tipo nome[indice]  
 	Atribuição: nome[indice] = <valor>
@@ -589,11 +622,11 @@ São variáveis que comportam mais de uma informação do mesmo tipo, definidas 
 		}
 
 - Classificação método "bolha": carrega valores maiores ou menores para a ultima posição por comparação entre dois valores consequentes de modo crescente ou decrescente.
-		- Note a inversão de variáveis com x;
-		- O intervalo for(int i=0;i<=t-1;i++), o teste vai até a penúltima posiçao, no caso do vetor de t posições;
-		- A expressão relacionada ao teste, garante em i<=t-1-c (c inicializado em 0) que as posições do cálculo decresçam, evitando comparações repetidas;
-		- Também funciona comparando o código ASC em vetores tipo string;
-		- Para ordem decrescente inverta os sinais de maior para menor e decremente.
+	- Note a inversão de variáveis com x;
+	- O intervalo for(int i=0;i<=t-1;i++), o teste vai até a penúltima posiçao, no caso do vetor de t posições;
+	- A expressão relacionada ao teste, garante em i<=t-1-c (c inicializado em 0) que as posições do cálculo decresçam, evitando comparações repetidas;
+	- Também funciona comparando o código ASC em vetores tipo string;
+	- Para ordem decrescente inverta os sinais de maior para menor e decremente.
 
 	Método Bolha:
 
@@ -803,6 +836,3 @@ Se compararmos as variáveis x e y (x==y) criadas com "new String", estaríamos 
 			
 Vamos à prática.
 Comece pelo arquivo chamado 00-start.java, abra-o no editor de texto de sua preferência e leia a documentação inclusa no código para acompanhar o passo a passo e complete a lista.
-
-
-@LPS
