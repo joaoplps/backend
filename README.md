@@ -767,8 +767,13 @@ Retornos:
 
 Classe define Objeto de características e comportamentos diferentes. Os métodos alteram características.
 
-- Atributos - Características de um Objeto;
-- Métodos - Definem comportamentos (funções, rotinas);
+- Atributos
+
+Características de um Objeto;
+
+- Métodos
+
+Definem comportamentos (funções, rotinas);
 	
 	Ex.: 
 		Pessoa: Classe
@@ -777,9 +782,15 @@ Classe define Objeto de características e comportamentos diferentes. Os método
 	
 ### Linguagens
 
-- Compiladas - Compiladores específicos para cada ambiente;
-- Interpretadas - Compila em um tradutor que trabalha com diferentes ambientes;
-	
+- Compiladas
+
+Compiladores específicos para cada ambiente;
+
+- Interpretadas
+
+Compila em um tradutor que trabalha com diferentes ambientes;
+
+
 Java não é uma linguagem, e sim uma plataforma. Possue as seguintes divisões:
 	
 	J2SE Standard Edition
@@ -798,12 +809,12 @@ Esta plataforma é composta por dois instrumentos:
 
 Variáveis Primitivas:
 
-- int idade = 10;
-- float valor = 1.5;
-- double							(aceita int e float)
-- char letra = 'a';
-- boolean verdade = true;	(verdadeiro ou falso)
-- String nome = "João";		(não é primitiva, cabem textos)
+	- int idade = 10;
+	- float valor = 1.5;
+	- double							(aceita int e float)
+	- char letra = 'a';
+	- boolean verdade = true;	(verdadeiro ou falso)
+	- String nome = "João";		(não é primitiva, cabem textos)
 	
 Escrita básica na tela:
 	
